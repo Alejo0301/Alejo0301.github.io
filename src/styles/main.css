@@ -1,9 +1,6 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 40px;
-}
-.container {
-  max-width: 900px;
-  margin: 64px auto;
-  padding: 0 20px;
-}
+:root { font-family: system-ui, Arial, sans-serif; }
+body { margin: 0; }
+.container { max-width: 900px; margin: 64px auto; padding: 0 20px; }
+.links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+a { text-decoration: none; border: 1px solid #ddd; padding: 10px 14px; border-radius: 10px; }
+a:hover { border-color: #999; }
