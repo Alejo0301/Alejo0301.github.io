@@ -8,20 +8,67 @@
 </head>
 <body>
 
-<h1>Mi portafolio profesional</h1>
-<p>Sitio en construcción 🚧</p>
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <strong>Gionny A. Gutiérrez</strong>
+      <span>Structural Engineer · BIM · Developer</span>
+    </a>
 
-<nav class="links">
-  <a href="engineering.html">Ingeniería</a>
-  <a href="software.html">Software</a>
-  <a href="projects/index.html">Proyectos</a>
-  <a href="pages/blog.html">Notas</a>
-  <a href="pages/about.html">Sobre mí</a>
-  <a href="pages/contact.html">Contacto</a>
-</nav>
+    <nav class="nav">
+      <a class="btn" href="engineering.html">Ingeniería</a>
+      <a class="btn" href="software.html">Software</a>
+      <a class="btn" href="projects/index.html">Proyectos</a>
+      <a class="btn" href="pages/blog.html">Notas</a>
+      <a class="btn" href="pages/about.html">Sobre mí</a>
+      <a class="btn primary" href="pages/contact.html">Contacto</a>
+    </nav>
+  </div>
+</header>
 
+<main class="container">
+  <section class="hero">
+    <div class="kicker">Ingeniería moderna · análisis · automatización</div>
+    <h1>Estructuras claras. Resultados confiables.</h1>
+    <p class="lead">
+      Portafolio profesional para mostrar proyectos de diseño y análisis estructural, flujos BIM y herramientas de software
+      que construyo para automatizar trabajo técnico.
+    </p>
+
+    <div class="nav" style="margin-top:16px;">
+      <a class="btn primary" href="projects/index.html">Ver proyectos</a>
+      <a class="btn" href="software.html">Ver herramientas</a>
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h2>Diseño estructural</h2>
+      <p>Modelos, criterios normativos (NSR-10), verificaciones y memorias técnicas.</p>
+    </article>
+
+    <article class="card">
+      <h2>BIM & coordinación</h2>
+      <p>Flujos Revit/Navisworks, control de interferencias, entregables y estándares.</p>
+    </article>
+
+    <article class="card">
+      <h2>Software & automatización</h2>
+      <p>Scripts y herramientas para acelerar cálculos, reportes y extracción de datos.</p>
+    </article>
+  </section>
+
+  <footer class="footer">
+    © <span id="y"></span> Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages
+  </footer>
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 <script src="src/scripts/main.js"></script>
 
 </body>
+
 </html>
 
