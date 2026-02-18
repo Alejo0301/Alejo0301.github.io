@@ -1,16 +1,75 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contacto | Gionny</title>
-  <link rel="stylesheet" href="../src/styles/main.css">
+  <link rel="stylesheet" href="../src/styles/main.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>Contacto</h1>
-    <p>En construcción.</p>
-    <a href="../index.html">Volver al inicio</a>
-  </main>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">
+      <strong>Gionny A. Gutiérrez</strong>
+      <span>Structural Engineer · BIM · Developer</span>
+    </a>
+
+    <nav class="nav">
+      <a class="btn" href="../engineering.html">Ingeniería</a>
+      <a class="btn" href="../software.html">Software</a>
+      <a class="btn" href="../projects/index.html">Proyectos</a>
+      <a class="btn" href="blog.html">Notas</a>
+      <a class="btn" href="about.html">Sobre mí</a>
+      <a class="btn primary" href="contact.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="kicker">Contacto</div>
+  <h1>Hablemos</h1>
+  <p class="lead">Si quieres hablar de un proyecto, colaboración o una oportunidad laboral, escríbeme.</p>
+
+  <div class="hr"></div>
+
+  <section class="grid">
+    <article class="card">
+      <h2>Email</h2>
+      <p><a class="btn primary" href="mailto:gionny.gutierrez@gmail.com">Enviar correo</a></p>
+      <p class="lead" style="margin-top:10px;">gionny.gutierrez@gmail.com</p>
+    </article>
+
+    <article class="card">
+      <h2>LinkedIn</h2>
+      <p><a class="btn" href="https://www.linkedin.com/in/gionny-gutiérrez-027015182/" target="_blank" rel="noreferrer">Ver perfil</a></p>
+      <p class="lead" style="margin-top:10px;">Conecta conmigo para proyectos y oportunidades.</p>
+    </article>
+
+    <article class="card">
+      <h2>GitHub</h2>
+      <p><a class="btn" href="https://github.com/Alejo0301" target="_blank" rel="noreferrer">Ver repos</a></p>
+      <p class="lead" style="margin-top:10px;">Código, experimentos y herramientas.</p>
+    </article>
+  </section>
+
+  <section class="prose">
+    <h2>CV</h2>
+    <p>
+      <a class="btn primary" href="../assets/cv-gionny.pdf" target="_blank" rel="noreferrer">Descargar CV</a>
+      <span style="color: var(--muted); margin-left:10px;">(por ahora puede ser un placeholder)</span>
+    </p>
+  </section>
+
+  <footer class="footer">
+    © <span id="y"></span> Gionny A. Gutiérrez
+  </footer>
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+
