@@ -1,34 +1,187 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Software | Gionny</title>
-  <link rel="stylesheet" href="src/styles/main.css">
-  <link rel="icon" href="assets/logoF.png">
+  <link rel="stylesheet" href="src/styles/main.css" />
 </head>
 <body>
+
 <header class="header">
   <div class="header-inner">
-    <a class="brand" href="../index.html">
+    <a class="brand" href="index.html">
       <strong>Gionny A. Gutiérrez</strong>
       <span>Structural Engineer · BIM · Developer</span>
     </a>
 
     <nav class="nav">
-      <a class="btn" href="../engineering.html">Ingeniería</a>
-      <a class="btn" href="../software.html">Software</a>
-      <a class="btn" href="../projects/index.html">Proyectos</a>
+      <a class="btn" href="engineering.html">Ingeniería</a>
+      <a class="btn primary" href="software.html">Software</a>
+      <a class="btn" href="projects/index.html">Proyectos</a>
       <a class="btn" href="pages/blog.html">Notas</a>
       <a class="btn" href="pages/about.html">Sobre mí</a>
-      <a class="btn " href="pages/contact.html">Contacto</a>
+      <a class="btn" href="pages/contact.html">Contacto</a>
     </nav>
   </div>
 </header>
-  <main class="container">
-    <h1>Software</h1>
-    <p>Este apartado se encuentra en desarrollo y se actualizará pronto</p>
-    <a href="index.html">Volver al inicio</a>
-  </main>
+
+<main class="container">
+
+  <div class="kicker">Engineering Toolbox</div>
+  <h1>Software & Automatización</h1>
+
+  <p class="lead">
+    Desarrollo herramientas en Python y automatizaciones BIM (Revit API) para acelerar cálculos,
+    reducir errores y mejorar la calidad de los entregables estructurales.
+  </p>
+
+  <div class="hr"></div>
+
+  <div class="section-title">Python Desktop Tools</div>
+  <section class="grid">
+
+    <article class="card">
+      <h2>Generador de espectros (NSR-10)</h2>
+      <p>
+        Aplicación en Python con interfaz gráfica para generar espectros de pseudoaceleración y parámetros
+        según municipio en Colombia, orientada a análisis sísmico y verificación normativa.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">GUI</span>
+        <span class="tag">Sismo</span>
+        <span class="tag">NSR-10</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Curvas de interacción de columnas</h2>
+      <p>
+        Herramienta para generar curvas P–M (interacción axial–momento) y apoyar la verificación de columnas
+        en concreto reforzado con criterios de diseño estructural.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Concreto</span>
+        <span class="tag">Columnas</span>
+        <span class="tag">Diseño</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Verificación geométrica de columnas</h2>
+      <p>
+        Checker rápido para validar geometría y criterios básicos antes de modelación/detalle:
+        dimensiones, recubrimientos, disposición y coherencia general.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">QA/QC</span>
+        <span class="tag">Columnas</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Verificación geométrica de vigas</h2>
+      <p>
+        Validación preliminar de secciones y criterios geométricos para vigas:
+        dimensiones mínimas, relaciones básicas y consistencia para detalle.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">QA/QC</span>
+        <span class="tag">Vigas</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Despiece de vigas (en desarrollo)</h2>
+      <p>
+        Herramienta en primeras etapas para apoyar el despiece manual de vigas y organización de barras,
+        orientada a mejorar tiempos de detalle y revisión.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Detalle</span>
+        <span class="tag">En progreso</span>
+      </div>
+    </article>
+
+  </section>
+
+  <div class="hr"></div>
+
+  <div class="section-title">BIM / Revit Automation (API)</div>
+  <section class="grid">
+
+    <article class="card">
+      <h2>Metrados automáticos</h2>
+      <p>
+        Automatización para extracción de cantidades y reportes desde modelos BIM,
+        mejorando consistencia y reduciendo reprocesos en presupuestos y control de obra.
+      </p>
+      <div class="tags">
+        <span class="tag">Revit API</span>
+        <span class="tag">BIM</span>
+        <span class="tag">Quantities</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Cuantificación de friso y pañete</h2>
+      <p>
+        Herramienta para cuantificar automáticamente elementos de acabados (friso/pañete)
+        desde el modelo, generando datos listos para análisis y presupuesto.
+      </p>
+      <div class="tags">
+        <span class="tag">Revit</span>
+        <span class="tag">Automatización</span>
+        <span class="tag">Costos</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Generador de vistas para despieces (en desarrollo)</h2>
+      <p>
+        Proyecto en primeras etapas para crear vistas automáticas orientadas a despieces y documentación,
+        reduciendo tiempo de preparación y estandarizando entregables.
+      </p>
+      <div class="tags">
+        <span class="tag">Revit API</span>
+        <span class="tag">Documentación</span>
+        <span class="tag">En progreso</span>
+      </div>
+    </article>
+
+  </section>
+
+  <div class="hr"></div>
+
+  <div class="section-title">Roadmap</div>
+
+  <section class="prose">
+    <h2>Despiece automático según NSR-10 (próximo)</h2>
+    <p>
+      Línea de trabajo para integrar un despiece automático de refuerzo en Revit, alineado con criterios NSR-10,
+      buscando acelerar detalle, mejorar consistencia y reducir errores humanos.
+    </p>
+
+    <p>
+      <a class="btn primary" href="projects/index.html">Ver proyectos</a>
+      <a class="btn" href="pages/contact.html">Contactar</a>
+    </p>
+  </section>
+
+  <footer class="footer">
+    © <span id="y"></span> Gionny A. Gutiérrez — Engineering tools built with Python & BIM automation
+  </footer>
+
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
