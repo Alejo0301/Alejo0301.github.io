@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Notas | Gionny</title>
-  <link rel="stylesheet" href="../src/styles/main.css">
-  <link rel="icon" href="../assets/logoF.png">
+  <link rel="stylesheet" href="../src/styles/main.css" />
 </head>
 <body>
+
 <header class="header">
   <div class="header-inner">
     <a class="brand" href="../index.html">
@@ -19,16 +19,128 @@
       <a class="btn" href="../engineering.html">Ingeniería</a>
       <a class="btn" href="../software.html">Software</a>
       <a class="btn" href="../projects/index.html">Proyectos</a>
-      <a class="btn primary" href="about.html">Sobre mí</a>
+      <a class="btn primary" href="blog.html">Notas</a>
+      <a class="btn" href="about.html">Sobre mí</a>
       <a class="btn" href="contact.html">Contacto</a>
     </nav>
   </div>
 </header>
 
 <main class="container">
-    <h1>Notas técnicas</h1>
-    <p>Este apartado se encuentra en desarrollo y se actualizará pronto</p>
-    <a href="../index.html">Volver al inicio</a>
+
+  <div class="kicker">Notas técnicas</div>
+  <h1>Notas, guías y aprendizajes</h1>
+  <p class="lead">
+    Aquí publico apuntes cortos y guías prácticas sobre ingeniería estructural, BIM y automatización
+    (NSR-10, modelación, QA/QC, y herramientas en Python).
+  </p>
+
+  <div class="tags">
+    <span class="tag">NSR-10</span>
+    <span class="tag">ETABS/SAP2000</span>
+    <span class="tag">BIM</span>
+    <span class="tag">Python</span>
+    <span class="tag">QA/QC</span>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="section-title">Entradas recientes</div>
+
+  <section class="grid">
+
+    <a class="card-link" href="#">
+      <article class="card">
+        <h2>Cómo estructuro una memoria de cálculo (NSR-10)</h2>
+        <p>Checklist práctico para que tus entregables sean claros, verificables y fáciles de revisar.</p>
+        <div class="tags">
+          <span class="tag">NSR-10</span>
+          <span class="tag">Documentación</span>
+        </div>
+      </article>
+    </a>
+
+    <a class="card-link" href="#">
+      <article class="card">
+        <h2>Control de derivas: qué reviso y cómo lo reporto</h2>
+        <p>Una guía corta para interpretar derivas y comunicar resultados sin ruido.</p>
+        <div class="tags">
+          <span class="tag">Diseño sísmico</span>
+          <span class="tag">QA/QC</span>
+        </div>
+      </article>
+    </a>
+
+    <a class="card-link" href="#">
+      <article class="card">
+        <h2>Revit para estructura: estándares mínimos que uso</h2>
+        <p>Nombres, niveles, vistas y documentación: lo que evita caos en coordinación.</p>
+        <div class="tags">
+          <span class="tag">Revit</span>
+          <span class="tag">BIM</span>
+        </div>
+      </article>
+    </a>
+
+    <a class="card-link" href="#">
+      <article class="card">
+        <h2>Automatización en ingeniería: 3 tareas que siempre automatizo</h2>
+        <p>Reportes, extracción de cantidades y validaciones geométricas: impacto real en tiempo y errores.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Automatización</span>
+        </div>
+      </article>
+    </a>
+
+    <a class="card-link" href="#">
+      <article class="card">
+        <h2>Geotecnia para estructurales: señales de alerta en laderas</h2>
+        <p>Qué pregunto y qué reviso cuando el proyecto tiene riesgo de movimientos en masa.</p>
+        <div class="tags">
+          <span class="tag">Geotecnia</span>
+          <span class="tag">Riesgo</span>
+        </div>
+      </article>
+    </a>
+
+    <a class="card-link" href="#">
+      <article class="card">
+        <h2>Plantilla de revisión: vigas y columnas antes de modelar</h2>
+        <p>Checklist previo para evitar re-trabajo: geometría, recubrimientos, coherencia y detalles clave.</p>
+        <div class="tags">
+          <span class="tag">QA/QC</span>
+          <span class="tag">Detalle</span>
+        </div>
+      </article>
+    </a>
+
+  </section>
+
+  <div class="hr"></div>
+
+  <section class="prose">
+    <h2>¿Qué viene?</h2>
+    <p>
+      Publicaré guías más completas y casos cortos derivados de proyectos reales.
+      Si quieres colaborar o necesitas apoyo técnico, escríbeme.
+    </p>
+
+    <p>
+      <a class="btn primary" href="contact.html">Contactar</a>
+      <a class="btn" href="../projects/index.html">Ver proyectos</a>
+    </p>
+  </section>
+
+  <footer class="footer">
+    © <span id="y"></span> Gionny A. Gutiérrez — Notas técnicas
+  </footer>
+
 </main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
