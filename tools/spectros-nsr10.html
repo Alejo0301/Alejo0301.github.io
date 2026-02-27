@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tool — Espectros NSR-10 | Gionny</title>
+  <link rel="stylesheet" href="../src/styles/main.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">
+      <strong>Gionny A. Gutiérrez</strong>
+      <span>Structural Engineer · BIM · Developer</span>
+    </a>
+
+    <nav class="nav">
+      <a class="btn" href="../engineering.html">Ingeniería</a>
+      <a class="btn primary" href="../software.html">Software</a>
+      <a class="btn" href="../projects/index.html">Proyectos</a>
+      <a class="btn" href="../pages/blog.html">Notas</a>
+      <a class="btn" href="../pages/about.html">Sobre mí</a>
+      <a class="btn" href="../pages/contact.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="kicker">Python Desktop Tool</div>
+  <h1>Generador de espectros (NSR-10) por municipio</h1>
+
+  <div class="meta">
+    <span><strong>Tipo:</strong> Aplicación de escritorio</span>
+    <span><strong>Stack:</strong> Python · Matplotlib</span>
+    <span><strong>Salida:</strong> Gráficas + parámetros (listos para reporte)</span>
+  </div>
+
+  <div class="hr"></div>
+
+  <section class="prose">
+    <h2>Qué hace</h2>
+    <p>
+      Herramienta en Python con interfaz que genera el espectro de pseudoaceleración de diseño según la NSR-10,
+      a partir de la selección del municipio en Colombia. El objetivo es acelerar el proceso de obtención,
+      verificación y documentación de espectros para análisis sísmico.
+    </p>
+
+    <h2>Flujo de uso</h2>
+    <ol style="color: var(--muted);">
+      <li>Seleccionar municipio.</li>
+      <li>Calcular parámetros y generar el espectro.</li>
+      <li>Exportar/usar la gráfica y valores en memoria técnica o modelación.</li>
+    </ol>
+
+    <h2>Características</h2>
+    <ul>
+      <li>Selección de municipio (Colombia).</li>
+      <li>Cálculo automático de parámetros de amenaza y espectro.</li>
+      <li>Generación de gráfica lista para reportes.</li>
+      <li>Enfoque en rapidez y reducción de errores manuales.</li>
+    </ul>
+
+    <h2>Capturas</h2>
+    <p style="color: var(--muted);">
+        A continuación se muestran ejemplos de la interfaz y los resultados generados por la herramienta.
+    </p>
+  </section>
+
+  <!-- GALLERY (solo imágenes, sin CSS extra) -->
+  <section class="grid">
+    <article class="card" style="padding:0; overflow:hidden;">
+      <img src="../assets/tools/spectros/espectro.png" alt="Interfaz de la herramienta" style="width:100%; display:block;">
+    </article>
+
+    <article class="card" style="padding:0; overflow:hidden;">
+      <img src="../assets/tools/spectros/espectro2.png" alt="Espectro generado" style="width:100%; display:block;">
+    </article>
+
+    <article class="card" style="padding:0; overflow:hidden;">
+      <img src="../assets/tools/spectros/espectro.png" alt="Parámetros de salida" style="width:100%; display:block;">
+    </article>
+  </section>
+
+  <footer class="footer">
+    <a class="btn" href="../software.html">← Volver a Software</a>
+    <a class="btn primary" href="../pages/contact.html">Solicitar demo</a>
+  </footer>
+
+</main>
+
+</body>
+</html>
