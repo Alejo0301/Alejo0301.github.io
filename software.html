@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Software | Gionny</title>
   <link rel="stylesheet" href="src/styles/main.css" />
-  <link rel="icon" href="../assets/logoF.png">
+  <link rel="icon" href="assets/logoF.png">
 </head>
 <body>
 
@@ -29,91 +29,129 @@
 
 <main class="container">
 
-  <div class="kicker">Engineering Toolbox</div>
-  <h1>Software & Automatización</h1>
+  <section class="hero">
+    <div class="kicker">Engineering Toolbox</div>
+    <h1>Software & Automatización</h1>
 
-  <p class="lead">
-    Desarrollo herramientas en Python y automatizaciones BIM (Revit API) para acelerar cálculos,
-    reducir errores y mejorar la calidad de los entregables estructurales.
-  </p>
+    <p class="lead">
+      Desarrollo herramientas en Python y automatizaciones BIM (Revit API) para acelerar cálculos,
+      reducir errores y mejorar la calidad de los entregables estructurales.
+    </p>
+  </section>
 
   <div class="hr"></div>
 
   <div class="section-title">Python Desktop Tools</div>
   <section class="grid">
+    <article class="card card-feature">
+      <div class="card-media">
+        <img src="assets/tools/cuantificador_acero/portada_cuantificador_acero.png" alt="Portada cuantificador de cantidades de acero y despiezador">
+      </div>
+      <div class="card-body">
+        <h2>Cuantificador de cantidades de acero y despiezador</h2>
+        <p>
+          Aplicación desarrollada en Streamlit para cuantificar acero de refuerzo y apoyar el despiece
+          de elementos estructurales, facilitando estimaciones, revisión de barras y organización del detalle.
+        </p>
 
-    <article class="card">
-      <h2>Generador de espectros (NSR-10)</h2>
-      <p>
-        Aplicación en Python con interfaz gráfica para generar espectros de pseudoaceleración y parámetros
-        según municipio en Colombia, orientada a análisis sísmico y verificación normativa.
-      </p>
-      <p style="margin-top:12px;">
-      <a class="btn primary" href="tools/spectros-nsr10.html">Ver detalles</a>
-      </p>
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">GUI</span>
-        <span class="tag">Sismo</span>
-        <span class="tag">NSR-10</span>
+        <p style="margin-top:12px;">
+          <a class="btn primary" href="https://steel-quantifier-ldctbvozg4wxrmzfq8rbuz.streamlit.app/" target="_blank" rel="noopener noreferrer">
+            Abrir herramienta
+          </a>
+        </p>
+
+        <div class="tags">
+          <span class="tag">Streamlit</span>
+          <span class="tag">Acero</span>
+          <span class="tag">Despiece</span>
+          <span class="tag">Cuantificación</span>
+        </div>
       </div>
     </article>
 
-    <article class="card">
-      <h2>Curvas de interacción de columnas</h2>
-      <p>
-        Herramienta para generar curvas P–M (interacción axial–momento) y apoyar la verificación de columnas
-        en concreto reforzado con criterios de diseño estructural.
-      </p>
-      <p style="margin-top:12px;">
-        <a class="btn primary" href="tools/curvas-interaccion.html">
-          Ver detalles
-        </a>
-     </p>
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">Concreto</span>
-        <span class="tag">Columnas</span>
-        <span class="tag">Diseño</span>
+    <article class="card card-feature">
+      <div class="card-media">
+        <img src="assets/tools/spectros/portada_espectro.png" alt="Portada generador de espectros NSR-10">
+      </div>
+      <div class="card-body">
+        <h2>Generador de espectros (NSR-10)</h2>
+        <p>
+          Aplicación en Python con interfaz gráfica para generar espectros de pseudoaceleración y parámetros
+          según municipio en Colombia, orientada a análisis sísmico y verificación normativa.
+        </p>
+
+        <p style="margin-top:12px;">
+          <a class="btn primary" href="tools/spectros-nsr10.html">Ver detalles</a>
+        </p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">GUI</span>
+          <span class="tag">Sismo</span>
+          <span class="tag">NSR-10</span>
+        </div>
       </div>
     </article>
 
-    <article class="card">
-      <h2>Verificación geométrica de columnas</h2>
-      <p>
-        Checker rápido para validar geometría y criterios básicos antes de modelación/detalle:
-        dimensiones, recubrimientos, disposición y coherencia general.
-      </p>
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">QA/QC</span>
-        <span class="tag">Columnas</span>
+    <article class="card card-feature">
+      <div class="card-media">
+        <img src="assets/tools/curvas/portada_curvas.png" alt="Portada curvas de interacción de columnas">
+      </div>
+      <div class="card-body">
+        <h2>Curvas de interacción de columnas</h2>
+        <p>
+          Herramienta para generar curvas P–M (interacción axial–momento) y apoyar la verificación de columnas
+          en concreto reforzado con criterios de diseño estructural.
+        </p>
+
+        <p style="margin-top:12px;">
+          <a class="btn primary" href="tools/curvas-interaccion.html">Ver detalles</a>
+        </p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Concreto</span>
+          <span class="tag">Columnas</span>
+          <span class="tag">Diseño</span>
+        </div>
       </div>
     </article>
 
-    <article class="card">
-      <h2>Verificación geométrica de vigas</h2>
-      <p>
-        Validación preliminar de secciones y criterios geométricos para vigas:
-        dimensiones mínimas, relaciones básicas y consistencia para detalle.
-      </p>
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">QA/QC</span>
-        <span class="tag">Vigas</span>
+    <article class="card card-feature">
+      <div class="card-media">
+        <img src="assets/tools/verificacion_columnas/portada_verificacion_columnas.png" alt="Portada verificación geométrica de columnas">
+      </div>
+      <div class="card-body">
+        <h2>Verificación geométrica de columnas</h2>
+        <p>
+          Checker rápido para validar geometría y criterios básicos antes de modelación y detalle:
+          dimensiones, recubrimientos, disposición y coherencia general.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">QA/QC</span>
+          <span class="tag">Columnas</span>
+        </div>
       </div>
     </article>
 
-    <article class="card">
-      <h2>Despiece de vigas (en desarrollo)</h2>
-      <p>
-        Herramienta en primeras etapas para apoyar el despiece manual de vigas y organización de barras,
-        orientada a mejorar tiempos de detalle y revisión.
-      </p>
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">Detalle</span>
-        <span class="tag">En progreso</span>
+    <article class="card card-feature">
+      <div class="card-media">
+        <img src="assets/tools/verificacion_vigas/portada_verificacion_vigas.png" alt="Portada verificación geométrica de vigas">
+      </div>
+      <div class="card-body">
+        <h2>Verificación geométrica de vigas</h2>
+        <p>
+          Validación preliminar de secciones y criterios geométricos para vigas:
+          dimensiones mínimas, relaciones básicas y consistencia para detalle.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">QA/QC</span>
+          <span class="tag">Vigas</span>
+        </div>
       </div>
     </article>
 
@@ -124,42 +162,60 @@
   <div class="section-title">BIM / Revit Automation (API)</div>
   <section class="grid">
 
-    <article class="card">
-      <h2>Metrados automáticos</h2>
-      <p>
-        Automatización para extracción de cantidades y reportes desde modelos BIM,
-        mejorando consistencia y reduciendo reprocesos en presupuestos y control de obra.
-      </p>
-      <div class="tags">
-        <span class="tag">Revit API</span>
-        <span class="tag">BIM</span>
-        <span class="tag">Quantities</span>
+    <article class="card card-feature">
+      <div class="card-media">
+        <img src="assets/tools/generador_vistas/portada_vistas.png" alt="Portada metrados automáticos">
+      </div>
+      <div class="card-body">
+        <h2>Metrados automáticos</h2>
+        <p>
+          Automatización para extracción de cantidades y reportes desde modelos BIM,
+          mejorando consistencia y reduciendo reprocesos en presupuestos y control de obra.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Revit API</span>
+          <span class="tag">BIM</span>
+          <span class="tag">Quantities</span>
+        </div>
       </div>
     </article>
 
-    <article class="card">
-      <h2>Cuantificación de friso y pañete</h2>
-      <p>
-        Herramienta para cuantificar automáticamente elementos de acabados (friso/pañete)
-        desde el modelo, generando datos listos para análisis y presupuesto.
-      </p>
-      <div class="tags">
-        <span class="tag">Revit</span>
-        <span class="tag">Automatización</span>
-        <span class="tag">Costos</span>
+    <article class="card card-feature">
+      <div class="card-media">
+        <img src="assets/tools/cuantificador_friso/portada_cuantificador_muros.png" alt="Portada cuantificación de friso y pañete">
+      </div>
+      <div class="card-body">
+        <h2>Cuantificación de friso y pañete</h2>
+        <p>
+          Herramienta para cuantificar automáticamente elementos de acabados (friso y pañete)
+          desde el modelo, generando datos listos para análisis y presupuesto.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Revit</span>
+          <span class="tag">Automatización</span>
+          <span class="tag">Costos</span>
+        </div>
       </div>
     </article>
 
-    <article class="card">
-      <h2>Generador de vistas para despieces (en desarrollo)</h2>
-      <p>
-        Proyecto en primeras etapas para crear vistas automáticas orientadas a despieces y documentación,
-        reduciendo tiempo de preparación y estandarizando entregables.
-      </p>
-      <div class="tags">
-        <span class="tag">Revit API</span>
-        <span class="tag">Documentación</span>
-        <span class="tag">En progreso</span>
+    <article class="card card-feature">
+      <div class="card-media">
+        <img src="assets/tools/generador_vistas/portada_vistas.png" alt="Portada generador de vistas para despieces">
+      </div>
+      <div class="card-body">
+        <h2>Generador de vistas para despieces (en desarrollo)</h2>
+        <p>
+          Proyecto en primeras etapas para crear vistas automáticas orientadas a despieces y documentación,
+          reduciendo tiempo de preparación y estandarizando entregables.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Revit API</span>
+          <span class="tag">Documentación</span>
+          <span class="tag">En progreso</span>
+        </div>
       </div>
     </article>
 
