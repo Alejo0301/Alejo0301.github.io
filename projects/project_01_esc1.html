@@ -1,149 +1,183 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> PROYECTO ESC1 | Gionny</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ESC-1 — Edificio multifamiliar de 4 niveles, diseño estructural — Gionny A. Gutiérrez" />
+  <title>ESC-1 — Edificio multifamiliar (4 niveles) | Diseño estructural</title>
   <link rel="stylesheet" href="../src/styles/main.css" />
-  <link rel="icon" href="../assets/logoF.png">
-
+  <link rel="stylesheet" href="../src/styles/project.css" />
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="brand" href="../index.html">
-      <strong>Gionny A. Gutiérrez</strong>
-      <span>Structural Engineer · BIM · Developer</span>
-    </a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Gionny A. Gutiérrez<span>Structural Engineer · BIM · Developer</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../engineering.html">Ingeniería</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../projects/index.html">Proyectos</a></li>
+        <li><a href="../pages/blog.html">Notas</a></li>
+        <li><a href="../pages/about.html">Sobre mí</a></li>
+        <li><a href="../pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+    </div>
+  </nav>
 
-    <nav class="nav">
-      <a class="btn" href="../engineering.html">Ingeniería</a>
-      <a class="btn" href="../software.html">Software</a>
-      <a class="btn primary" href="index.html">Proyectos</a>
-      <a class="btn" href="../pages/contact.html">Contacto</a>
-    </nav>
-  </div>
-</header>
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="eyebrow-line eyebrow-line--struct"></span>
+          <span class="eyebrow-label eyebrow-label--struct">Proyecto</span>
+        </div>
+        <h1>ESC-1 — Edificio multifamiliar (4 niveles) | Diseño estructural</h1>
+        <div class="project-meta">
+          <div class="project-meta-item">
+            <span class="project-meta-label">Rol</span>
+            <span class="project-meta-value">Diseño y verificación estructural</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Herramientas</span>
+            <span class="project-meta-value">ETABS · SAP2000 · Revit · DCCAD</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Norma</span>
+            <span class="project-meta-value">NSR-10</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Ubicación</span>
+            <span class="project-meta-value">San Gil, Santander, CO (alta sismicidad)</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<main class="container">
-  <div class="kicker">Proyecto</div>
-  <h1>ESC-1 — Edificio multifamiliar (4 niveles) | Diseño estructural</h1>
+    <section class="section">
+      <div class="container">
+        <img class="project-cover reveal" src="../assets/projects/ESC-1/cover.png" alt="Proyecto ESC-1" loading="eager" />
 
-  <div class="meta">
-    <span><strong>Rol:</strong> Diseño y verificación estructural</span>
-    <span><strong>Herramientas:</strong> ETABS · SAP2000 · Revit· DCCAD</span>
-    <span><strong>Norma:</strong> NSR-10</span>
-    <span><strong>Ubicación:</strong> San Gil Santander, CO (alta sismicidad)</span>
-  </div>
+        <div class="project-body">
+          <div class="project-content reveal">
 
-  <div class="hr"></div>
+            <h2>Resumen ejecutivo</h2>
+            <p>Se desarrolló el diseño estructural de un edificio multifamiliar de cuatro niveles ubicado en zona de alta amenaza sísmica. El principal reto fue garantizar estabilidad y rigidez sin apoyos intermedios, resolviendo una luz libre de 6 metros mediante pórticos resistentes a momento en concreto reforzado. El proyecto integró evaluación geotécnica del terreno por condiciones de amenaza por movimientos en masa y se diseñó conforme a los requisitos de la NSR-10. El resultado fue un sistema estructural estable, continuo y normativamente verificable, compatible con los requerimientos arquitectónicos y constructivos del proyecto.</p>
 
-  <!-- Cover -->
-  <section class="card" style="padding:0; overflow:hidden;">
-    <img src="../assets/projects/ESC-1/cover.png" alt="Proyecto ESC-1" style="width:100%; display:block;">
-  </section>
+            <h2>Contexto y restricciones</h2>
+            <ul>
+              <li><strong>Uso:</strong> Multifamiliar</li>
+              <li><strong>Restricción clave:</strong> Luz libre ~6 m sin columnas</li>
+              <li><strong>Condición del sitio:</strong> Amenaza por movimientos en masa / geotecnia compleja</li>
+              <li><strong>Criterios:</strong> Derivas, resistencia, servicio, constructibilidad</li>
+            </ul>
 
-  <section class="prose">
-    <h2>Resumen ejecutivo</h2>
-    <p>
-      Se desarrolló el diseño estructural de un edificio multifamiliar de cuatro niveles ubicado en zona de alta amenaza sísmica. 
-      El principal reto fue garantizar estabilidad y rigidez sin apoyos intermedios, resolviendo una luz libre de 6 metros mediante pórticos resistentes a momento en concreto reforzado. 
-      El proyecto integró evaluación geotécnica del terreno por condiciones de amenaza por movimientos en masa y se diseñó conforme a los requisitos de la NSR-10. 
-      El resultado fue un sistema estructural estable, continuo y normativamente verificable, compatible con los requerimientos arquitectónicos y constructivos del proyecto.
-    </p>
+            <h2>Solución estructural</h2>
+            <p>El sistema estructural se resolvió mediante pórticos resistentes a momento en concreto reforzado, diseñados para trabajar sin apoyos intermedios y cubrir una luz libre de 6 metros entre ejes estructurales. Los pórticos actúan como el principal sistema de resistencia lateral, garantizando continuidad de rigidez y adecuada disipación de energía sísmica. La solución permitió mantener la configuración arquitectónica requerida sin comprometer estabilidad ni desempeño estructural.</p>
 
-    <h2>Contexto y restricciones</h2>
-    <ul>
-      <li><strong>Uso:</strong> multifamiliar</li>
-      <li><strong>Restricción clave:</strong> luz libre ~6 m sin columnas </li>
-      <li><strong>Condición del sitio:</strong> amenaza por movimientos en masa / geotecnia compleja </li>
-      <li><strong>Criterios:</strong> derivas, resistencia, servicio, constructibilidad</li>
-    </ul>
+            <h2>Desempeño estructural</h2>
+            <p>El modelo estructural fue evaluado bajo combinaciones de carga gravitacional y sísmica conforme a la NSR-10, verificando estabilidad global, control de derivas y continuidad resistente del sistema. El diseño final cumple los requisitos de seguridad, servicio y constructibilidad establecidos para edificaciones en zonas de alta amenaza sísmica.</p>
 
-    <h2>Solución estructural</h2>
-    <p>
-      El sistema estructural se resolvió mediante pórticos resistentes a momento en concreto reforzado, diseñados para trabajar sin apoyos intermedios y cubrir una luz libre de 6 metros entre ejes estructurales. 
-      Los pórticos actúan como el principal sistema de resistencia lateral, garantizando continuidad de rigidez y adecuada disipación de energía sísmica. 
-      La solución permitió mantener la configuración arquitectónica requerida sin comprometer estabilidad ni desempeño estructural.
-    </p>
-    <h3>Datos técnicos del proyecto</h3>
-    <ul>
-      <li><strong>Tipo:</strong> Edificación residencial multifamiliar</li>
-      <li><strong>Sistema estructural:</strong> Pórticos resistentes a momento</li>
-      <li><strong>Material:</strong> Concreto reforzado</li>
-      <li><strong>Altura:</strong> 4 niveles</li>
-      <li><strong>Luz principal:</strong> 6 m</li>
-      <li><strong>Norma:</strong> NSR-10</li>
-    </ul>
+          </div>
 
+          <aside class="project-sidebar reveal reveal-delay-2">
+            <div class="sidebar-card">
+              <p class="sidebar-card-title">Datos técnicos</p>
+              <div class="tech-list">
+                <div class="tech-row"><span class="tech-key">Tipo</span><span class="tech-val">Edificación residencial multifamiliar</span></div>
+                <div class="tech-row"><span class="tech-key">Sistema</span><span class="tech-val">Pórticos resistentes a momento</span></div>
+                <div class="tech-row"><span class="tech-key">Material</span><span class="tech-val">Concreto reforzado</span></div>
+                <div class="tech-row"><span class="tech-key">Altura</span><span class="tech-val">4 niveles</span></div>
+                <div class="tech-row"><span class="tech-key">Luz principal</span><span class="tech-val">6 m</span></div>
+                <div class="tech-row"><span class="tech-key">Norma</span><span class="tech-val">NSR-10</span></div>
+              </div>
+            </div>
+            <div class="sidebar-card">
+              <p class="sidebar-card-title">Entregables</p>
+              <div class="deliverables-list">
+                <div class="deliverable-item">Memoria de cálculo (PDF)</div>
+                <div class="deliverable-item">Análisis estructural (ETABS/SAP2000)</div>
+                <div class="deliverable-item">Planos estructurales</div>
+                <div class="deliverable-item">Modelo BIM/analítico</div>
+              </div>
+            </div>
+            <a href="../assets/projects/ESC-1/esc1-summary.pdf" target="_blank" class="btn-download">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Descargar resumen PDF
+            </a>
+            <div class="sidebar-card">
+              <p class="sidebar-card-title">Tags</p>
+              <div class="tags-row">
+                <span class="tag tag-struct">Estructuras</span>
+                <span class="tag tag-struct">NSR-10</span>
+                <span class="tag tag-struct">ETABS</span>
+                <span class="tag tag-neutral">Geotecnia</span>
+              </div>
+            </div>
+          </aside>
+        </div>
 
-    <h2>Desempeño estructural</h2>
-    <p>
-    El modelo estructural fue evaluado bajo combinaciones de carga gravitacional y sísmica conforme a la NSR-10, verificando estabilidad global, control de derivas y continuidad resistente del sistema. 
-    El diseño final cumple los requisitos de seguridad, servicio y constructibilidad establecidos para edificaciones en zonas de alta amenaza sísmica.
-    </p>
+        <div class="project-gallery reveal">
+          <h2>Galería</h2>
+          <div class="gallery-grid">
+            <img class="gallery-img" src="../assets/projects/ESC-1/01.jpeg" alt="ESC-1 imagen 1" loading="lazy" />
+            <img class="gallery-img" src="../assets/projects/ESC-1/02.jpeg" alt="ESC-1 imagen 2" loading="lazy" />
+            <img class="gallery-img" src="../assets/projects/ESC-1/03.jpeg" alt="ESC-1 imagen 3" loading="lazy" />
+            <img class="gallery-img" src="../assets/projects/ESC-1/04.jpeg" alt="ESC-1 imagen 4" loading="lazy" />
+            <img class="gallery-img" src="../assets/projects/ESC-1/05.jpeg" alt="ESC-1 imagen 5" loading="lazy" />
+            <img class="gallery-img" src="../assets/projects/ESC-1/06.jpeg" alt="ESC-1 imagen 6" loading="lazy" />
+            <img class="gallery-img" src="../assets/projects/ESC-1/07.jpeg" alt="ESC-1 imagen 7" loading="lazy" />
+            <img class="gallery-img" src="../assets/projects/ESC-1/08.jpeg" alt="ESC-1 imagen 8" loading="lazy" />
+            <img class="gallery-img" src="../assets/projects/ESC-1/09.png"  alt="ESC-1 imagen 9" loading="lazy" />
+          </div>
+        </div>
 
-    <h2>Entregables</h2>
-    <ul>
-      <li>Memoria de cálculo (PDF)</li>
-      <li>Análisis estructural (ETABS/SAP2000)</li>
-      <li>Planos estructurales</li>
-      <li>Modelo (BIM/analítico)</li>
-    </ul>
-
-    <p>
-      <a class="btn primary" href="../assets/projects/ESC-1/esc1-summary.pdf" target="_blank" rel="noreferrer">
-        Descargar resumen (PDF)
-      </a>
-    </p>
-
-    <h2>Galería</h2>
-  </section>
-
-  <section class="grid">
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/projects/ESC-1/01.jpeg" alt="ESC-1 imagen 1" style="width:100%; display:block;">
-    </article>
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/projects/ESC-1/02.jpeg" alt="ESC-1 imagen 2" style="width:100%; display:block;">
-    </article>
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/projects/ESC-1/03.jpeg" alt="ESC-1 imagen 3" style="width:100%; display:block;">
-    </article>
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/projects/ESC-1/04.jpeg" alt="ESC-1 imagen 4" style="width:100%; display:block;">
-    </article>
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/projects/ESC-1/05.jpeg" alt="ESC-1 imagen 5" style="width:100%; display:block;">
-    </article>
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/projects/ESC-1/06.jpeg" alt="ESC-1 imagen 6" style="width:100%; display:block;">
-    </article>
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/projects/ESC-1/07.jpeg" alt="ESC-1 imagen 7" style="width:100%; display:block;">
-    </article>
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/projects/ESC-1/08.jpeg" alt="ESC-1 imagen 8" style="width:100%; display:block;">
-    </article>
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/projects/ESC-1/09.png" alt="ESC-1 imagen 9" style="width:100%; display:block;">
-    </article>
-  </section>
+        <div class="project-nav">
+          <a href="index.html" class="project-nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Volver a Proyectos
+          </a>
+          <a href="../index.html" class="btn btn-outline">Inicio</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <a class="btn" href="index.html">← Volver a Proyectos</a>
-    <a class="btn" href="../index.html">Inicio</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Gionny A. Gutiérrez<span>Structural Engineer · BIM · Developer</span></a>
+          <p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p>
+          <span class="available-badge">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="../engineering.html">Ingeniería</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../projects/index.html">Proyectos</a></li>
+            <li><a href="../pages/about.html">Sobre mí</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+        <p class="footer-tech">NSR-10 · ETABS · SAP2000 · Revit · Python</p>
+      </div>
+    </div>
   </footer>
-</main>
 
-
+  <script src="../src/scripts/global.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-  
