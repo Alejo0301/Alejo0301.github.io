@@ -1,132 +1,298 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Áreas de especialización en ingeniería estructural — Gionny A. Gutiérrez" />
   <title>Ingeniería | Gionny Gutiérrez</title>
-  <link rel="stylesheet" href="src/styles/main.css">
-  <link rel="icon" href="assets/logoF.png">
+  <link rel="stylesheet" href="src/tokens.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>" />
+
+  <style>
+    /* ── HERO INTERIOR ───────────────────────────────────── */
+    .page-hero {
+      padding: var(--space-3xl) 0 var(--space-2xl);
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .page-hero .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+    .page-hero .eyebrow-line {
+      width: 28px; height: 1px;
+      background: var(--struct);
+    }
+    .page-hero .eyebrow span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--struct);
+    }
+
+    .page-hero h1 {
+      max-width: 640px;
+      margin-bottom: var(--space-md);
+    }
+
+    .page-hero p {
+      max-width: 560px;
+      font-size: 1.05rem;
+    }
+
+    /* ── ÁREAS GRID ──────────────────────────────────────── */
+    .areas-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+
+    .area-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+      padding: var(--space-xl) 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .area-row:last-child { border-bottom: none; }
+
+    .area-row.reverse { direction: rtl; }
+    .area-row.reverse > * { direction: ltr; }
+
+    .area-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-default);
+    }
+
+    .area-content {}
+
+    .area-num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-sm);
+    }
+
+    .area-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+
+    .area-content p {
+      font-size: 0.95rem;
+      margin-bottom: var(--space-lg);
+      line-height: 1.75;
+    }
+
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .area-row,
+      .area-row.reverse { grid-template-columns: 1fr; direction: ltr; }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="brand" href="index.html">
-      <strong>Gionny A. Gutiérrez</strong>
-      <span>Structural Engineer · BIM · Developer</span>
-    </a>
+  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        Gionny A. Gutiérrez
+        <span>Structural Engineer · BIM · Developer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="engineering.html">Ingeniería</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="projects/index.html">Proyectos</a></li>
+        <li><a href="pages/blog.html">Notas</a></li>
+        <li><a href="pages/about.html">Sobre mí</a></li>
+        <li><a href="pages/contact.html" class="btn btn-accent" style="padding:6px 16px;font-size:0.85rem;">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+    </div>
+  </nav>
 
-    <nav class="nav">
-      <a class="btn primary" href="engineering.html">Ingeniería</a>
-      <a class="btn" href="software.html">Software</a>
-      <a class="btn" href="projects/index.html">Proyectos</a>
-      <a class="btn" href="pages/blog.html">Notas</a>
-      <a class="btn" href="pages/about.html">Sobre mí</a>
-      <a class="btn" href="pages/contact.html">Contacto</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-
-  <section class="hero">
-    <div class="kicker">Ingeniería estructural</div>
-    <h1>Áreas de especialización</h1>
-    <p class="lead">
-      Desarrollo soluciones estructurales seguras, verificables y constructivamente eficientes,
-      integrando análisis estructural, criterios normativos y herramientas de automatización técnica.
-    </p>
-  </section>
-
-  <div class="hr"></div>
-
-  <section class="grid">
-
-    <article class="card card-feature">
-      <div class="card-media">
-        <img src="assets/images/engineering/portada2.png" alt="Diseño estructural de edificaciones">
-      </div>
-
-      <div class="card-body">
-        <h2>Diseño estructural de edificaciones</h2>
+  <main>
+    <!-- ── PAGE HERO ──────────────────────────────────────── -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          <span>Ingeniería estructural</span>
+        </div>
+        <h1>Áreas de especialización</h1>
         <p>
-          Modelación analítica, verificación sísmica, control de derivas y diseño conforme a normativa.
-          Desarrollo de memorias técnicas y definición de sistemas estructurales en concreto y acero.
+          Desarrollo soluciones estructurales seguras, verificables y
+          constructivamente eficientes, integrando análisis estructural,
+          criterios normativos y herramientas de automatización técnica.
         </p>
+      </div>
+    </section>
 
-        <div class="tags">
-          <span class="tag">NSR-10</span>
-          <span class="tag">ETABS</span>
-          <span class="tag">SAP2000</span>
-          <span class="tag">Diseño sísmico</span>
+    <!-- ── ÁREAS ──────────────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <div class="areas-list">
+
+          <!-- Área 1 -->
+          <div class="area-row reveal">
+            <img
+              class="area-img"
+              src="assets/images/engineering/portada2.png"
+              alt="Diseño estructural de edificaciones"
+              loading="lazy"
+            />
+            <div class="area-content">
+              <p class="area-num">01 / Diseño</p>
+              <h2>Diseño estructural de edificaciones</h2>
+              <p>
+                Modelación analítica, verificación sísmica, control de derivas
+                y diseño conforme a normativa. Desarrollo de memorias técnicas
+                y definición de sistemas estructurales en concreto y acero.
+              </p>
+              <div class="tags-row">
+                <span class="tag tag-struct">NSR-10</span>
+                <span class="tag tag-struct">ETABS</span>
+                <span class="tag tag-struct">SAP2000</span>
+                <span class="tag tag-struct">Diseño sísmico</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Área 2 -->
+          <div class="area-row reverse reveal">
+            <img
+              class="area-img"
+              src="assets/images/engineering/Reforzamiento.png"
+              alt="Evaluación e intervención estructural"
+              loading="lazy"
+            />
+            <div class="area-content">
+              <p class="area-num">02 / Evaluación</p>
+              <h2>Evaluación e intervención estructural</h2>
+              <p>
+                Diagnóstico del comportamiento estructural, evaluación de
+                seguridad, propuestas de refuerzo y adaptación estructural
+                en edificaciones existentes.
+              </p>
+              <div class="tags-row">
+                <span class="tag tag-struct">Reforzamiento</span>
+                <span class="tag tag-struct">Patología estructural</span>
+                <span class="tag tag-struct">Evaluación sísmica</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Área 3 -->
+          <div class="area-row reveal">
+            <img
+              class="area-img"
+              src="assets/images/engineering/Navis.png"
+              alt="Ingeniería estructural y BIM"
+              loading="lazy"
+            />
+            <div class="area-content">
+              <p class="area-num">03 / BIM</p>
+              <h2>Ingeniería estructural + BIM</h2>
+              <p>
+                Modelos BIM estructurales, coordinación interdisciplinaria,
+                control de interferencias y generación de documentación
+                técnica constructiva.
+              </p>
+              <div class="tags-row">
+                <span class="tag tag-bim">Revit</span>
+                <span class="tag tag-bim">Navisworks</span>
+                <span class="tag tag-bim">Coordinación BIM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Área 4 -->
+          <div class="area-row reverse reveal">
+            <img
+              class="area-img"
+              src="assets/images/engineering/Metrados.png"
+              alt="Análisis especializado y automatización"
+              loading="lazy"
+            />
+            <div class="area-content">
+              <p class="area-num">04 / Automatización</p>
+              <h2>Análisis especializado y automatización</h2>
+              <p>
+                Desarrollo de herramientas computacionales para optimizar
+                cálculos, generar reportes automáticos y mejorar la
+                eficiencia del análisis estructural.
+              </p>
+              <div class="tags-row">
+                <span class="tag tag-software">Python</span>
+                <span class="tag tag-software">Automatización</span>
+                <span class="tag tag-software">Herramientas técnicas</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </article>
+    </section>
+  </main>
 
-    <article class="card card-feature">
-      <div class="card-media">
-        <img src="assets/images/engineering/Reforzamiento.png" alt="Evaluación e intervención estructural">
-      </div>
-
-      <div class="card-body">
-        <h2>Evaluación e intervención estructural</h2>
-        <p>
-          Diagnóstico del comportamiento estructural, evaluación de seguridad, propuestas de refuerzo
-          y adaptación estructural en edificaciones existentes.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Reforzamiento</span>
-          <span class="tag">Patología estructural</span>
-          <span class="tag">Evaluación sísmica</span>
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:var(--space-sm);display:inline-flex;flex-direction:column">
+            Gionny A. Gutiérrez
+            <span>Structural Engineer · BIM · Developer</span>
+          </a>
+          <p>Portafolio profesional — ingeniería estructural, BIM y automatización técnica.</p>
+          <span class="footer-available" style="margin-top:var(--space-md);display:inline-flex">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="engineering.html">Ingeniería</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="projects/index.html">Proyectos</a></li>
+            <li><a href="pages/about.html">Sobre mí</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
         </div>
       </div>
-    </article>
-
-    <article class="card card-feature">
-      <div class="card-media">
-        <img src="assets/images/engineering/Navis.png" alt="Ingeniería estructural y BIM">
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+        <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-tertiary)">NSR-10 · ETABS · SAP2000 · Revit · Python</p>
       </div>
+    </div>
+  </footer>
 
-      <div class="card-body">
-        <h2>Ingeniería estructural + BIM</h2>
-        <p>
-          Modelos BIM estructurales, coordinación interdisciplinaria, control de interferencias
-          y generación de documentación técnica constructiva.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Revit</span>
-          <span class="tag">Navisworks</span>
-          <span class="tag">Coordinación BIM</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="card card-feature">
-      <div class="card-media">
-        <img src="assets/images/engineering/Metrados.png" alt="Análisis especializado y automatización">
-      </div>
-
-      <div class="card-body">
-        <h2>Análisis especializado y automatización</h2>
-        <p>
-          Desarrollo de herramientas computacionales para optimizar cálculos, generar reportes automáticos
-          y mejorar la eficiencia del análisis estructural.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Automatización</span>
-          <span class="tag">Herramientas técnicas</span>
-        </div>
-      </div>
-    </article>
-
-  </section>
-
-</main>
-
-<script src="src/scripts/main.js"></script>
+  <script src="src/global.js"></script>
 </body>
 </html>
