@@ -1,279 +1,322 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Proyectos | Ingeniería estructural y software</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proyectos de ingeniería estructural, BIM y software — Gionny A. Gutiérrez" />
+  <title>Proyectos | Gionny Gutiérrez</title>
+
+  <!-- Rutas desde projects/ suben un nivel -->
   <link rel="stylesheet" href="../src/styles/main.css" />
-  <link rel="icon" href="../assets/logoF.png">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../src/styles/projects.css" />
+
+  <!-- Alpine.js — filtros sin build step -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="brand" href="../index.html">
-      <strong>Gionny A. Gutiérrez</strong>
-      <span>Structural Engineer · BIM · Developer</span>
-    </a>
-
-    <nav class="nav">
-      <a class="btn" href="../engineering.html">Ingeniería</a>
-      <a class="btn" href="../software.html">Software</a>
-      <a class="btn primary" href="index.html">Proyectos</a>
-      <a class="btn" href="../pages/blog.html">Notas</a>
-      <a class="btn" href="../pages/about.html">Sobre mí</a>
-      <a class="btn" href="../pages/contact.html">Contacto</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-
-  <section class="hero">
-    <div class="kicker">Portafolio</div>
-    <h1>Proyectos</h1>
-    <p class="lead">
-      Casos de ingeniería estructural, flujos BIM y herramientas de software
-      con enfoque en claridad, calidad y resultados.
-    </p>
-
-    <div class="tags">
-      <span class="tag">Estructuras</span>
-      <span class="tag">BIM</span>
-      <span class="tag">Software</span>
-      <span class="tag">Investigación</span>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        Gionny A. Gutiérrez
+        <span>Structural Engineer · BIM · Developer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../engineering.html">Ingeniería</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../projects/index.html">Proyectos</a></li>
+        <li><a href="../pages/blog.html">Notas</a></li>
+        <li><a href="../pages/about.html">Sobre mí</a></li>
+        <li><a href="../pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
     </div>
-  </section>
+  </nav>
 
-  <div class="hr"></div>
+  <main
+    x-data="{
+      active: 'todos',
+      projects: [
+        {
+          id: 1,
+          num: '01',
+          title: 'ESCALA ESC-1',
+          desc: 'Edificio multifamiliar de 4 niveles en zona sísmica alta, con luz libre de 6 m sin columnas mediante pórticos en concreto y diseño conforme a NSR-10.',
+          img: '../assets/projects/ESC-1/Portada_ESC1.png',
+          alt: 'Portada proyecto ESC-1',
+          href: 'project_01_esc1.html',
+          cat: 'estructuras',
+          tags: ['Estructuras','NSR-10','ETABS','Geotecnia'],
+          tagtypes: ['struct','struct','struct','neutral']
+        },
+        {
+          id: 2,
+          num: '02',
+          title: 'Edificio Multifamiliar Playa 360',
+          desc: 'Diseño estructural de edificio residencial de 6 niveles con parqueadero y 14 apartamentos, desarrollado en zona de alta amenaza sísmica y condiciones geotécnicas exigentes.',
+          img: '../assets/projects/playa360/Portada_playa360.png',
+          alt: 'Portada proyecto Playa 360',
+          href: 'project_02_playa360.html',
+          cat: 'estructuras',
+          tags: ['Estructuras','NSR-10','Análisis sísmico','Interacción suelo-estructura'],
+          tagtypes: ['struct','struct','struct','neutral']
+        },
+        {
+          id: 3,
+          num: '03',
+          title: 'Naves Avícolas Granja Alaska',
+          desc: 'Diseño estructural de dos naves industriales avícolas de 15 × 100 m para incubación de huevos, resueltas con cerchas metálicas tipo Pratt y sistema mixto acero-concreto.',
+          img: '../assets/projects/Naves_Alaska/Portada_Naves_Alaska.png',
+          alt: 'Portada proyecto Naves Alaska',
+          href: 'project_03_Naves_Alaska.html',
+          cat: 'estructuras',
+          tags: ['Estructuras metálicas','Cerchas Pratt','Naves industriales','Agroindustria'],
+          tagtypes: ['struct','struct','neutral','neutral']
+        },
+        {
+          id: 4,
+          num: '04',
+          title: 'Edificio Multifamiliar MonteReal',
+          desc: 'Diseño estructural de edificio multifamiliar de 5 niveles con parqueadero y 11 apartamentos, ubicado en zona de alta sismicidad y con condiciones geotécnicas complejas.',
+          img: '../assets/projects/Montereal/Portada_Montereal.png',
+          alt: 'Portada proyecto Monterreal',
+          href: 'project_04_Montereal.html',
+          cat: 'estructuras',
+          tags: ['Estructuras','NSR-10','Análisis sísmico','Geotecnia'],
+          tagtypes: ['struct','struct','struct','neutral']
+        },
+        {
+          id: 5,
+          num: '05',
+          title: 'Edificio Rueda López',
+          desc: 'Proyecto estructural planificado para 2027 de edificio multifamiliar de 4 niveles con 4 apartamentos por piso, orientado a eficiencia espacial y desempeño estructural en zona de alta amenaza sísmica.',
+          img: '../assets/projects/Edificio_LopezR/Portada_Edificio_LopezR.png',
+          alt: 'Portada proyecto Edificio López R',
+          href: 'project_05_Edificio_LopezR.html',
+          cat: 'investigacion',
+          tags: ['Proyecto 2027','Planificación estructural','NSR-10','Alta densidad'],
+          tagtypes: ['neutral','struct','struct','neutral']
+        },
+        {
+          id: 6,
+          num: '06',
+          title: 'Cabañas D.H',
+          desc: 'Diseño estructural de dos unidades tipo glamping en madera en entorno rural natural, con arriostramientos en acero y cubiertas livianas, orientado a mínimo impacto ambiental.',
+          img: '../assets/projects/Cabañas_DH/Portada_Cabaña_DH.png',
+          alt: 'Portada proyecto Cabañas DH',
+          href: 'project_06_Cabañas_DH.html',
+          cat: 'estructuras',
+          tags: ['Madera estructural','Diseño sostenible','Estructuras livianas','Turismo rural'],
+          tagtypes: ['struct','neutral','struct','neutral']
+        },
+        {
+          id: 7,
+          num: '07',
+          title: 'Condominio Trinidad',
+          desc: 'Diseño estructural de viviendas unifamiliares de 1 y 2 pisos de alto valor económico en un condominio exclusivo en Santander, con proyección de más de 50 lotes.',
+          img: '../assets/projects/Condominio_Trinidad/Portada_Condominio_Trinidad.png',
+          alt: 'Portada proyecto Condominio Trinidad',
+          href: 'project_07_Condominio_Trinidad.html',
+          cat: 'estructuras',
+          tags: ['Vivienda premium','Diseño estructural','Casas 1 y 2 pisos','NSR-10'],
+          tagtypes: ['neutral','struct','struct','struct']
+        },
+        {
+          id: 8,
+          num: '08',
+          title: 'Casa Unifamiliar Díaz Olarte',
+          desc: 'Evaluación estructural y propuesta de reforzamiento de vivienda unifamiliar de dos niveles en sistema aporticado, ubicada en zona de alta amenaza sísmica en Santander.',
+          img: '../assets/projects/Casa_Diaz_Olarte/Portada_Casa_DiazOlarte.png',
+          alt: 'Portada proyecto Casa Díaz Olarte',
+          href: 'project_08_Casa_DiazOlarte.html',
+          cat: 'estructuras',
+          tags: ['Reconocimiento de obra','Evaluación estructural','Reforzamiento sísmico','NSR-10'],
+          tagtypes: ['neutral','struct','struct','struct']
+        },
+        {
+          id: 9,
+          num: '09',
+          title: 'Cubierta Cerramiento B.A',
+          desc: 'Diseño estructural de cubierta metálica para cerramiento en lote urbano, resuelta mediante cercha tipo Howe y optimizada para estabilidad y eficiencia estructural.',
+          img: '../assets/projects/Cerramiento_Industrial_BA/Portada_Cerramiento_BA.png',
+          alt: 'Portada proyecto Cerramiento BA',
+          href: 'project_09_CerramientoBA.html',
+          cat: 'estructuras',
+          tags: ['Estructuras metálicas','Cercha Howe','Cubiertas livianas','Licencias urbanas'],
+          tagtypes: ['struct','struct','struct','neutral']
+        },
+        {
+          id: 10,
+          num: '10',
+          title: 'Casa Unifamiliar E.P',
+          desc: 'Diseño estructural de vivienda de lujo en terreno con pendiente extrema hacia el Cañón del Chicamocha, resuelta con columnas esbeltas y sistema de arriostramiento para control de pandeo.',
+          img: '../assets/projects/Casa_EP/Portada_CasaEP.png',
+          alt: 'Portada proyecto Casa EP',
+          href: 'project_10_Casa_EP.html',
+          cat: 'estructuras',
+          tags: ['Estructuras en ladera','Columnas de concreto','Control de pandeo','Modelación numérica'],
+          tagtypes: ['struct','struct','struct','neutral']
+        }
+      ],
+      get filtered() {
+        if (this.active === 'todos') return this.projects;
+        return this.projects.filter(p => p.cat === this.active);
+      },
+      tagClass(type) {
+        const map = { struct: 'tag-struct', bim: 'tag-bim', software: 'tag-software', neutral: 'tag-neutral' };
+        return 'tag ' + (map[type] || 'tag-neutral');
+      }
+    }"
+  >
 
-  <div class="featured-intro">
-    <div>
-      <div class="section-title">Destacados</div>
-      <p>
-        Selección de proyectos en diseño estructural, reforzamiento, vivienda, industria y estructuras livianas.
-      </p>
-    </div>
-  </div>
-
-  <section class="projects-grid">
-
-
-    <a class="card-link" href="project_01_esc1.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/ESC-1/Portada_ESC1.png" alt="Portada proyecto ESC-1">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-label">Portafolio</span>
         </div>
-        <div class="card-body">
-          <h2>Proyecto 01 — ESCALA ESC-1</h2>
-          <p>
-            Edificio multifamiliar de 4 niveles en zona sísmica alta, con luz libre de 6 m sin columnas
-            mediante pórticos en concreto y diseño conforme a NSR-10.
-          </p>
-          <div class="tags">
-            <span class="tag">Estructuras</span>
-            <span class="tag">NSR-10</span>
-            <span class="tag">ETABS</span>
-            <span class="tag">Geotecnia</span>
+        <h1>Proyectos</h1>
+        <p>
+          Casos de ingeniería estructural, flujos BIM y herramientas de software
+          con enfoque en claridad, calidad y resultados.
+        </p>
+      </div>
+    </section>
+
+    <!-- FILTROS + GRID -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Barra de filtros -->
+        <div class="filters-bar">
+          <div class="filters-left">
+            <button
+              class="filter-btn"
+              :class="active === 'todos' ? 'filter-btn--active' : ''"
+              @click="active = 'todos'">
+              Todos
+              <span class="filter-count" x-text="projects.length"></span>
+            </button>
+            <button
+              class="filter-btn"
+              :class="active === 'estructuras' ? 'filter-btn--active filter-btn--struct' : ''"
+              @click="active = 'estructuras'">
+              Estructuras
+              <span class="filter-count" x-text="projects.filter(p => p.cat === 'estructuras').length"></span>
+            </button>
+            <button
+              class="filter-btn"
+              :class="active === 'bim' ? 'filter-btn--active filter-btn--bim' : ''"
+              @click="active = 'bim'">
+              BIM
+              <span class="filter-count" x-text="projects.filter(p => p.cat === 'bim').length"></span>
+            </button>
+            <button
+              class="filter-btn"
+              :class="active === 'software' ? 'filter-btn--active filter-btn--software' : ''"
+              @click="active = 'software'">
+              Software
+              <span class="filter-count" x-text="projects.filter(p => p.cat === 'software').length"></span>
+            </button>
+            <button
+              class="filter-btn"
+              :class="active === 'investigacion' ? 'filter-btn--active filter-btn--investigacion' : ''"
+              @click="active = 'investigacion'">
+              Investigación
+              <span class="filter-count" x-text="projects.filter(p => p.cat === 'investigacion').length"></span>
+            </button>
           </div>
-        </div>
-      </article>
-    </a>
-
-    <a class="card-link" href="project_02_playa360.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/playa360/Portada_playa360.png" alt="Portada proyecto Playa 360">
-        </div>
-        <div class="card-body">
-          <h2>Proyecto 02 — Edificio Multifamiliar Playa 360</h2>
-          <p>
-            Diseño estructural de edificio residencial de 6 niveles con parqueadero y 14 apartamentos,
-            desarrollado en zona de alta amenaza sísmica y condiciones geotécnicas exigentes.
+          <p class="filters-result">
+            <span x-text="filtered.length"></span> proyecto<span x-show="filtered.length !== 1">s</span>
           </p>
-          <div class="tags">
-            <span class="tag">Estructuras</span>
-            <span class="tag">NSR-10</span>
-            <span class="tag">Análisis sísmico</span>
-            <span class="tag">Interacción suelo-estructura</span>
-          </div>
         </div>
-      </article>
-    </a>
 
-    <a class="card-link" href="project_03_Naves_Alaska.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/Naves_Alaska/Portada_Naves_Alaska.png" alt="Portada proyecto Naves Alaska">
-        </div>
-        <div class="card-body">
-          <h2>Proyecto 03 — Naves Avícolas Granja Alaska</h2>
-          <p>
-            Diseño estructural de dos naves industriales avícolas de 15 × 100 m para incubación de huevos,
-            resueltas con cerchas metálicas tipo Pratt y sistema mixto acero-concreto.
-          </p>
-          <div class="tags">
-            <span class="tag">Estructuras metálicas</span>
-            <span class="tag">Cerchas Pratt</span>
-            <span class="tag">Naves industriales</span>
-            <span class="tag">Agroindustria</span>
-          </div>
-        </div>
-      </article>
-    </a>
+        <!-- Descripción de sección destacados -->
+        <p class="projects-intro">
+          Selección de proyectos en diseño estructural, reforzamiento, vivienda, industria y estructuras livianas.
+        </p>
 
-    <a class="card-link" href="project_04_Montereal.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/Montereal/Portada_Montereal.png" alt="Portada proyecto Monterreal">
+        <!-- Grid de proyectos -->
+        <div class="projects-grid">
+          <template x-for="p in filtered" :key="p.id">
+            <a :href="p.href" class="project-card reveal">
+              <div class="project-card-img-wrap">
+                <img
+                  :src="p.img"
+                  :alt="p.alt"
+                  class="project-card-img"
+                  loading="lazy"
+                />
+                <div class="project-card-num" x-text="'0' + (p.num > 9 ? '' : '') + p.num"></div>
+              </div>
+              <div class="project-card-body">
+                <h3 class="project-card-title" x-text="'Proyecto ' + p.num + ' — ' + p.title"></h3>
+                <p class="project-card-desc" x-text="p.desc"></p>
+                <div class="project-card-tags">
+                  <template x-for="(tag, i) in p.tags" :key="i">
+                    <span :class="tagClass(p.tagtypes[i])" x-text="tag"></span>
+                  </template>
+                </div>
+                <span class="project-card-link">Ver proyecto →</span>
+              </div>
+            </a>
+          </template>
         </div>
-        <div class="card-body">
-          <h2>Proyecto 04 — Edificio Multifamiliar MonteReal</h2>
-          <p>
-            Diseño estructural de edificio multifamiliar de 5 niveles con parqueadero y 11 apartamentos,
-            ubicado en zona de alta sismicidad y con condiciones geotécnicas complejas.
-          </p>
-          <div class="tags">
-            <span class="tag">Estructuras</span>
-            <span class="tag">NSR-10</span>
-            <span class="tag">Análisis sísmico</span>
-            <span class="tag">Geotecnia</span>
-          </div>
-        </div>
-      </article>
-    </a>
 
-    <a class="card-link" href="project_05_Edificio_LopezR.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/Edificio_LopezR/Portada_Edificio_LopezR.png" alt="Portada proyecto Edificio López R">
+        <!-- Estado vacío -->
+        <div class="empty-state" x-show="filtered.length === 0">
+          <p>No hay proyectos en esta categoría todavía.</p>
         </div>
-        <div class="card-body">
-          <h2>Proyecto 05 — Edificio Rueda López</h2>
-          <p>
-            Proyecto estructural planificado para 2027 de edificio multifamiliar de 4 niveles con 4 apartamentos por piso,
-            orientado a eficiencia espacial y desempeño estructural en zona de alta amenaza sísmica.
-          </p>
-          <div class="tags">
-            <span class="tag">Proyecto 2027</span>
-            <span class="tag">Planificación estructural</span>
-            <span class="tag">NSR-10</span>
-            <span class="tag">Alta densidad</span>
-          </div>
-        </div>
-      </article>
-    </a>
 
-    <a class="card-link" href="project_06_Cabañas_DH.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/Cabañas_DH/Portada_Cabaña_DH.png" alt="Portada proyecto Cabañas DH">
-        </div>
-        <div class="card-body">
-          <h2>Proyecto 06 — Cabañas D.H</h2>
-          <p>
-            Diseño estructural de dos unidades tipo glamping en madera en entorno rural natural,
-            con arriostramientos en acero y cubiertas livianas, orientado a mínimo impacto ambiental.
-          </p>
-          <div class="tags">
-            <span class="tag">Madera estructural</span>
-            <span class="tag">Diseño sostenible</span>
-            <span class="tag">Estructuras livianas</span>
-            <span class="tag">Turismo rural</span>
-          </div>
-        </div>
-      </article>
-    </a>
+      </div>
+    </section>
 
-    <a class="card-link" href="project_07_Condominio_Trinidad.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/Condominio_Trinidad/Portada_Condominio_Trinidad.png" alt="Portada proyecto Condominio Trinidad">
-        </div>
-        <div class="card-body">
-          <h2>Proyecto 07 — Condominio Trinidad</h2>
-          <p>
-            Diseño estructural de viviendas unifamiliares de 1 y 2 pisos de alto valor económico en un condominio exclusivo en Santander, Colombia, con proyección de más de 50 lotes y 3 diseños desarrollados a la fecha.
-          </p>
-          <div class="tags">
-            <span class="tag">Vivienda premium</span>
-            <span class="tag">Diseño estructural</span>
-            <span class="tag">Casas 1 y 2 pisos</span>
-            <span class="tag">NSR-10</span>
-          </div>
-        </div>
-      </article>
-    </a>
+  </main>
 
-    <a class="card-link" href="project_08_Casa_DiazOlarte.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/Casa_Diaz_Olarte/Portada_Casa_DiazOlarte.png" alt="Portada proyecto Casa Díaz Olarte">
-        </div>
-        <div class="card-body">
-          <h2>Proyecto 08 — Casa Unifamiliar Díaz Olarte</h2>
-          <p>
-          Evaluación estructural y propuesta de reforzamiento de vivienda unifamiliar de dos niveles en sistema aporticado, ubicada en zona de alta amenaza sísmica en Santander.
-          </p>
-          <div class="tags">
-            <span class="tag">Reconocimiento de obra</span>
-            <span class="tag">Evaluación estructural</span>
-            <span class="tag">Reforzamiento sísmico</span>
-            <span class="tag">NSR-10</span>
-          </div>
-        </div>
-      </article>
-    </a>
-
-    <a class="card-link" href="project_09_CerramientoBA.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/Cerramiento_Industrial_BA/Portada_Cerramiento_BA.png" alt="Portada proyecto Cerramiento BA">
-        </div>
-        <div class="card-body">
-          <h2>Proyecto 09 — Cubierta Cerramiento B.A</h2>
-          <p>
-            Diseño estructural de cubierta metálica para cerramiento en lote urbano,
-            resuelta mediante cercha tipo Howe y optimizada para estabilidad y eficiencia estructural.
-          </p>
-          <div class="tags">
-            <span class="tag">Estructuras metálicas</span>
-            <span class="tag">Cercha Howe</span>
-            <span class="tag">Cubiertas livianas</span>
-            <span class="tag">Licencias urbanas</span>
-          </div>
-        </div>
-      </article>
-    </a>
-
-    <a class="card-link" href="project_10_Casa_EP.html">
-      <article class="card card-feature">
-        <div class="card-media">
-          <img src="../assets/projects/Casa_EP/Portada_CasaEP.png" alt="Portada proyecto Casa EP">
-        </div>
-        <div class="card-body">
-          <h2>Proyecto 10 — Casa Unifamiliar E.P</h2>
-          <p>
-            Diseño estructural de vivienda de lujo en terreno con pendiente extrema hacia el Cañón del Chicamocha,
-            resuelta con columnas esbeltas y sistema de arriostramiento para control de pandeo.
-          </p>
-          <div class="tags">
-            <span class="tag">Estructuras en ladera</span>
-            <span class="tag">Columnas de concreto</span>
-            <span class="tag">Control de pandeo</span>
-            <span class="tag">Modelación numérica</span>
-          </div>
-        </div>
-      </article>
-    </a>
-
-  </section>
-
+  <!-- FOOTER -->
   <footer class="footer">
-    <a class="btn" href="../index.html">Volver al inicio</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            Gionny A. Gutiérrez
+            <span>Structural Engineer · BIM · Developer</span>
+          </a>
+          <p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p>
+          <span class="available-badge">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="../engineering.html">Ingeniería</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../projects/index.html">Proyectos</a></li>
+            <li><a href="../pages/about.html">Sobre mí</a></li>
+            <li><a href="../pages/blog.html">Notas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+        <p class="footer-tech">NSR-10 · ETABS · SAP2000 · Revit · Python</p>
+      </div>
+    </div>
   </footer>
-</main>
+
+  <script src="../src/scripts/global.js"></script>
 
 </body>
 </html>
