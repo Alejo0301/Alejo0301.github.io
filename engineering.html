@@ -5,113 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Áreas de especialización en ingeniería estructural — Gionny A. Gutiérrez" />
   <title>Ingeniería | Gionny Gutiérrez</title>
-  <link rel="stylesheet" href="src/styles/tokens.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>" />
 
-  <style>
-    /* ── HERO INTERIOR ───────────────────────────────────── */
-    .page-hero {
-      padding: var(--space-3xl) 0 var(--space-2xl);
-      border-bottom: 1px solid var(--border-default);
-    }
-
-    .page-hero .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-lg);
-    }
-    .page-hero .eyebrow-line {
-      width: 28px; height: 1px;
-      background: var(--struct);
-    }
-    .page-hero .eyebrow span {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--struct);
-    }
-
-    .page-hero h1 {
-      max-width: 640px;
-      margin-bottom: var(--space-md);
-    }
-
-    .page-hero p {
-      max-width: 560px;
-      font-size: 1.05rem;
-    }
-
-    /* ── ÁREAS GRID ──────────────────────────────────────── */
-    .areas-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xl);
-      margin-top: var(--space-2xl);
-    }
-
-    .area-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-2xl);
-      align-items: center;
-      padding: var(--space-xl) 0;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .area-row:last-child { border-bottom: none; }
-
-    .area-row.reverse { direction: rtl; }
-    .area-row.reverse > * { direction: ltr; }
-
-    .area-img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-default);
-    }
-
-    .area-content {}
-
-    .area-num {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-tertiary);
-      letter-spacing: 0.1em;
-      margin-bottom: var(--space-sm);
-    }
-
-    .area-content h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: var(--space-md);
-    }
-
-    .area-content p {
-      font-size: 0.95rem;
-      margin-bottom: var(--space-lg);
-      line-height: 1.75;
-    }
-
-    .tags-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-xs);
-    }
-
-    /* ── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .area-row,
-      .area-row.reverse { grid-template-columns: 1fr; direction: ltr; }
-    }
-  </style>
+  <link rel="stylesheet" href="src/styles/main.css" />
+  <link rel="stylesheet" href="src/styles/engineering.css" />
 </head>
 
 <body>
 
-  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -125,19 +26,20 @@
         <li><a href="projects/index.html">Proyectos</a></li>
         <li><a href="pages/blog.html">Notas</a></li>
         <li><a href="pages/about.html">Sobre mí</a></li>
-        <li><a href="pages/contact.html" class="btn btn-accent" style="padding:6px 16px;font-size:0.85rem;">Contacto</a></li>
+        <li><a href="pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
       </ul>
       <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
     </div>
   </nav>
 
   <main>
-    <!-- ── PAGE HERO ──────────────────────────────────────── -->
+
+    <!-- PAGE HERO -->
     <section class="page-hero">
       <div class="container">
-        <div class="eyebrow">
-          <span class="eyebrow-line"></span>
-          <span>Ingeniería estructural</span>
+        <div class="eyebrow-row">
+          <span class="eyebrow-line eyebrow-line--struct"></span>
+          <span class="eyebrow-label eyebrow-label--struct">Ingeniería estructural</span>
         </div>
         <h1>Áreas de especialización</h1>
         <p>
@@ -148,19 +50,13 @@
       </div>
     </section>
 
-    <!-- ── ÁREAS ──────────────────────────────────────────── -->
+    <!-- ÁREAS -->
     <section class="section">
       <div class="container">
         <div class="areas-list">
 
-          <!-- Área 1 -->
           <div class="area-row reveal">
-            <img
-              class="area-img"
-              src="assets/images/engineering/portada2.png"
-              alt="Diseño estructural de edificaciones"
-              loading="lazy"
-            />
+            <img class="area-img" src="assets/images/engineering/portada2.png" alt="Diseño estructural de edificaciones" loading="lazy" />
             <div class="area-content">
               <p class="area-num">01 / Diseño</p>
               <h2>Diseño estructural de edificaciones</h2>
@@ -178,14 +74,8 @@
             </div>
           </div>
 
-          <!-- Área 2 -->
-          <div class="area-row reverse reveal">
-            <img
-              class="area-img"
-              src="assets/images/engineering/Reforzamiento.png"
-              alt="Evaluación e intervención estructural"
-              loading="lazy"
-            />
+          <div class="area-row area-row--reverse reveal">
+            <img class="area-img" src="assets/images/engineering/Reforzamiento.png" alt="Evaluación e intervención estructural" loading="lazy" />
             <div class="area-content">
               <p class="area-num">02 / Evaluación</p>
               <h2>Evaluación e intervención estructural</h2>
@@ -202,14 +92,8 @@
             </div>
           </div>
 
-          <!-- Área 3 -->
           <div class="area-row reveal">
-            <img
-              class="area-img"
-              src="assets/images/engineering/Navis.png"
-              alt="Ingeniería estructural y BIM"
-              loading="lazy"
-            />
+            <img class="area-img" src="assets/images/engineering/Navis.png" alt="Ingeniería estructural y BIM" loading="lazy" />
             <div class="area-content">
               <p class="area-num">03 / BIM</p>
               <h2>Ingeniería estructural + BIM</h2>
@@ -226,21 +110,15 @@
             </div>
           </div>
 
-          <!-- Área 4 -->
-          <div class="area-row reverse reveal">
-            <img
-              class="area-img"
-              src="assets/images/engineering/Metrados.png"
-              alt="Análisis especializado y automatización"
-              loading="lazy"
-            />
+          <div class="area-row area-row--reverse reveal">
+            <img class="area-img" src="assets/images/engineering/Metrados.png" alt="Análisis especializado y automatización" loading="lazy" />
             <div class="area-content">
               <p class="area-num">04 / Automatización</p>
               <h2>Análisis especializado y automatización</h2>
               <p>
                 Desarrollo de herramientas computacionales para optimizar
-                cálculos, generar reportes automáticos y mejorar la
-                eficiencia del análisis estructural.
+                cálculos, generar reportes automáticos y mejorar la eficiencia
+                del análisis estructural.
               </p>
               <div class="tags-row">
                 <span class="tag tag-software">Python</span>
@@ -253,19 +131,20 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom:var(--space-sm);display:inline-flex;flex-direction:column">
+          <a href="index.html" class="nav-logo">
             Gionny A. Gutiérrez
             <span>Structural Engineer · BIM · Developer</span>
           </a>
           <p>Portafolio profesional — ingeniería estructural, BIM y automatización técnica.</p>
-          <span class="footer-available" style="margin-top:var(--space-md);display:inline-flex">Disponible para proyectos</span>
+          <span class="available-badge">Disponible para proyectos</span>
         </div>
         <div class="footer-col">
           <h4>Páginas</h4>
@@ -288,11 +167,11 @@
       </div>
       <div class="footer-bottom">
         <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
-        <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-tertiary)">NSR-10 · ETABS · SAP2000 · Revit · Python</p>
+        <p class="footer-tech">NSR-10 · ETABS · SAP2000 · Revit · Python</p>
       </div>
     </div>
   </footer>
 
-  <script src="src/global.js"></script>
+  <script src="src/scripts/global.js"></script>
 </body>
 </html>

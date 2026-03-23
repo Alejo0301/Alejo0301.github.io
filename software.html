@@ -3,235 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Herramientas de software para ingeniería estructural — Python, BIM, Revit API — Gionny A. Gutiérrez" />
+  <meta name="description" content="Herramientas de software para ingeniería estructural — Gionny A. Gutiérrez" />
   <title>Software | Gionny Gutiérrez</title>
-  <link rel="stylesheet" href="src/styles/tokens.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>" />
 
-  <!-- Alpine.js — interacciones de tabs sin build step -->
+  <link rel="stylesheet" href="src/styles/main.css" />
+  <link rel="stylesheet" href="src/styles/software.css" />
+
+  <!-- Alpine.js — tabs sin build step -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-  <style>
-    /* ── PAGE HERO ───────────────────────────────────────── */
-    .page-hero {
-      padding: var(--space-3xl) 0 var(--space-2xl);
-      border-bottom: 1px solid var(--border-default);
-    }
-    .page-hero .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-lg);
-    }
-    .eyebrow-line { width: 28px; height: 1px; background: var(--software); }
-    .eyebrow span {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--software);
-    }
-    .page-hero h1 { max-width: 640px; margin-bottom: var(--space-md); }
-    .page-hero p  { max-width: 560px; font-size: 1.05rem; }
-
-    /* ── TABS ────────────────────────────────────────────── */
-    .tabs-nav {
-      display: flex;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-2xl);
-      border-bottom: 1px solid var(--border-default);
-      padding-bottom: 0;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid transparent;
-      cursor: pointer;
-      font-family: var(--font-sans);
-      transition: all var(--transition-fast);
-      margin-bottom: -1px;
-    }
-
-    .tab-btn:hover { color: var(--text-primary); }
-
-    .tab-btn.active-python {
-      color: var(--software);
-      border-bottom-color: var(--software);
-    }
-    .tab-btn.active-bim {
-      color: var(--bim);
-      border-bottom-color: var(--bim);
-    }
-    .tab-btn.active-roadmap {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    /* ── TOOLS GRID ──────────────────────────────────────── */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: var(--space-lg);
-    }
-
-    .tool-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: all var(--transition-base);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .tool-card:hover {
-      border-color: var(--border-strong);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
-    .tool-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .tool-body {
-      padding: var(--space-lg);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .tool-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.7rem;
-      font-weight: 500;
-      padding: 3px 9px;
-      border-radius: var(--radius-full);
-      margin-bottom: var(--space-md);
-      align-self: flex-start;
-    }
-
-    .tool-status::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-    }
-
-    .status-available {
-      background: var(--struct-bg);
-      color: var(--struct-text);
-    }
-    .status-available::before { background: var(--struct); }
-
-    .status-details {
-      background: var(--bim-bg);
-      color: var(--bim-text);
-    }
-    .status-details::before { background: var(--bim); }
-
-    .status-progress {
-      background: var(--warning-bg);
-      color: var(--warning);
-    }
-    .status-progress::before { background: var(--warning); animation: pulse-dot 2s infinite; }
-
-    .tool-body h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: var(--space-sm);
-      color: var(--text-primary);
-      line-height: 1.3;
-    }
-
-    .tool-body p {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      flex: 1;
-      margin-bottom: var(--space-md);
-    }
-
-    .tool-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-sm);
-      flex-wrap: wrap;
-    }
-
-    .tool-link {
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--accent);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: gap var(--transition-fast), color var(--transition-fast);
-    }
-    .tool-link:hover {
-      gap: 8px;
-      color: var(--accent-dark);
-    }
-
-    /* ── ROADMAP ─────────────────────────────────────────── */
-    .roadmap-item {
-      padding: var(--space-xl);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-lg);
-      background: var(--bg-surface);
-    }
-
-    .roadmap-item h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: var(--space-sm);
-    }
-
-    .roadmap-item p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    .roadmap-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.72rem;
-      font-weight: 500;
-      padding: 3px 9px;
-      border-radius: var(--radius-full);
-      background: var(--accent-bg);
-      color: var(--accent-dark);
-      margin-bottom: var(--space-md);
-    }
-
-    /* ── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .tools-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -245,21 +29,22 @@
         <li><a href="projects/index.html">Proyectos</a></li>
         <li><a href="pages/blog.html">Notas</a></li>
         <li><a href="pages/about.html">Sobre mí</a></li>
-        <li><a href="pages/contact.html" class="btn btn-accent" style="padding:6px 16px;font-size:0.85rem;">Contacto</a></li>
+        <li><a href="pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
       </ul>
       <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
     </div>
   </nav>
 
   <main>
-    <!-- ── PAGE HERO ──────────────────────────────────────── -->
+
+    <!-- PAGE HERO -->
     <section class="page-hero">
       <div class="container">
-        <div class="eyebrow">
-          <span class="eyebrow-line"></span>
-          <span>Engineering Toolbox</span>
+        <div class="eyebrow-row">
+          <span class="eyebrow-line eyebrow-line--software"></span>
+          <span class="eyebrow-label eyebrow-label--software">Engineering Toolbox</span>
         </div>
-        <h1>Software & Automatización</h1>
+        <h1>Software &amp; Automatización</h1>
         <p>
           Herramientas en Python y automatizaciones BIM (Revit API) para
           acelerar cálculos, reducir errores y mejorar la calidad de los
@@ -268,7 +53,7 @@
       </div>
     </section>
 
-    <!-- ── TABS + CONTENIDO ───────────────────────────────── -->
+    <!-- TABS + CONTENIDO -->
     <section class="section">
       <div class="container" x-data="{ tab: 'python' }">
 
@@ -276,69 +61,54 @@
         <div class="tabs-nav">
           <button
             class="tab-btn"
-            :class="tab === 'python' ? 'active-python' : ''"
-            @click="tab = 'python'"
-          >
+            :class="tab === 'python' ? 'tab-btn--active tab-btn--software' : ''"
+            @click="tab = 'python'">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             Python Desktop Tools
           </button>
           <button
             class="tab-btn"
-            :class="tab === 'bim' ? 'active-bim' : ''"
-            @click="tab = 'bim'"
-          >
+            :class="tab === 'bim' ? 'tab-btn--active tab-btn--bim' : ''"
+            @click="tab = 'bim'">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
             BIM / Revit API
           </button>
           <button
             class="tab-btn"
-            :class="tab === 'roadmap' ? 'active-roadmap' : ''"
-            @click="tab = 'roadmap'"
-          >
+            :class="tab === 'roadmap' ? 'tab-btn--active tab-btn--accent' : ''"
+            @click="tab = 'roadmap'">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             Roadmap
           </button>
         </div>
 
-        <!-- Tab: Python Desktop Tools -->
-        <div x-show="tab === 'python'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+        <!-- Tab: Python -->
+        <div x-show="tab === 'python'" x-transition.opacity>
           <div class="tools-grid">
 
-            <!-- Cuantificador de acero -->
             <div class="tool-card reveal">
-              <img class="tool-img" src="assets/tools/cuantificador_acero/portada_cuantificador_acero.png" alt="Cuantificador de cantidades de acero" loading="lazy" />
+              <img class="tool-img" src="assets/tools/cuantificador_acero/portada_cuantificador_acero.png" alt="Cuantificador de acero" loading="lazy" />
               <div class="tool-body">
-                <span class="tool-status status-available">Disponible</span>
+                <span class="tool-status tool-status--available">Disponible</span>
                 <h3>Cuantificador de cantidades de acero y despiezador</h3>
-                <p>
-                  Aplicación en Streamlit para cuantificar acero de refuerzo
-                  y apoyar el despiece de elementos estructurales.
-                  Estimaciones, revisión de barras y organización del detalle.
-                </p>
+                <p>Aplicación en Streamlit para cuantificar acero de refuerzo y apoyar el despiece de elementos estructurales.</p>
                 <div class="tool-footer">
                   <div class="tags-row">
                     <span class="tag tag-software">Streamlit</span>
                     <span class="tag tag-software">Python</span>
                     <span class="tag tag-struct">Acero</span>
                   </div>
-                  <a href="https://steel-quantifier-ldctbvozg4wxrmzfq8rbuz.streamlit.app/" target="_blank" rel="noopener" class="tool-link">
-                    Abrir herramienta →
-                  </a>
+                  <a href="https://steel-quantifier-ldctbvozg4wxrmzfq8rbuz.streamlit.app/" target="_blank" rel="noopener" class="tool-link">Abrir herramienta →</a>
                 </div>
               </div>
             </div>
 
-            <!-- Generador espectros -->
             <div class="tool-card reveal reveal-delay-1">
               <img class="tool-img" src="assets/tools/spectros/portada_espectro.png" alt="Generador de espectros NSR-10" loading="lazy" />
               <div class="tool-body">
-                <span class="tool-status status-details">Ver detalles</span>
+                <span class="tool-status tool-status--details">Ver detalles</span>
                 <h3>Generador de espectros (NSR-10)</h3>
-                <p>
-                  Aplicación en Python con interfaz gráfica para generar
-                  espectros de pseudoaceleración y parámetros sísmicos
-                  según municipio en Colombia.
-                </p>
+                <p>Aplicación en Python con interfaz gráfica para generar espectros de pseudoaceleración según municipio en Colombia.</p>
                 <div class="tool-footer">
                   <div class="tags-row">
                     <span class="tag tag-software">Python</span>
@@ -350,17 +120,12 @@
               </div>
             </div>
 
-            <!-- Curvas interacción -->
             <div class="tool-card reveal reveal-delay-2">
-              <img class="tool-img" src="assets/tools/curvas/portada_curvas.png" alt="Curvas de interacción de columnas" loading="lazy" />
+              <img class="tool-img" src="assets/tools/curvas/portada_curvas.png" alt="Curvas de interacción" loading="lazy" />
               <div class="tool-body">
-                <span class="tool-status status-details">Ver detalles</span>
+                <span class="tool-status tool-status--details">Ver detalles</span>
                 <h3>Curvas de interacción de columnas</h3>
-                <p>
-                  Herramienta para generar curvas P–M (interacción
-                  axial–momento) y apoyar la verificación de columnas en
-                  concreto reforzado.
-                </p>
+                <p>Herramienta para generar curvas P–M y apoyar la verificación de columnas en concreto reforzado.</p>
                 <div class="tool-footer">
                   <div class="tags-row">
                     <span class="tag tag-software">Python</span>
@@ -372,17 +137,12 @@
               </div>
             </div>
 
-            <!-- Verificación columnas -->
             <div class="tool-card reveal">
-              <img class="tool-img" src="assets/tools/verificacion_columnas/portada_verificacion_columnas.png" alt="Verificación geométrica de columnas" loading="lazy" />
+              <img class="tool-img" src="assets/tools/verificacion_columnas/portada_verificacion_columnas.png" alt="Verificación geométrica columnas" loading="lazy" />
               <div class="tool-body">
-                <span class="tool-status status-details">Ver detalles</span>
+                <span class="tool-status tool-status--details">Ver detalles</span>
                 <h3>Verificación geométrica de columnas</h3>
-                <p>
-                  Checker rápido para validar geometría y criterios básicos
-                  antes de modelación y detalle: dimensiones, recubrimientos
-                  y coherencia general.
-                </p>
+                <p>Checker rápido para validar geometría y criterios básicos antes de modelación y detalle.</p>
                 <div class="tool-footer">
                   <div class="tags-row">
                     <span class="tag tag-software">Python</span>
@@ -393,17 +153,12 @@
               </div>
             </div>
 
-            <!-- Verificación vigas -->
             <div class="tool-card reveal reveal-delay-1">
-              <img class="tool-img" src="assets/tools/verificacion_vigas/portada_verificacion_vigas.png" alt="Verificación geométrica de vigas" loading="lazy" />
+              <img class="tool-img" src="assets/tools/verificacion_vigas/portada_verificacion_vigas.png" alt="Verificación geométrica vigas" loading="lazy" />
               <div class="tool-body">
-                <span class="tool-status status-details">Ver detalles</span>
+                <span class="tool-status tool-status--details">Ver detalles</span>
                 <h3>Verificación geométrica de vigas</h3>
-                <p>
-                  Validación preliminar de secciones y criterios geométricos
-                  para vigas: dimensiones mínimas, relaciones básicas y
-                  consistencia para detalle.
-                </p>
+                <p>Validación preliminar de secciones y criterios geométricos para vigas antes del detalle.</p>
                 <div class="tool-footer">
                   <div class="tags-row">
                     <span class="tag tag-software">Python</span>
@@ -417,21 +172,16 @@
           </div>
         </div>
 
-        <!-- Tab: BIM / Revit API -->
-        <div x-show="tab === 'bim'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+        <!-- Tab: BIM -->
+        <div x-show="tab === 'bim'" x-transition.opacity>
           <div class="tools-grid">
 
-            <!-- Metrados automáticos -->
             <div class="tool-card reveal">
               <img class="tool-img" src="assets/tools/generador_vistas/portada_vistas.png" alt="Metrados automáticos" loading="lazy" />
               <div class="tool-body">
-                <span class="tool-status status-available">Disponible</span>
+                <span class="tool-status tool-status--available">Disponible</span>
                 <h3>Metrados automáticos</h3>
-                <p>
-                  Automatización para extracción de cantidades y reportes
-                  desde modelos BIM, mejorando consistencia y reduciendo
-                  reprocesos en presupuestos y control de obra.
-                </p>
+                <p>Automatización para extracción de cantidades y reportes desde modelos BIM.</p>
                 <div class="tool-footer">
                   <div class="tags-row">
                     <span class="tag tag-bim">Revit API</span>
@@ -442,17 +192,12 @@
               </div>
             </div>
 
-            <!-- Cuantificación friso -->
             <div class="tool-card reveal reveal-delay-1">
-              <img class="tool-img" src="assets/tools/cuantificador_friso/portada_cuantificador_muros.png" alt="Cuantificación de friso y pañete" loading="lazy" />
+              <img class="tool-img" src="assets/tools/cuantificador_friso/portada_cuantificador_muros.png" alt="Cuantificación friso y pañete" loading="lazy" />
               <div class="tool-body">
-                <span class="tool-status status-available">Disponible</span>
+                <span class="tool-status tool-status--available">Disponible</span>
                 <h3>Cuantificación de friso y pañete</h3>
-                <p>
-                  Herramienta para cuantificar automáticamente elementos de
-                  acabados desde el modelo, generando datos listos para
-                  análisis y presupuesto.
-                </p>
+                <p>Cuantificación automática de acabados desde el modelo BIM, lista para presupuesto.</p>
                 <div class="tool-footer">
                   <div class="tags-row">
                     <span class="tag tag-bim">Revit</span>
@@ -463,17 +208,12 @@
               </div>
             </div>
 
-            <!-- Generador de vistas -->
             <div class="tool-card reveal reveal-delay-2">
-              <img class="tool-img" src="assets/tools/generador_vistas/portada_vistas.png" alt="Generador de vistas para despieces" loading="lazy" />
+              <img class="tool-img" src="assets/tools/generador_vistas/portada_vistas.png" alt="Generador de vistas" loading="lazy" />
               <div class="tool-body">
-                <span class="tool-status status-progress">En desarrollo</span>
+                <span class="tool-status tool-status--progress">En desarrollo</span>
                 <h3>Generador de vistas para despieces</h3>
-                <p>
-                  Proyecto en primeras etapas para crear vistas automáticas
-                  orientadas a despieces y documentación, reduciendo tiempo
-                  de preparación y estandarizando entregables.
-                </p>
+                <p>Vistas automáticas orientadas a despieces y documentación, estandarizando entregables.</p>
                 <div class="tool-footer">
                   <div class="tags-row">
                     <span class="tag tag-bim">Revit API</span>
@@ -487,23 +227,19 @@
         </div>
 
         <!-- Tab: Roadmap -->
-        <div x-show="tab === 'roadmap'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
-          <div style="display:flex;flex-direction:column;gap:var(--space-md)">
-
+        <div x-show="tab === 'roadmap'" x-transition.opacity>
+          <div class="roadmap-list">
             <div class="roadmap-item reveal">
               <span class="roadmap-badge">Próximo · 2025</span>
               <h3>Despiece automático según NSR-10</h3>
               <p>
                 Integración de un despiece automático de refuerzo en Revit,
                 alineado con criterios NSR-10. Busca acelerar el detalle,
-                mejorar consistencia y reducir errores humanos en la
-                generación de planos de refuerzo.
+                mejorar consistencia y reducir errores humanos.
               </p>
             </div>
-
           </div>
-
-          <div style="margin-top:var(--space-2xl);display:flex;gap:var(--space-md)">
+          <div class="roadmap-ctas">
             <a href="projects/index.html" class="btn btn-primary">Ver proyectos</a>
             <a href="pages/contact.html" class="btn btn-outline">Contactar</a>
           </div>
@@ -511,19 +247,20 @@
 
       </div>
     </section>
+
   </main>
 
-  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom:var(--space-sm);display:inline-flex;flex-direction:column">
+          <a href="index.html" class="nav-logo">
             Gionny A. Gutiérrez
             <span>Structural Engineer · BIM · Developer</span>
           </a>
-          <p>Engineering tools built with Python & BIM automation.</p>
-          <span class="footer-available" style="margin-top:var(--space-md);display:inline-flex">Disponible para proyectos</span>
+          <p>Engineering tools built with Python &amp; BIM automation.</p>
+          <span class="available-badge">Disponible para proyectos</span>
         </div>
         <div class="footer-col">
           <h4>Páginas</h4>
@@ -545,12 +282,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© Gionny A. Gutiérrez — Engineering tools built with Python & BIM automation</p>
-        <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-tertiary)">Python · Streamlit · Revit API · NSR-10</p>
+        <p>© Gionny A. Gutiérrez — Engineering tools built with Python &amp; BIM automation</p>
+        <p class="footer-tech">Python · Streamlit · Revit API · NSR-10</p>
       </div>
     </div>
   </footer>
 
-  <script src="src/global.js"></script>
+  <script src="src/scripts/global.js"></script>
 </body>
 </html>

@@ -4,300 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portafolio profesional de Gionny A. Gutiérrez — Ingeniero estructural, BIM y desarrollador de herramientas técnicas." />
-  <title>Gionny Gutiérrez | Structural Engineer & Developer</title>
+  <title>Gionny Gutiérrez | Structural Engineer &amp; Developer</title>
 
-  <!-- Tokens y estilos globales -->
-  <link rel="stylesheet" href="src/styles/tokens.css" />
-
-  <!-- Favicon placeholder -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>" />
-
-  <style>
-    /* ── HERO ──────────────────────────────────────────────── */
-    .hero {
-      min-height: calc(100vh - var(--nav-height));
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-2xl);
-      align-items: center;
-      padding: var(--space-3xl) 0;
-    }
-
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-lg);
-    }
-
-    .hero-eyebrow-line {
-      width: 32px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    .hero-eyebrow span {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .hero-title {
-      font-size: clamp(2.8rem, 6vw, 4.8rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: var(--space-md);
-    }
-
-    .hero-title .accent-word {
-      color: var(--accent);
-      display: block;
-    }
-
-    .hero-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: var(--space-xl);
-      max-width: 480px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.8rem;
-      color: var(--struct);
-      font-weight: 500;
-      margin-bottom: var(--space-xl);
-    }
-
-    .hero-badge::before {
-      content: '';
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--struct);
-      animation: pulse-dot 2s infinite;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: var(--space-sm);
-      flex-wrap: wrap;
-    }
-
-    /* Hero imagen lado derecho */
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-img-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 460px;
-      aspect-ratio: 4/3;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      border: 1px solid var(--border-default);
-    }
-
-    .hero-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-img-badge {
-      position: absolute;
-      bottom: var(--space-md);
-      left: var(--space-md);
-      background: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-md);
-      padding: 8px 14px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero-img-badge strong {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
-      line-height: 1.1;
-    }
-
-    .hero-img-badge span {
-      font-size: 0.7rem;
-      color: var(--text-tertiary);
-      margin-top: 2px;
-    }
-
-    /* ── STATS ─────────────────────────────────────────────── */
-    .stats {
-      border-top: 1px solid var(--border-default);
-      border-bottom: 1px solid var(--border-default);
-      padding: var(--space-xl) 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-lg);
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-num {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--text-primary);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .stat-num .stat-accent {
-      color: var(--accent);
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-tertiary);
-      font-weight: 400;
-    }
-
-    /* ── ÁREAS ─────────────────────────────────────────────── */
-    .areas-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-md);
-      margin-top: var(--space-xl);
-    }
-
-    .area-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-lg);
-      padding: var(--space-xl) var(--space-lg);
-      text-decoration: none;
-      display: block;
-      transition: all var(--transition-base);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .area-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--area-color);
-      transform: scaleX(0);
-      transition: transform var(--transition-base);
-      transform-origin: left;
-    }
-
-    .area-card:hover {
-      border-color: var(--border-strong);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-    }
-
-    .area-card:hover::after {
-      transform: scaleX(1);
-    }
-
-    .area-card[data-area="struct"] { --area-color: var(--struct); }
-    .area-card[data-area="bim"]    { --area-color: var(--bim); }
-    .area-card[data-area="soft"]   { --area-color: var(--software); }
-
-    .area-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: var(--space-lg);
-    }
-
-    .area-card[data-area="struct"] .area-icon { background: var(--struct-bg); color: var(--struct); }
-    .area-card[data-area="bim"]    .area-icon { background: var(--bim-bg);    color: var(--bim); }
-    .area-card[data-area="soft"]   .area-icon { background: var(--software-bg); color: var(--software); }
-
-    .area-card img.area-image {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      border-radius: var(--radius-md);
-      margin-bottom: var(--space-md);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .area-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: var(--space-sm);
-      color: var(--text-primary);
-    }
-
-    .area-card p {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .area-arrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--area-color);
-      margin-top: var(--space-md);
-      transition: gap var(--transition-fast);
-    }
-
-    .area-card:hover .area-arrow {
-      gap: 8px;
-    }
-
-    /* ── RESPONSIVE HERO ───────────────────────────────────── */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding: var(--space-2xl) 0;
-      }
-      .hero-visual { display: none; }
-      .stats-grid  { grid-template-columns: repeat(2, 1fr); }
-      .areas-grid  { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="src/styles/main.css" />
+  <link rel="stylesheet" href="src/styles/index.css" />
 </head>
 
 <body>
 
-  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         Gionny A. Gutiérrez
         <span>Structural Engineer · BIM · Developer</span>
       </a>
-
       <ul class="nav-links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="engineering.html">Ingeniería</a></li>
@@ -305,31 +26,28 @@
         <li><a href="projects/index.html">Proyectos</a></li>
         <li><a href="pages/blog.html">Notas</a></li>
         <li><a href="pages/about.html">Sobre mí</a></li>
-        <li><a href="pages/contact.html" class="btn btn-accent" style="padding:6px 16px;font-size:0.85rem;">Contacto</a></li>
+        <li><a href="pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
       </ul>
-
-      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-        <!-- ícono se inyecta por JS -->
-      </button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
     </div>
   </nav>
 
-  <!-- ── HERO ─────────────────────────────────────────────── -->
   <main>
-    <section class="section" style="padding-top:var(--space-2xl)">
-      <div class="container">
-        <div class="hero">
 
-          <!-- Texto -->
+    <!-- HERO -->
+    <section class="section hero-section">
+      <div class="container">
+        <div class="hero-grid">
+
           <div class="hero-content">
-            <div class="hero-eyebrow">
-              <span class="hero-eyebrow-line"></span>
-              <span>Portafolio profesional</span>
+            <div class="eyebrow-row">
+              <span class="eyebrow-line"></span>
+              <span class="eyebrow-label">Portafolio profesional</span>
             </div>
 
             <h1 class="hero-title">
               Estructuras claras.
-              <span class="accent-word">Resultados confiables.</span>
+              <span class="hero-title-accent">Resultados confiables.</span>
             </h1>
 
             <p class="hero-subtitle">
@@ -338,9 +56,7 @@
               Revit API para mejorar la calidad de entregables técnicos.
             </p>
 
-            <div class="hero-badge">
-              Colombia · Disponible para proyectos
-            </div>
+            <span class="available-badge">Colombia · Disponible para proyectos</span>
 
             <div class="hero-ctas">
               <a href="projects/index.html" class="btn btn-primary">
@@ -352,14 +68,9 @@
             </div>
           </div>
 
-          <!-- Visual -->
           <div class="hero-visual reveal reveal-delay-2">
             <div class="hero-img-wrap">
-              <img
-                src="assets/images/home/Home_DE.png"
-                alt="Diseño estructural — modelo BIM"
-                loading="eager"
-              />
+              <img src="assets/images/home/Home_DE.png" alt="Modelo estructural BIM" loading="eager" />
               <div class="hero-img-badge">
                 <strong>10+</strong>
                 <span>proyectos estructurales</span>
@@ -371,8 +82,8 @@
       </div>
     </section>
 
-    <!-- ── STATS ─────────────────────────────────────────── -->
-    <section class="stats reveal">
+    <!-- STATS -->
+    <section class="stats-section reveal">
       <div class="container">
         <div class="stats-grid">
           <div class="stat-item">
@@ -395,65 +106,68 @@
       </div>
     </section>
 
-    <!-- ── ÁREAS ──────────────────────────────────────────── -->
+    <!-- ÁREAS -->
     <section class="section">
       <div class="container">
         <p class="section-eyebrow reveal">Especialización</p>
-        <h2 class="reveal" style="max-width:560px">
-          Ingeniería moderna · análisis · automatización
-        </h2>
+        <h2 class="areas-heading reveal">Ingeniería moderna · análisis · automatización</h2>
 
         <div class="areas-grid">
 
-          <a href="engineering.html" class="area-card reveal reveal-delay-1" data-area="struct">
+          <a href="engineering.html" class="area-card area-card--struct reveal reveal-delay-1">
             <img class="area-image" src="assets/images/home/Home_DE.png" alt="Diseño estructural" loading="lazy" />
-            <div class="area-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 22 21 22 12 2 3 22"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="3" y1="22" x2="21" y2="22"/></svg>
+            <div class="area-card-body">
+              <div class="area-icon area-icon--struct">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 22 21 22 12 2 3 22"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+              </div>
+              <h3>Diseño estructural</h3>
+              <p>Modelos estructurales, verificación sísmica, control de derivas y memorias técnicas bajo NSR-10.</p>
+              <span class="area-arrow">Ver ingeniería →</span>
             </div>
-            <h3>Diseño estructural</h3>
-            <p>Modelos estructurales, verificación sísmica, control de derivas y memorias técnicas bajo NSR-10.</p>
-            <span class="area-arrow">Ver ingeniería →</span>
           </a>
 
-          <a href="engineering.html" class="area-card reveal reveal-delay-2" data-area="bim">
+          <a href="engineering.html" class="area-card area-card--bim reveal reveal-delay-2">
             <img class="area-image" src="assets/images/home/Home_INTE.png" alt="BIM y coordinación" loading="lazy" />
-            <div class="area-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+            <div class="area-card-body">
+              <div class="area-icon area-icon--bim">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+              </div>
+              <h3>BIM &amp; coordinación</h3>
+              <p>Flujos BIM con Revit y Navisworks, coordinación interdisciplinaria y estandarización de entregables.</p>
+              <span class="area-arrow">Ver BIM →</span>
             </div>
-            <h3>BIM & coordinación</h3>
-            <p>Flujos BIM con Revit y Navisworks, coordinación interdisciplinaria y estandarización de entregables.</p>
-            <span class="area-arrow">Ver BIM →</span>
           </a>
 
-          <a href="software.html" class="area-card reveal reveal-delay-3" data-area="soft">
+          <a href="software.html" class="area-card area-card--soft reveal reveal-delay-3">
             <img class="area-image" src="assets/images/home/Home_Apis.png" alt="Software y automatización" loading="lazy" />
-            <div class="area-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <div class="area-card-body">
+              <div class="area-icon area-icon--soft">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3>Software &amp; automatización</h3>
+              <p>Scripts y herramientas en Python y Revit API para automatizar cálculos, reportes y extracción de datos.</p>
+              <span class="area-arrow">Ver herramientas →</span>
             </div>
-            <h3>Software & automatización</h3>
-            <p>Scripts y herramientas en Python y Revit API para automatizar cálculos, reportes y extracción de datos.</p>
-            <span class="area-arrow">Ver herramientas →</span>
           </a>
 
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom:var(--space-sm);display:inline-flex;flex-direction:column">
+          <a href="index.html" class="nav-logo">
             Gionny A. Gutiérrez
             <span>Structural Engineer · BIM · Developer</span>
           </a>
-          <p>Portafolio profesional que muestra proyectos de ingeniería estructural, flujos BIM y herramientas de automatización técnica.</p>
-          <span class="footer-available" style="margin-top:var(--space-md);display:inline-flex">Disponible para proyectos</span>
+          <p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p>
+          <span class="available-badge">Disponible para proyectos</span>
         </div>
-
         <div class="footer-col">
           <h4>Páginas</h4>
           <ul>
@@ -464,7 +178,6 @@
             <li><a href="pages/blog.html">Notas</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h4>Contacto</h4>
           <ul>
@@ -474,18 +187,14 @@
             <li><a href="assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
           </ul>
         </div>
-
       </div>
-
       <div class="footer-bottom">
         <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
-        <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-tertiary)">NSR-10 · ETABS · SAP2000 · Revit · Python</p>
+        <p class="footer-tech">NSR-10 · ETABS · SAP2000 · Revit · Python</p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="src/global.js"></script>
-
+  <script src="src/scripts/global.js"></script>
 </body>
 </html>
