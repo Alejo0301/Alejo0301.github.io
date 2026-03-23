@@ -1,89 +1,198 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sobre mí | Gionny</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sobre Gionny A. Gutiérrez — Ingeniero estructural, BIM y desarrollador de herramientas técnicas" />
+  <title>Sobre mí | Gionny Gutiérrez</title>
+
   <link rel="stylesheet" href="../src/styles/main.css" />
-  <link rel="icon" href="../assets/logoF.png">
+  <link rel="stylesheet" href="../src/styles/pages.css" />
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="brand" href="../index.html">
-      <strong>Gionny A. Gutiérrez</strong>
-      <span>Structural Engineer · BIM · Developer</span>
-    </a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        Gionny A. Gutiérrez
+        <span>Structural Engineer · BIM · Developer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../engineering.html">Ingeniería</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../projects/index.html">Proyectos</a></li>
+        <li><a href="../pages/blog.html">Notas</a></li>
+        <li><a href="../pages/about.html">Sobre mí</a></li>
+        <li><a href="../pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+    </div>
+  </nav>
 
-    <nav class="nav">
-      <a class="btn" href="../engineering.html">Ingeniería</a>
-      <a class="btn" href="../software.html">Software</a>
-      <a class="btn" href="../projects/index.html">Proyectos</a>
-      <a class="btn" href="blog.html">Notas</a>
-      <a class="btn primary" href="about.html">Sobre mí</a>
-      <a class="btn" href="contact.html">Contacto</a>
-    </nav>
-  </div>
-</header>
+  <main>
 
-<main class="container">
-  <div class="kicker">Perfil</div>
-  <h1>Sobre mí</h1>
-  <p class="lead">
-    Soy ingeniero estructural con enfoque en diseño, análisis y verificación normativa, y desarrollo herramientas de software
-    para automatizar trabajo técnico y mejorar la calidad de los entregables.
-  </p>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-label">Perfil</span>
+        </div>
+        <h1>Sobre mí</h1>
+        <p>
+          Soy ingeniero estructural con enfoque en diseño, análisis y verificación normativa,
+          y desarrollo herramientas de software para automatizar trabajo técnico y mejorar
+          la calidad de los entregables.
+        </p>
+      </div>
+    </section>
 
-  <div class="hr"></div>
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
 
-  <section class="grid">
-    <article class="card">
-      <h2>Lo que hago</h2>
-      <p>
-        Diseño y verifico estructuras con criterios de seguridad, servicio y constructibilidad. Me interesa especialmente la
-        ingeniería resiliente y la claridad en la comunicación técnica (memorias, planos, reportes).
-      </p>
-    </article>
+          <!-- Contenido principal -->
+          <div class="about-content">
 
-    <article class="card">
-      <h2>Cómo trabajo</h2>
-      <p>
-        Combino análisis estructural + BIM + automatización. Busco procesos reproducibles, control de calidad y documentación
-        limpia para que los proyectos se sostengan en el tiempo.
-      </p>
-    </article>
+            <div class="about-block reveal">
+              <p class="about-block-label">Lo que hago</p>
+              <p>Diseño y verifico estructuras con criterios de seguridad, servicio y constructibilidad. Me interesa especialmente la ingeniería resiliente y la claridad en la comunicación técnica: memorias, planos y reportes que cualquier miembro del equipo pueda seguir y mantener.</p>
+            </div>
 
-    <article class="card">
-      <h2>Lo que construyo como developer</h2>
-      <p>
-        Scripts y herramientas (web o Python) para acelerar cálculos, extracción de datos, generación de reportes y tareas repetitivas.
-      </p>
-    </article>
-  </section>
+            <div class="about-block reveal">
+              <p class="about-block-label">Cómo trabajo</p>
+              <p>Combino análisis estructural + BIM + automatización. Busco procesos reproducibles, control de calidad y documentación limpia para que los proyectos se sostengan en el tiempo. No me interesa hacer el trabajo dos veces.</p>
+            </div>
 
-  <section class="prose">
-    <h2>Herramientas</h2>
-    <ul>
-      <li><strong>Estructuras:</strong> ETABS · SAP2000 · diseño y verificación</li>
-      <li><strong>BIM:</strong> Revit · Navisworks · coordinación y estándares</li>
-      <li><strong>Software:</strong> HTML · CSS · JavaScript · Python (automatización)</li>
-    </ul>
+            <blockquote class="about-quote reveal">
+              <p>Estructuras seguras, claras y documentadas. Entregables que un equipo pueda mantener.</p>
+            </blockquote>
 
-    <h2>En qué me enfoco</h2>
-    <ul>
-      <li>Estructuras seguras, claras y documentadas.</li>
-      <li>Entregables que un equipo pueda mantener (QA/QC).</li>
-      <li>Automatización inteligente para reducir errores y tiempo.</li>
-    </ul>
-  </section>
+            <div class="about-block reveal">
+              <p class="about-block-label">Lo que construyo como developer</p>
+              <p>Scripts y herramientas en Python y Revit API para acelerar cálculos, extracción de datos, generación de reportes y tareas repetitivas. Cada herramienta que desarrollo nace de un problema real en obra o en oficina.</p>
+            </div>
+
+            <div class="about-block reveal">
+              <p class="about-block-label">En qué me enfoco</p>
+              <div class="focus-list">
+                <div class="focus-item">
+                  <span class="focus-dot"></span>
+                  Estructuras seguras, claras y documentadas.
+                </div>
+                <div class="focus-item">
+                  <span class="focus-dot"></span>
+                  Entregables que un equipo pueda mantener (QA/QC).
+                </div>
+                <div class="focus-item">
+                  <span class="focus-dot"></span>
+                  Automatización inteligente para reducir errores y tiempo.
+                </div>
+              </div>
+            </div>
+
+            <div class="about-block reveal" style="border-bottom:none">
+              <div class="hero-ctas">
+                <a href="../pages/contact.html" class="btn btn-primary">Hablemos</a>
+                <a href="../projects/index.html" class="btn btn-outline">Ver proyectos</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar de herramientas -->
+          <aside class="about-sidebar reveal reveal-delay-2">
+
+            <div class="skills-card">
+              <p class="skills-card-title">Herramientas</p>
+
+              <div class="skill-group skill-group--struct">
+                <p class="skill-group-label">Estructuras</p>
+                <div class="skill-pills">
+                  <span class="skill-pill">ETABS</span>
+                  <span class="skill-pill">SAP2000</span>
+                  <span class="skill-pill">NSR-10</span>
+                  <span class="skill-pill">Diseño sísmico</span>
+                  <span class="skill-pill">DCCAD</span>
+                </div>
+              </div>
+
+              <div class="skill-group skill-group--bim">
+                <p class="skill-group-label">BIM</p>
+                <div class="skill-pills">
+                  <span class="skill-pill">Revit</span>
+                  <span class="skill-pill">Navisworks</span>
+                  <span class="skill-pill">Revit API</span>
+                  <span class="skill-pill">AutoCAD</span>
+                </div>
+              </div>
+
+              <div class="skill-group skill-group--soft">
+                <p class="skill-group-label">Software</p>
+                <div class="skill-pills">
+                  <span class="skill-pill">Python</span>
+                  <span class="skill-pill">Streamlit</span>
+                  <span class="skill-pill">HTML</span>
+                  <span class="skill-pill">CSS</span>
+                  <span class="skill-pill">JavaScript</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <p class="skills-card-title">Disponibilidad</p>
+              <span class="available-badge" style="margin-bottom:var(--space-md);display:inline-flex">Colombia · Disponible para proyectos</span>
+              <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6">Abierto a proyectos de diseño estructural, revisión técnica, automatización BIM y colaboraciones remotas.</p>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer class="footer">
-    <a class="btn primary" href="contact.html">Hablemos</a>
-    <a class="btn" href="../projects/index.html">Ver proyectos</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            Gionny A. Gutiérrez
+            <span>Structural Engineer · BIM · Developer</span>
+          </a>
+          <p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p>
+          <span class="available-badge">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="../engineering.html">Ingeniería</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../projects/index.html">Proyectos</a></li>
+            <li><a href="../pages/blog.html">Notas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+        <p class="footer-tech">NSR-10 · ETABS · SAP2000 · Revit · Python</p>
+      </div>
+    </div>
   </footer>
-</main>
+
+  <script src="../src/scripts/global.js"></script>
 
 </body>
 </html>
-

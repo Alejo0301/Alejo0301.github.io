@@ -1,147 +1,245 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Notas | Gionny</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Notas técnicas sobre ingeniería estructural, BIM y automatización — Gionny A. Gutiérrez" />
+  <title>Notas | Gionny Gutiérrez</title>
+
   <link rel="stylesheet" href="../src/styles/main.css" />
-  <link rel="icon" href="../assets/logoF.png">
+  <link rel="stylesheet" href="../src/styles/pages.css" />
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="brand" href="../index.html">
-      <strong>Gionny A. Gutiérrez</strong>
-      <span>Structural Engineer · BIM · Developer</span>
-    </a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        Gionny A. Gutiérrez
+        <span>Structural Engineer · BIM · Developer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../engineering.html">Ingeniería</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../projects/index.html">Proyectos</a></li>
+        <li><a href="../pages/blog.html">Notas</a></li>
+        <li><a href="../pages/about.html">Sobre mí</a></li>
+        <li><a href="../pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+    </div>
+  </nav>
 
-    <nav class="nav">
-      <a class="btn" href="../engineering.html">Ingeniería</a>
-      <a class="btn" href="../software.html">Software</a>
-      <a class="btn" href="../projects/index.html">Proyectos</a>
-      <a class="btn primary" href="blog.html">Notas</a>
-      <a class="btn" href="about.html">Sobre mí</a>
-      <a class="btn" href="contact.html">Contacto</a>
-    </nav>
-  </div>
-</header>
+  <main>
 
-<main class="container">
-
-  <div class="kicker">Notas técnicas</div>
-  <h1>Notas, guías y aprendizajes</h1>
-  <p class="lead">
-    Aquí publico apuntes cortos y guías prácticas sobre ingeniería estructural, BIM y automatización
-    (NSR-10, modelación, QA/QC, y herramientas en Python).
-  </p>
-
-  <div class="tags">
-    <span class="tag">NSR-10</span>
-    <span class="tag">ETABS/SAP2000</span>
-    <span class="tag">BIM</span>
-    <span class="tag">Python</span>
-    <span class="tag">QA/QC</span>
-  </div>
-
-  <div class="hr"></div>
-
-  <div class="section-title">Entradas recientes</div>
-
-  <section class="grid">
-
-    <a class="card-link" href="#">
-      <article class="card">
-        <h2>Cómo estructuro una memoria de cálculo (NSR-10)</h2>
-        <p>Checklist práctico para que tus entregables sean claros, verificables y fáciles de revisar.</p>
-        <div class="tags">
-          <span class="tag">NSR-10</span>
-          <span class="tag">Documentación</span>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-label">Notas técnicas</span>
         </div>
-      </article>
-    </a>
+        <h1>Notas, guías y aprendizajes</h1>
+        <p>
+          Apuntes cortos y guías prácticas sobre ingeniería estructural, BIM y automatización:
+          NSR-10, modelación, QA/QC, y herramientas en Python.
+        </p>
+      </div>
+    </section>
 
-    <a class="card-link" href="#">
-      <article class="card">
-        <h2>Control de derivas: qué reviso y cómo lo reporto</h2>
-        <p>Una guía corta para interpretar derivas y comunicar resultados sin ruido.</p>
-        <div class="tags">
-          <span class="tag">Diseño sísmico</span>
-          <span class="tag">QA/QC</span>
+    <section class="section">
+      <div class="container">
+
+        <!-- Filtros de categoría -->
+        <div class="blog-filters">
+          <button class="blog-filter-btn active" data-filter="all">Todas</button>
+          <button class="blog-filter-btn" data-filter="nsr10">NSR-10</button>
+          <button class="blog-filter-btn" data-filter="bim">BIM</button>
+          <button class="blog-filter-btn" data-filter="python">Python</button>
+          <button class="blog-filter-btn" data-filter="qaqc">QA/QC</button>
+          <button class="blog-filter-btn" data-filter="geotecnia">Geotecnia</button>
         </div>
-      </article>
-    </a>
 
-    <a class="card-link" href="#">
-      <article class="card">
-        <h2>Revit para estructura: estándares mínimos que uso</h2>
-        <p>Nombres, niveles, vistas y documentación: lo que evita caos en coordinación.</p>
-        <div class="tags">
-          <span class="tag">Revit</span>
-          <span class="tag">BIM</span>
+        <!-- Lista de notas -->
+        <div class="blog-list">
+
+          <a href="#" class="blog-card" data-cat="nsr10">
+            <p class="blog-card-eyebrow">NSR-10 · Documentación</p>
+            <h2>Cómo estructuro una memoria de cálculo (NSR-10)</h2>
+            <p>Checklist práctico para que tus entregables sean claros, verificables y fáciles de revisar por cualquier miembro del equipo.</p>
+            <div class="blog-card-tags">
+              <span class="tag tag-struct">NSR-10</span>
+              <span class="tag tag-neutral">Documentación</span>
+            </div>
+            <span class="blog-card-arrow">
+              Leer nota
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card" data-cat="qaqc">
+            <p class="blog-card-eyebrow">Diseño sísmico · QA/QC</p>
+            <h2>Control de derivas: qué reviso y cómo lo reporto</h2>
+            <p>Una guía corta para interpretar derivas, comunicar resultados sin ruido y documentar de forma que el revisor lo entienda rápido.</p>
+            <div class="blog-card-tags">
+              <span class="tag tag-struct">Diseño sísmico</span>
+              <span class="tag tag-neutral">QA/QC</span>
+            </div>
+            <span class="blog-card-arrow">
+              Leer nota
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card" data-cat="bim">
+            <p class="blog-card-eyebrow">Revit · BIM</p>
+            <h2>Revit para estructura: estándares mínimos que uso</h2>
+            <p>Nombres, niveles, vistas y documentación: lo que evita caos en coordinación y hace que el modelo sobreviva al traspaso de equipo.</p>
+            <div class="blog-card-tags">
+              <span class="tag tag-bim">Revit</span>
+              <span class="tag tag-bim">BIM</span>
+            </div>
+            <span class="blog-card-arrow">
+              Leer nota
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card" data-cat="python">
+            <p class="blog-card-eyebrow">Python · Automatización</p>
+            <h2>Automatización en ingeniería: 3 tareas que siempre automatizo</h2>
+            <p>Reportes, extracción de cantidades y validaciones geométricas. Impacto real en tiempo y reducción de errores humanos.</p>
+            <div class="blog-card-tags">
+              <span class="tag tag-software">Python</span>
+              <span class="tag tag-software">Automatización</span>
+            </div>
+            <span class="blog-card-arrow">
+              Leer nota
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card" data-cat="geotecnia">
+            <p class="blog-card-eyebrow">Geotecnia · Riesgo</p>
+            <h2>Geotecnia para estructurales: señales de alerta en laderas</h2>
+            <p>Qué pregunto y qué reviso cuando el proyecto tiene riesgo de movimientos en masa. Lo que no aparece en el informe pero importa.</p>
+            <div class="blog-card-tags">
+              <span class="tag tag-neutral">Geotecnia</span>
+              <span class="tag tag-neutral">Riesgo</span>
+            </div>
+            <span class="blog-card-arrow">
+              Leer nota
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card" data-cat="qaqc">
+            <p class="blog-card-eyebrow">QA/QC · Detalle</p>
+            <h2>Plantilla de revisión: vigas y columnas antes de modelar</h2>
+            <p>Checklist previo para evitar re-trabajo: geometría, recubrimientos, coherencia y detalles clave que se escapan bajo presión de tiempo.</p>
+            <div class="blog-card-tags">
+              <span class="tag tag-neutral">QA/QC</span>
+              <span class="tag tag-struct">Detalle</span>
+            </div>
+            <span class="blog-card-arrow">
+              Leer nota
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
         </div>
-      </article>
-    </a>
 
-    <a class="card-link" href="#">
-      <article class="card">
-        <h2>Automatización en ingeniería: 3 tareas que siempre automatizo</h2>
-        <p>Reportes, extracción de cantidades y validaciones geométricas: impacto real en tiempo y errores.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Automatización</span>
+        <!-- CTA inferior -->
+        <div class="blog-cta reveal">
+          <div>
+            <p style="font-weight:500;color:var(--text-primary);margin-bottom:4px">¿Qué viene?</p>
+            <p>Publicaré guías más completas y casos cortos derivados de proyectos reales. Si quieres colaborar o necesitas apoyo técnico, escríbeme.</p>
+          </div>
+          <div class="blog-cta-btns">
+            <a href="../pages/contact.html" class="btn btn-primary">Contactar</a>
+            <a href="../projects/index.html" class="btn btn-outline">Ver proyectos</a>
+          </div>
         </div>
-      </article>
-    </a>
 
-    <a class="card-link" href="#">
-      <article class="card">
-        <h2>Geotecnia para estructurales: señales de alerta en laderas</h2>
-        <p>Qué pregunto y qué reviso cuando el proyecto tiene riesgo de movimientos en masa.</p>
-        <div class="tags">
-          <span class="tag">Geotecnia</span>
-          <span class="tag">Riesgo</span>
-        </div>
-      </article>
-    </a>
+      </div>
+    </section>
 
-    <a class="card-link" href="#">
-      <article class="card">
-        <h2>Plantilla de revisión: vigas y columnas antes de modelar</h2>
-        <p>Checklist previo para evitar re-trabajo: geometría, recubrimientos, coherencia y detalles clave.</p>
-        <div class="tags">
-          <span class="tag">QA/QC</span>
-          <span class="tag">Detalle</span>
-        </div>
-      </article>
-    </a>
-
-  </section>
-
-  <div class="hr"></div>
-
-  <section class="prose">
-    <h2>¿Qué viene?</h2>
-    <p>
-      Publicaré guías más completas y casos cortos derivados de proyectos reales.
-      Si quieres colaborar o necesitas apoyo técnico, escríbeme.
-    </p>
-
-    <p>
-      <a class="btn primary" href="contact.html">Contactar</a>
-      <a class="btn" href="../projects/index.html">Ver proyectos</a>
-    </p>
-  </section>
+  </main>
 
   <footer class="footer">
-    © <span id="y"></span> Gionny A. Gutiérrez — Notas técnicas
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            Gionny A. Gutiérrez
+            <span>Structural Engineer · BIM · Developer</span>
+          </a>
+          <p>Notas técnicas sobre ingeniería estructural, BIM y automatización.</p>
+          <span class="available-badge">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="../engineering.html">Ingeniería</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../projects/index.html">Proyectos</a></li>
+            <li><a href="../pages/about.html">Sobre mí</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Notas técnicas</p>
+        <p class="footer-tech">NSR-10 · ETABS · BIM · Python</p>
+      </div>
+    </div>
   </footer>
 
-</main>
+  <script src="../src/scripts/global.js"></script>
+  <script>
+    /* Animación escalonada de las cards del blog */
+    document.addEventListener('DOMContentLoaded', function () {
+      var cards = document.querySelectorAll('.blog-card');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('blog-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+      cards.forEach(function (card, i) {
+        card.style.transitionDelay = (i * 80) + 'ms';
+        observer.observe(card);
+      });
+
+      /* Filtros de categoría */
+      var filterBtns = document.querySelectorAll('.blog-filter-btn');
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var filter = btn.getAttribute('data-filter');
+          cards.forEach(function (card) {
+            var cat = card.getAttribute('data-cat');
+            var show = filter === 'all' || cat === filter;
+            card.style.display = show ? 'block' : 'none';
+          });
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
