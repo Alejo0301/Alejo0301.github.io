@@ -530,21 +530,26 @@ code, .mono {
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
+  --grid-line: rgba(26, 26, 24, 0.08);
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
+[data-theme="dark"] .bg-grid {
+  --grid-line: rgba(232, 226, 214, 0.08);
+}
+
 .bg-grid__point {
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent);
-  opacity: 0.6;
+  opacity: 0.75;
   transform: translate(0, 0);
   transition: transform 1.3s ease-in-out;
   will-change: transform;
