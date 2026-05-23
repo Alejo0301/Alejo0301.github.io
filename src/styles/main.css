@@ -16,6 +16,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,7 +25,8 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-base);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: var(--leading-base);
+  text-rendering: optimizeLegibility;
   transition: background-color var(--transition-slow), color var(--transition-slow);
   min-height: 100vh;
 }
@@ -32,18 +34,59 @@ body {
 /* ── TIPOGRAFÍA ──────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
   color: var(--text-primary);
 }
 
-h1 { font-size: clamp(2.4rem, 5vw, 4rem);   font-weight: 700; }
-h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; }
-h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; }
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+h5, h6 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+em {
+  font-style: italic;
+  color: var(--text-secondary);
+}
 
 p {
   color: var(--text-secondary);
-  line-height: 1.75;
+  line-height: var(--leading-relaxed);
   font-size: 1rem;
 }
 
@@ -60,6 +103,17 @@ img {
 code, .mono {
   font-family: var(--font-mono);
   font-size: 0.875em;
+}
+
+::selection {
+  background: var(--accent-bg);
+  color: var(--accent-dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
 /* ── LAYOUT ──────────────────────────────────────────────── */
@@ -80,9 +134,9 @@ code, .mono {
 
 /* ── UTILIDADES ──────────────────────────────────────────── */
 .section-eyebrow {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
   color: var(--text-tertiary);
   margin-bottom: var(--space-md);
@@ -91,7 +145,7 @@ code, .mono {
 .divider {
   border: none;
   border-top: 1px solid var(--border-default);
-  margin: var(--space-xl) 0;
+  margin: var(--space-2xl) 0;
 }
 
 .eyebrow-row {
@@ -112,9 +166,9 @@ code, .mono {
 .eyebrow-line--software { background: var(--software); }
 
 .eyebrow-label {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -128,11 +182,12 @@ code, .mono {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: 10px 22px;
-  border-radius: var(--radius-md);
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
+  letter-spacing: 0.01em;
   cursor: pointer;
   border: 1px solid transparent;
   transition: all var(--transition-base);
@@ -189,19 +244,19 @@ code, .mono {
 .tag-struct {
   background: var(--struct-bg);
   color: var(--struct-text);
-  border: 1px solid var(--struct);
+  border: 1px solid var(--tag-struct-border);
 }
 
 .tag-bim {
   background: var(--bim-bg);
   color: var(--bim-text);
-  border: 1px solid var(--bim);
+  border: 1px solid var(--tag-bim-border);
 }
 
 .tag-software {
   background: var(--software-bg);
   color: var(--software-text);
-  border: 1px solid var(--software);
+  border: 1px solid var(--tag-software-border);
 }
 
 .tag-neutral {
@@ -220,7 +275,7 @@ code, .mono {
 .card {
   background: var(--bg-surface);
   border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
   transition: border-color var(--transition-base),
               box-shadow var(--transition-base),
@@ -279,7 +334,7 @@ code, .mono {
   font-size: 0.65rem;
   font-weight: 400;
   color: var(--text-tertiary);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .nav-links {
@@ -294,7 +349,7 @@ code, .mono {
   font-weight: 400;
   color: var(--text-secondary);
   padding: 6px 12px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   transition: color var(--transition-fast),
               background var(--transition-fast);
 }
@@ -307,12 +362,16 @@ code, .mono {
 .nav-links a.active {
   color: var(--accent);
   font-weight: 500;
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
 }
 
 .theme-toggle {
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-default);
   background: transparent;
   cursor: pointer;
@@ -432,14 +491,14 @@ code, .mono {
 }
 
 .page-hero p {
-  max-width: 560px;
+  max-width: var(--max-w-prose);
   font-size: 1.05rem;
 }
 
 /* ── SCROLL REVEAL ───────────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(12px);
   transition: opacity var(--transition-slow),
               transform var(--transition-slow);
 }
@@ -453,6 +512,14 @@ code, .mono {
 .reveal-delay-2 { transition-delay: 200ms; }
 .reveal-delay-3 { transition-delay: 300ms; }
 .reveal-delay-4 { transition-delay: 400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 /* ── RESPONSIVE GLOBAL ───────────────────────────────────── */
 @media (max-width: 768px) {

@@ -79,6 +79,33 @@
 
   /* Nav */
   --nav-height: 64px;
+
+  /* Espaciado extendido */
+  --space-4xl: 128px;
+
+  /* Ancho máximo para prosa */
+  --max-w-prose: 66ch;
+
+  /* Line-heights semánticos */
+  --leading-tight:   1.1;
+  --leading-snug:    1.25;
+  --leading-base:    1.6;
+  --leading-relaxed: 1.75;
+
+  /* Letter-spacing semánticos */
+  --tracking-tight:  -0.03em;
+  --tracking-snug:   -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.08em;
+  --tracking-wider:   0.14em;
+
+  /* Línea de cuadrícula — para grid técnico futuro */
+  --grid-line: rgba(26, 26, 24, 0.05);
+
+  /* Bordes de tags — versión atenuada para no competir con el texto */
+  --tag-struct-border:   rgba(43, 95, 74, 0.30);
+  --tag-bim-border:      rgba(58, 90, 114, 0.30);
+  --tag-software-border: rgba(139, 78, 42, 0.30);
 }
 
 /* ── DARK MODE ───────────────────────────────────────────── */
@@ -119,4 +146,10 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.30);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.40);
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.50);
+
+  --grid-line: rgba(232, 226, 214, 0.05);
+
+  --tag-struct-border:   rgba(61, 140, 106, 0.35);
+  --tag-bim-border:      rgba(79, 122, 154, 0.35);
+  --tag-software-border: rgba(181, 107, 62, 0.35);
 }
