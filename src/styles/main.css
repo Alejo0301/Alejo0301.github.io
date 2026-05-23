@@ -19,15 +19,17 @@ html {
   scroll-padding-top: var(--nav-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-base);
+  transition: background-color var(--transition-slow);
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-base);
+  background-color: transparent;
   color: var(--text-primary);
   line-height: var(--leading-base);
   text-rendering: optimizeLegibility;
-  transition: background-color var(--transition-slow), color var(--transition-slow);
+  transition: color var(--transition-slow);
   min-height: 100vh;
 }
 
@@ -519,6 +521,41 @@ code, .mono {
     transform: none;
     transition: none;
   }
+}
+
+/* ── GRID TÉCNICO ANIMADO ────────────────────────────────── */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.bg-grid__point {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.6;
+  transform: translate(0, 0);
+  transition: transform 1.3s ease-in-out;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-grid__point { display: none; }
+}
+
+@media (max-width: 768px) {
+  .bg-grid { display: none; }
 }
 
 /* ── RESPONSIVE GLOBAL ───────────────────────────────────── */
