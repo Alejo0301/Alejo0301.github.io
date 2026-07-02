@@ -1,119 +1,224 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tool — Espectros NSR-10 | Gionny</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Generador de espectros de diseño NSR-10 por municipio en Python — Gionny A. Gutiérrez" />
+  <title>Espectros NSR-10 | Gionny Gutiérrez</title>
   <link rel="stylesheet" href="../src/styles/main.css" />
+  <link rel="stylesheet" href="../src/styles/tools.css" />
   <link rel="icon" href="../assets/logoF.png">
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="brand" href="../index.html">
-      <strong>Gionny A. Gutiérrez</strong>
-      <span>Structural Engineer · BIM · Developer</span>
-    </a>
-
-    <nav class="nav">
-      <a class="btn" href="../engineering.html">Ingeniería</a>
-      <a class="btn primary" href="../software.html">Software</a>
-      <a class="btn" href="../projects/index.html">Proyectos</a>
-      <a class="btn" href="../pages/blog.html">Notas</a>
-      <a class="btn" href="../pages/about.html">Sobre mí</a>
-      <a class="btn" href="../pages/contact.html">Contacto</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-
-  <div class="kicker">Python Desktop Tool</div>
-  <h1>Generador de espectros (NSR-10) por municipio</h1>
-  <div class="card" style="padding:0; overflow:hidden; margin-top:20px;">
-  <img src="../assets/tools/spectros/hero.png" 
-       alt="Generador de espectros NSR-10"
-       style="width:100%; display:block;">
-  </div>
-  <p class="lead" style="margin-top:24px;">
-  Reduce tiempos de generación de espectros en más del 80%, 
-  eliminando errores manuales y acelerando la preparación de memorias de cálculo.
-  </p>
-  <div class="meta">
-    <span><strong>Tipo:</strong> Aplicación de escritorio</span>
-    <span><strong>Stack:</strong> Python · Matplotlib</span>
-    <span><strong>Salida:</strong> Gráficas + parámetros (listos para reporte)</span>
-  </div>
-
-  <div class="hr"></div>
-
-  <section class="prose">
-    <h2>Qué hace</h2>
-    <p>
-      Herramienta en Python con interfaz que genera el espectro de pseudoaceleración de diseño según la NSR-10,
-      a partir de la selección del municipio en Colombia. El objetivo es acelerar el proceso de obtención,
-      verificación y documentación de espectros para análisis sísmico.
-    </p>
-
-    <h2>Flujo de uso</h2>
-    <ol style="color: var(--muted);">
-      <li>Seleccionar municipio.</li>
-      <li>Calcular parámetros y generar el espectro.</li>
-      <li>Exportar/usar la gráfica y valores en memoria técnica o modelación.</li>
-    </ol>
-
-    <h2>Características</h2>
-    <ul>
-      <li>Selección de municipio (Colombia).</li>
-      <li>Cálculo automático de parámetros de amenaza y espectro.</li>
-      <li>Generación de gráfica lista para reportes.</li>
-      <li>Enfoque en rapidez y reducción de errores manuales.</li>
-    </ul>
-    <h2>Impacto en práctica profesional</h2>
-    <ul>
-      <li>Disminuye tiempo de obtención de espectros por municipio.</li>
-      <li>Reduce riesgo de errores en parámetros sísmicos.</li>
-      <li>Facilita documentación técnica para memorias.</li>
-      <li>Estandariza criterios dentro del flujo de diseño estructural.</li>
-    </ul>
-
-    <h2>Flujo de trabajo</h2>
-
-    <div class="card" style="padding:20px; text-align:center;">
-      Selección de municipio →  
-      Cálculo automático de parámetros →  
-      Generación de espectro →  
-      Exportación para memoria técnica
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Gionny A. Gutiérrez<span>Structural Engineer · BIM · Developer</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../engineering.html">Ingeniería</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../projects/index.html">Proyectos</a></li>
+        <li><a href="../pages/blog.html">Notas</a></li>
+        <li><a href="../pages/about.html">Sobre mí</a></li>
+        <li><a href="../pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
     </div>
+  </nav>
 
-    <h2>Capturas</h2>
-    <p style="color: var(--muted);">
-        A continuación se muestran ejemplos de la interfaz y los resultados generados por la herramienta.
-    </p>
-  </section>
+  <main>
+    <section class="tool-hero">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="eyebrow-line eyebrow-line--software"></span>
+          <span class="eyebrow-label eyebrow-label--software">Python Desktop Tool</span>
+        </div>
+        <h1>Generador de espectros NSR-10 por municipio</h1>
+        <p class="tool-lead">
+          Herramienta en Python con interfaz que genera el espectro de
+          pseudoaceleración de diseño según la NSR-10, a partir de la
+          selección del municipio en Colombia.
+        </p>
+        <div class="tool-stat-badge">
+          <strong>+80%</strong>
+          <span>reducción de tiempo en generación de espectros</span>
+        </div>
+        <div class="tool-meta-grid">
+          <div class="tool-meta-item"><span class="tool-meta-label">Tipo</span><span class="tool-meta-value">Aplicación de escritorio</span></div>
+          <div class="tool-meta-item"><span class="tool-meta-label">Stack</span><span class="tool-meta-value">Python · Matplotlib</span></div>
+          <div class="tool-meta-item"><span class="tool-meta-label">Salida</span><span class="tool-meta-value">Gráficas + parámetros</span></div>
+          <div class="tool-meta-item"><span class="tool-meta-label">País</span><span class="tool-meta-value">Colombia · NSR-10</span></div>
+        </div>
+      </div>
+    </section>
 
-  <!-- GALLERY (solo imágenes, sin CSS extra) -->
-  <section class="grid">
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/tools/spectros/espectro.png" alt="Interfaz de la herramienta" style="width:100%; display:block;">
-    </article>
+    <section class="section">
+      <div class="container">
+        <img class="tool-preview reveal" src="../assets/tools/spectros/hero.png" alt="Generador de espectros NSR-10" loading="eager" />
 
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/tools/spectros/espectro2.png" alt="Espectro generado" style="width:100%; display:block;">
-    </article>
+        <div class="tool-content-grid">
+          <div class="tool-content reveal">
 
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/tools/spectros/espectro3.png" alt="Parámetros de salida" style="width:100%; display:block;">
-    </article>
-  </section>
+            <h2>Qué hace</h2>
+            <p>
+              Herramienta en Python con interfaz que genera el espectro de
+              pseudoaceleración de diseño según la NSR-10, a partir de la
+              selección del municipio en Colombia. El objetivo es acelerar
+              el proceso de obtención, verificación y documentación de
+              espectros para análisis sísmico.
+            </p>
+
+            <h2>Flujo de trabajo</h2>
+            <ol class="tool-steps">
+              <li>
+                <span class="tool-step-num"></span>
+                <div>
+                  <h3>Seleccionar municipio</h3>
+                  <p>Elección del municipio colombiano dentro de la interfaz de la herramienta.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tool-step-num"></span>
+                <div>
+                  <h3>Calcular parámetros</h3>
+                  <p>Cálculo automático de los parámetros de amenaza sísmica correspondientes.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tool-step-num"></span>
+                <div>
+                  <h3>Generar espectro</h3>
+                  <p>Construcción del espectro de pseudoaceleración de diseño según la NSR-10.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tool-step-num"></span>
+                <div>
+                  <h3>Exportar</h3>
+                  <p>Gráfica y valores listos para memoria técnica o modelación estructural.</p>
+                </div>
+              </li>
+            </ol>
+
+            <h2>Características</h2>
+            <div class="tool-feature-grid">
+              <div class="tool-feature-card">
+                <h3>Selección de municipio</h3>
+                <p>Cobertura de municipios en Colombia bajo criterios NSR-10.</p>
+              </div>
+              <div class="tool-feature-card">
+                <h3>Cálculo automático</h3>
+                <p>Parámetros de amenaza y espectro calculados sin intervención manual.</p>
+              </div>
+              <div class="tool-feature-card">
+                <h3>Gráfica lista para reporte</h3>
+                <p>Salida gráfica exportable, integrable directo en memorias técnicas.</p>
+              </div>
+              <div class="tool-feature-card">
+                <h3>Rapidez y precisión</h3>
+                <p>Enfoque en reducir tiempos y eliminar errores manuales de cálculo.</p>
+              </div>
+            </div>
+
+            <h2>Impacto en práctica profesional</h2>
+            <ul>
+              <li>Disminuye el tiempo de obtención de espectros por municipio.</li>
+              <li>Reduce el riesgo de errores en parámetros sísmicos.</li>
+              <li>Facilita la documentación técnica para memorias de cálculo.</li>
+              <li>Estandariza criterios dentro del flujo de diseño estructural.</li>
+            </ul>
+
+          </div>
+
+          <aside class="tool-sidebar reveal reveal-delay-2">
+            <div class="tool-sidebar-card">
+              <p class="tool-sidebar-title">Ficha técnica</p>
+              <div class="tool-fact-list">
+                <div class="tool-fact-row"><span class="tool-fact-key">Tipo</span><span class="tool-fact-val">Aplicación de escritorio</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">Stack</span><span class="tool-fact-val">Python · Matplotlib</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">Norma</span><span class="tool-fact-val">NSR-10</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">Salida</span><span class="tool-fact-val">Gráficas + parámetros</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">Uso</span><span class="tool-fact-val">Análisis sísmico / memoria técnica</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">País</span><span class="tool-fact-val">Colombia</span></div>
+              </div>
+            </div>
+
+            <div class="tool-sidebar-card">
+              <p class="tool-sidebar-title">Tags</p>
+              <div class="tags-row">
+                <span class="tag tag-software">Python</span>
+                <span class="tag tag-software">GUI</span>
+                <span class="tag tag-struct">NSR-10</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="tool-gallery reveal">
+          <h2>Capturas</h2>
+          <p class="tool-gallery-intro">Ejemplos de la interfaz y los resultados generados por la herramienta.</p>
+          <div class="tool-gallery-grid">
+            <figure class="tool-gallery-item">
+              <img src="../assets/tools/spectros/espectro.png" alt="Interfaz de la herramienta" loading="lazy" />
+              <figcaption>Interfaz de la herramienta</figcaption>
+            </figure>
+            <figure class="tool-gallery-item">
+              <img src="../assets/tools/spectros/espectro2.png" alt="Espectro generado" loading="lazy" />
+              <figcaption>Espectro generado</figcaption>
+            </figure>
+            <figure class="tool-gallery-item">
+              <img src="../assets/tools/spectros/espectro3.png" alt="Parámetros de salida" loading="lazy" />
+              <figcaption>Parámetros de salida</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="tool-cta">
+          <a href="../software.html" class="tool-cta-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Volver a Software
+          </a>
+          <a href="../pages/contact.html" class="btn btn-primary">Solicitar demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <a class="btn" href="../software.html">← Volver a Software</a>
-    <a class="btn primary" href="../pages/contact.html">Solicitar demo</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Gionny A. Gutiérrez<span>Structural Engineer · BIM · Developer</span></a>
+          <p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p>
+          <span class="available-badge">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="../engineering.html">Ingeniería</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../projects/index.html">Proyectos</a></li>
+            <li><a href="../pages/about.html">Sobre mí</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+        <p class="footer-tech">Análisis sísmico · Diseño en concreto · Diseño en acero · Modelación estructural · Automatización BIM</p>
+      </div>
+    </div>
   </footer>
 
-</main>
-
+  <script src="../src/scripts/global.js"></script>
 </body>
 </html>

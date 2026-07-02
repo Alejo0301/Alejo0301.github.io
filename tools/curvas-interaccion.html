@@ -1,119 +1,205 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tool — Curvas de Interacción | Gionny</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Generador de curvas de interacción P–M en Python — verificación de columnas en concreto reforzado — Gionny A. Gutiérrez" />
+  <title>Curvas de Interacción P–M | Gionny Gutiérrez</title>
   <link rel="stylesheet" href="../src/styles/main.css" />
+  <link rel="stylesheet" href="../src/styles/tools.css" />
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="brand" href="../index.html">
-      <strong>Gionny A. Gutiérrez</strong>
-      <span>Structural Engineer · BIM · Developer</span>
-    </a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Gionny A. Gutiérrez<span>Structural Engineer · BIM · Developer</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../engineering.html">Ingeniería</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../projects/index.html">Proyectos</a></li>
+        <li><a href="../pages/blog.html">Notas</a></li>
+        <li><a href="../pages/about.html">Sobre mí</a></li>
+        <li><a href="../pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+    </div>
+  </nav>
 
-    <nav class="nav">
-      <a class="btn" href="../engineering.html">Ingeniería</a>
-      <a class="btn primary" href="../software.html">Software</a>
-      <a class="btn" href="../projects/index.html">Proyectos</a>
-      <a class="btn" href="../pages/blog.html">Notas</a>
-      <a class="btn" href="../pages/about.html">Sobre mí</a>
-      <a class="btn" href="../pages/contact.html">Contacto</a>
-    </nav>
-  </div>
-</header>
+  <main>
+    <section class="tool-hero">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="eyebrow-line eyebrow-line--software"></span>
+          <span class="eyebrow-label eyebrow-label--software">Python Desktop Tool</span>
+        </div>
+        <h1>Generador de Curvas de Interacción P–M</h1>
+        <p class="tool-lead">
+          Genera curvas de interacción axial–momento para validar capacidad
+          resistente de columnas de concreto reforzado bajo distintos estados
+          de carga.
+        </p>
+        <div class="tool-meta-grid">
+          <div class="tool-meta-item"><span class="tool-meta-label">Tipo</span><span class="tool-meta-value">Aplicación de escritorio</span></div>
+          <div class="tool-meta-item"><span class="tool-meta-label">Stack</span><span class="tool-meta-value">Python · Matplotlib</span></div>
+          <div class="tool-meta-item"><span class="tool-meta-label">Uso</span><span class="tool-meta-value">Verificación de columnas en concreto</span></div>
+          <div class="tool-meta-item"><span class="tool-meta-label">Salida</span><span class="tool-meta-value">Curvas P–M + reporte PDF</span></div>
+        </div>
+      </div>
+    </section>
 
-<main class="container">
+    <section class="section">
+      <div class="container">
+        <img class="tool-preview reveal" src="../assets/tools/curvas/portada_curvas.png" alt="Curva de interacción P–M generada por la herramienta" loading="eager" />
 
-  <div class="kicker">Python Desktop Tool</div>
-  <h1>Generador de Curvas de Interacción P–M</h1>
+        <div class="tool-content-grid">
+          <div class="tool-content reveal">
 
-  <div class="meta">
-    <span><strong>Tipo:</strong> Aplicación de escritorio</span>
-    <span><strong>Stack:</strong> Python · Matplotlib</span>
-    <span><strong>Uso:</strong> Verificación de columnas en concreto</span>
-  </div>
+            <h2>Qué hace</h2>
+            <p>
+              Permite visualizar la relación entre carga axial y momento flector,
+              apoyando el proceso de diseño y verificación estructural de columnas
+              en concreto reforzado mediante resultados claros y exportables.
+            </p>
 
-  <div class="hr"></div>
+            <h2>Flujo de análisis</h2>
+            <ol class="tool-steps">
+              <li>
+                <span class="tool-step-num"></span>
+                <div>
+                  <h3>Datos de entrada</h3>
+                  <p>Geometría de la sección, distribución de refuerzo y propiedades de los materiales.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tool-step-num"></span>
+                <div>
+                  <h3>Generación de curva</h3>
+                  <p>Cálculo del dominio de interacción P–M para la sección definida.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tool-step-num"></span>
+                <div>
+                  <h3>Verificación demanda/capacidad</h3>
+                  <p>Ubicación de las combinaciones de carga sobre el dominio para evaluar margen de seguridad.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tool-step-num"></span>
+                <div>
+                  <h3>Reporte</h3>
+                  <p>Exportación de resultados en formato listo para memoria de cálculo.</p>
+                </div>
+              </li>
+            </ol>
 
-  <!-- HERO (usa curvas1.png como portada) -->
-  <section class="card" style="padding:0; overflow:hidden;">
-    <img src="../assets/tools/curvas/curvas1.png"
-         alt="Curva de interacción P-M (ejemplo 1)"
-         style="width:100%; display:block;">
-  </section>
+            <h2>Impacto en práctica profesional</h2>
+            <ul>
+              <li>Verificación rápida de capacidad resistente para combinaciones críticas.</li>
+              <li>Visualización clara del dominio y margen de seguridad.</li>
+              <li>Soporte para memorias y reportes técnicos de revisión.</li>
+            </ul>
 
-  <p class="lead" style="margin-top:24px;">
-    Genera curvas de interacción axial–momento para validar capacidad resistente
-    de columnas de concreto reforzado bajo distintos estados de carga.
-  </p>
+          </div>
 
-  <section class="prose">
-    <h2>Qué hace</h2>
-    <p>
-      Permite visualizar la relación entre carga axial y momento flector, apoyando el proceso de diseño y
-      verificación estructural de columnas en concreto reforzado mediante resultados claros y exportables.
-    </p>
+          <aside class="tool-sidebar reveal reveal-delay-2">
+            <div class="tool-sidebar-card">
+              <p class="tool-sidebar-title">Ficha técnica</p>
+              <div class="tool-fact-list">
+                <div class="tool-fact-row"><span class="tool-fact-key">Tipo</span><span class="tool-fact-val">Aplicación de escritorio</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">Stack</span><span class="tool-fact-val">Python · Matplotlib</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">Uso</span><span class="tool-fact-val">Verificación de columnas en concreto</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">Salida</span><span class="tool-fact-val">Curvas P–M + reporte PDF</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">Disciplina</span><span class="tool-fact-val">Diseño en concreto reforzado</span></div>
+                <div class="tool-fact-row"><span class="tool-fact-key">Estado</span><span class="tool-fact-val">Prototipo funcional</span></div>
+              </div>
+            </div>
 
-    <h2>Impacto en práctica profesional</h2>
-    <ul>
-      <li>Verificación rápida de capacidad resistente para combinaciones críticas.</li>
-      <li>Visualización clara del dominio y margen de seguridad.</li>
-      <li>Soporte para memorias y reportes técnicos de revisión.</li>
-    </ul>
+            <a href="../assets/tools/curvas/reportecolumnas.pdf" target="_blank" rel="noreferrer" class="tool-download">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Abrir reporte de ejemplo (PDF)
+            </a>
 
-    <h2>Ejemplo de reporte</h2>
-    <p>
-      <a class="btn primary"
-         href="../assets/tools/curvas/reportecolumnas.pdf"
-         target="_blank"
-         rel="noreferrer">
-        Abrir reporte (PDF)
-      </a>
-    </p>
+            <div class="tool-sidebar-card">
+              <p class="tool-sidebar-title">Tags</p>
+              <div class="tags-row">
+                <span class="tag tag-software">Python</span>
+                <span class="tag tag-struct">Concreto</span>
+                <span class="tag tag-struct">Columnas</span>
+              </div>
+            </div>
+          </aside>
+        </div>
 
-    <h2>Galería</h2>
-    <p style="color: var(--muted);">
-      Ejemplos de curvas y salidas gráficas generadas por la herramienta.
-    </p>
-  </section>
+        <div class="tool-gallery reveal">
+          <h2>Galería</h2>
+          <p class="tool-gallery-intro">Ejemplos de curvas y salidas gráficas generadas por la herramienta.</p>
+          <div class="tool-gallery-grid">
+            <figure class="tool-gallery-item">
+              <img src="../assets/tools/curvas/curvas1.png" alt="Curvas de interacción - ejemplo 1" loading="lazy" />
+              <figcaption>Curva de interacción — ejemplo 1</figcaption>
+            </figure>
+            <figure class="tool-gallery-item">
+              <img src="../assets/tools/curvas/curvas2.png" alt="Curvas de interacción - ejemplo 2" loading="lazy" />
+              <figcaption>Curva de interacción — ejemplo 2</figcaption>
+            </figure>
+            <figure class="tool-gallery-item">
+              <img src="../assets/tools/curvas/curvas3.png" alt="Curvas de interacción - ejemplo 3" loading="lazy" />
+              <figcaption>Curva de interacción — ejemplo 3</figcaption>
+            </figure>
+            <figure class="tool-gallery-item">
+              <img src="../assets/tools/curvas/curvas4.png" alt="Curvas de interacción - ejemplo 4" loading="lazy" />
+              <figcaption>Curva de interacción — ejemplo 4</figcaption>
+            </figure>
+          </div>
+        </div>
 
-  <!-- GALLERY (4 imágenes) -->
-  <section class="grid">
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/tools/curvas/curvas1.png"
-           alt="Curvas de interacción - ejemplo 1"
-           style="width:100%; display:block;">
-    </article>
-
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/tools/curvas/curvas2.png"
-           alt="Curvas de interacción - ejemplo 2"
-           style="width:100%; display:block;">
-    </article>
-
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/tools/curvas/curvas3.png"
-           alt="Curvas de interacción - ejemplo 3"
-           style="width:100%; display:block;">
-    </article>
-
-    <article class="card" style="padding:0; overflow:hidden;">
-      <img src="../assets/tools/curvas/curvas4.png"
-           alt="Curvas de interacción - ejemplo 4"
-           style="width:100%; display:block;">
-    </article>
-  </section>
+        <div class="tool-cta">
+          <a href="../software.html" class="tool-cta-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Volver a Software
+          </a>
+          <a href="../pages/contact.html" class="btn btn-primary">Solicitar información</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <a class="btn" href="../software.html">← Volver a Software</a>
-    <a class="btn primary" href="../pages/contact.html">Solicitar información</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Gionny A. Gutiérrez<span>Structural Engineer · BIM · Developer</span></a>
+          <p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p>
+          <span class="available-badge">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="../engineering.html">Ingeniería</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../projects/index.html">Proyectos</a></li>
+            <li><a href="../pages/about.html">Sobre mí</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+        <p class="footer-tech">Análisis sísmico · Diseño en concreto · Diseño en acero · Modelación estructural · Automatización BIM</p>
+      </div>
+    </div>
   </footer>
 
-</main>
-
+  <script src="../src/scripts/global.js"></script>
 </body>
 </html>

@@ -1,0 +1,437 @@
+/* ============================================================
+   GIONNY A. GUTIÉRREZ — TOOLS CSS
+   Ruta: src/styles/tools.css
+   Compartido por las páginas de detalle en tools/ (curvas-interaccion,
+   spectros-nsr10). Mismo patrón que project.css (hero + ficha técnica
+   + contenido + sidebar + galería + CTA) bajo el namespace .tool-*.
+   Acento: --software (terracota), consistente con software.html.
+   ============================================================ */
+
+/* ── HERO ────────────────────────────────────────────────── */
+.tool-hero {
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.tool-hero h1 {
+  max-width: 760px;
+  margin-bottom: var(--space-md);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.tool-lead {
+  max-width: var(--max-w-prose);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-xl);
+}
+
+.tool-stat-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 16px;
+  margin-bottom: var(--space-xl);
+  background: var(--software-bg);
+  border: 1px solid var(--tag-software-border);
+  border-radius: var(--radius-md);
+}
+
+.tool-stat-badge strong {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--software);
+  letter-spacing: -0.01em;
+}
+
+.tool-stat-badge span {
+  font-size: 0.8rem;
+  color: var(--software-text);
+}
+
+/* Meta row: Tipo / Stack / Uso / Salida / Norma / Estado */
+.tool-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-md);
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tool-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tool-meta-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.tool-meta-value {
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* ── CAPTURA PRINCIPAL ───────────────────────────────────── */
+.tool-preview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-3xl);
+}
+
+/* ── BODY: layout 2 columnas ─────────────────────────────── */
+.tool-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* ── CONTENIDO PRINCIPAL ─────────────────────────────────── */
+.tool-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tool-content h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.tool-content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.tool-content ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.tool-content ul li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding-left: var(--space-md);
+  position: relative;
+  line-height: 1.6;
+}
+
+.tool-content ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--software);
+  font-size: 0.8rem;
+}
+
+/* ── FLUJO DE USO / ANÁLISIS (pasos numerados) ───────────── */
+.tool-steps {
+  list-style: none;
+  counter-reset: tool-step;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tool-steps li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  position: relative;
+}
+
+.tool-steps li:not(:last-child) {
+  border-bottom: 1px dashed var(--border-subtle);
+}
+
+.tool-step-num {
+  counter-increment: tool-step;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--software);
+  line-height: 1.6;
+}
+
+.tool-step-num::before {
+  content: counter(tool-step, decimal-leading-zero);
+}
+
+.tool-steps h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.tool-steps p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── CARACTERÍSTICAS / PARÁMETROS (tarjetas) ─────────────── */
+.tool-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.tool-feature-card {
+  padding: var(--space-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+.tool-feature-card h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tool-feature-card p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── SIDEBAR: ficha técnica ──────────────────────────────── */
+.tool-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-lg));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.tool-sidebar-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.tool-sidebar-title {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tool-fact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tool-fact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tool-fact-key {
+  font-size: 0.68rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tool-fact-val {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  line-height: 1.4;
+}
+
+/* Botón de descarga (reporte PDF, etc.) */
+.tool-download {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px var(--space-md);
+  background: var(--bg-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  width: 100%;
+  justify-content: center;
+}
+
+.tool-download:hover {
+  background: var(--software-bg);
+  border-color: var(--software);
+  color: var(--software-text);
+}
+
+.tool-download svg {
+  flex-shrink: 0;
+}
+
+/* ── GALERÍA ─────────────────────────────────────────────── */
+.tool-gallery {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--border-default);
+}
+
+.tool-gallery h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.tool-gallery-intro {
+  font-size: 0.88rem;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-xl);
+}
+
+.tool-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.tool-gallery-item {
+  margin: 0;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.tool-gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+  cursor: zoom-in;
+}
+
+.tool-gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.tool-gallery-item figcaption {
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ── CTA FINAL ───────────────────────────────────────────── */
+.tool-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--border-default);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.tool-cta-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+
+.tool-cta-back:hover {
+  color: var(--software);
+  gap: var(--space-md);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .tool-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-sidebar {
+    position: static;
+    order: -1;
+  }
+
+  .tool-preview {
+    aspect-ratio: 16 / 10;
+  }
+
+  .tool-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tool-steps li {
+    grid-template-columns: 32px 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .tool-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-meta-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tool-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-gallery-item img {
+    transition: none;
+  }
+}
