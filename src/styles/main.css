@@ -438,6 +438,16 @@ code, .mono {
   color: var(--accent);
 }
 
+/* ── ESTADO DESHABILITADO (ej. CV en actualización) ──────── */
+.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.footer-col ul a.is-disabled:hover {
+  color: var(--text-secondary);
+}
+
 .footer-bottom {
   padding-top: var(--space-lg);
   border-top: 1px solid var(--border-subtle);

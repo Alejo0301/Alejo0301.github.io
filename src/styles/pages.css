@@ -489,6 +489,30 @@
   gap: 8px;
 }
 
+/* Estado deshabilitado (CV en actualización) */
+.contact-card.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.contact-card.is-disabled:hover {
+  border-color: var(--border-default);
+  box-shadow: none;
+  transform: none;
+}
+
+.contact-card.is-disabled:hover::after {
+  transform: scaleX(0);
+}
+
+.contact-card.is-disabled:hover .contact-icon {
+  transform: none;
+}
+
+.contact-card.is-disabled:hover .contact-action {
+  gap: 4px;
+}
+
 /* Mensaje de disponibilidad */
 .contact-availability {
   margin-top: var(--space-2xl);

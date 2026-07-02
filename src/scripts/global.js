@@ -57,10 +57,17 @@
     }
 
     /* ── NAV LINK ACTIVO ───────────────────────────────── */
-    var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    /* Compara la ruta resuelta completa, no solo el nombre de
+       archivo: index.html, projects/index.html y notes/index.html
+       comparten el mismo nombre de archivo pero son páginas
+       distintas. */
+    function normalizePath(path) {
+      return path.charAt(path.length - 1) === '/' ? path + 'index.html' : path;
+    }
+    var currentPath = normalizePath(window.location.pathname);
     document.querySelectorAll('.nav-links a').forEach(function (link) {
-      var linkFile = link.getAttribute('href').split('/').pop();
-      if (linkFile === currentFile) {
+      var linkPath = normalizePath(link.pathname);
+      if (linkPath === currentPath) {
         link.classList.add('active');
       }
     });
