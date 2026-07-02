@@ -4,106 +4,27 @@
    Estilos de projects/index.html — grid y filtros
    ============================================================ */
 
-/* ── FILTROS ─────────────────────────────────────────────── */
-.filters-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-  margin-bottom: var(--space-lg);
-  flex-wrap: wrap;
-}
-
-.filters-left {
-  display: flex;
-  gap: var(--space-xs);
-  flex-wrap: wrap;
-}
-
-.filter-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 14px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  font-family: var(--font-sans);
-  color: var(--text-secondary);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.filter-btn:hover {
-  color: var(--text-primary);
-  border-color: var(--border-strong);
-  background: var(--bg-raised);
-}
-
-.filter-btn--active {
-  color: var(--text-primary);
-  background: var(--text-primary);
-  color: var(--bg-base);
-  border-color: var(--text-primary);
-}
-
-.filter-btn--struct.filter-btn--active {
-  background: var(--struct);
-  border-color: var(--struct);
-  color: #fff;
-}
-
-.filter-btn--bim.filter-btn--active {
-  background: var(--bim);
-  border-color: var(--bim);
-  color: #fff;
-}
-
-.filter-btn--software.filter-btn--active {
-  background: var(--software);
-  border-color: var(--software);
-  color: #fff;
-}
-
-.filter-btn--investigacion.filter-btn--active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--bg-base);
-}
-
-.filter-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 18px;
-  height: 18px;
-  font-size: 0.68rem;
-  font-weight: 600;
-  padding: 0 4px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.filter-btn:not(.filter-btn--active) .filter-count {
-  background: var(--bg-raised);
-  color: var(--text-tertiary);
-}
-
-.filters-result {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-  white-space: nowrap;
-}
-
 /* ── INTRO ───────────────────────────────────────────────── */
 .projects-intro {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
   font-size: 0.9rem;
   color: var(--text-tertiary);
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-lg);
   border-bottom: 1px solid var(--border-subtle);
+}
+
+.projects-count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  white-space: nowrap;
 }
 
 /* ── GRID ────────────────────────────────────────────────── */
@@ -220,33 +141,15 @@
   color: var(--accent-dark);
 }
 
-/* ── EMPTY STATE ─────────────────────────────────────────── */
-.empty-state {
-  text-align: center;
-  padding: var(--space-3xl) 0;
-  color: var(--text-tertiary);
-  font-size: 0.9rem;
-}
-
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
 
-  .filters-bar {
+  .projects-intro {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .filters-result {
-    align-self: flex-end;
-  }
-}
-
-@media (max-width: 480px) {
-  .filter-btn {
-    padding: 6px 10px;
-    font-size: 0.78rem;
+    gap: var(--space-xs);
   }
 }

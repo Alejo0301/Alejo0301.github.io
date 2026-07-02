@@ -39,18 +39,23 @@
         <div class="hero-content">
           <div class="eyebrow-row">
             <span class="eyebrow-line"></span>
-            <span class="eyebrow-label">Portafolio profesional</span>
+            <span class="eyebrow-label">Portafolio profesional · Ingeniería estructural · BIM · Automatización</span>
           </div>
-          <h1 class="hero-title">
-            Estructuras claras.
-            <span class="hero-title-accent">Resultados confiables.</span>
-          </h1>
-          <p class="hero-subtitle">
-            Ingeniero estructural con enfoque en diseño, análisis sísmico y
-            automatización BIM. Desarrollo herramientas propias en Python y
-            Revit API para mejorar la calidad de entregables técnicos.
+          <h1 class="hero-title">Gionny Alejandro<br />Gutiérrez Piratoa</h1>
+          <p class="hero-role">
+            Ingeniero estructural enfocado en diseño sísmico, modelación BIM
+            y automatización de procesos técnicos.
           </p>
-          <span class="available-badge">Colombia · Disponible para proyectos</span>
+          <p class="hero-subtitle">
+            Desarrollo soluciones que integran cálculo, coordinación y
+            programación para producir entregables estructurales más claros,
+            precisos y confiables.
+          </p>
+          <div class="hero-meta">
+            <span class="hero-meta-item">NSR-10 · ACI 318 · AISC 360</span>
+            <span class="hero-meta-item">Colombia · Disponible para proyectos</span>
+            <span class="hero-meta-item">ETABS · Revit API · Python</span>
+          </div>
           <div class="hero-ctas">
             <a href="projects/index.html" class="btn btn-primary">
               Ver proyectos
@@ -61,19 +66,25 @@
           </div>
         </div>
  
-        <!-- ============================================================
-             CAMBIO 1: Hero badge
-             Antes: "10+ proyectos estructurales"
-             Ahora: dos líneas que muestran participación total y rol como diseñador
-             ============================================================ -->
         <div class="hero-visual reveal reveal-delay-2">
-          <div class="hero-img-wrap">
-            <img src="assets/images/home/Home_DE.png" alt="Modelo estructural BIM" loading="eager" />
-            <div class="hero-img-badge">
-              <strong>28+</strong>
-              <span>proyectos · 17+ como diseñador</span>
+          <figure class="hero-project-sequence">
+            <div class="hps-frame">
+              <img class="hps-layer hps-layer--boceto" src="assets/images/home/hero-boceto.png" alt="Boceto técnico del proyecto estructural" loading="eager" />
+              <img class="hps-layer hps-layer--etabs" src="assets/images/home/hero-etabs.png" alt="Modelo analítico del proyecto en ETABS" loading="lazy" />
+              <img class="hps-layer hps-layer--construccion" src="assets/images/home/hero-construccion.jpeg" alt="Obra estructural del proyecto en ejecución" loading="lazy" />
+              <div class="hps-scan" aria-hidden="true"></div>
+              <div class="hps-label">
+                <span class="hps-label-num">01</span>
+                <span class="hps-label-text">Boceto estructural</span>
+              </div>
+              <div class="hps-progress" aria-hidden="true">
+                <span class="hps-progress-tick is-active"></span>
+                <span class="hps-progress-tick"></span>
+                <span class="hps-progress-tick"></span>
+              </div>
             </div>
-          </div>
+            <figcaption>Del cálculo a la obra — mismo proyecto, tres etapas</figcaption>
+          </figure>
         </div>
  
       </div>
@@ -221,5 +232,6 @@
 
 <script src="src/scripts/global.js"></script>
 <script src="src/scripts/grid.js" defer></script>
+<script src="src/scripts/hero-sequence.js" defer></script>
 </body>
 </html>

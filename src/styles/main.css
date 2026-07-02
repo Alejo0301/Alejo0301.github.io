@@ -523,40 +523,31 @@ code, .mono {
   }
 }
 
-/* ── GRID TÉCNICO ANIMADO ────────────────────────────────── */
+/* ── FONDO ANIMADO — SKYLINE TÉCNICO ─────────────────────── */
 .bg-grid {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
-  --grid-line: rgba(26, 26, 24, 0.08);
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 64px 64px;
+  background: radial-gradient(ellipse 70% 55% at 50% 100%,
+    color-mix(in srgb, var(--accent) 10%, transparent) 0%,
+    transparent 70%);
 }
 
-[data-theme="dark"] .bg-grid {
-  --grid-line: rgba(232, 226, 214, 0.08);
-}
-
-.bg-grid__point {
+.bg-grid__skyline {
   position: absolute;
-  top: 0;
   left: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.75;
-  transform: translate(0, 0);
-  transition: transform 1.3s ease-in-out;
-  will-change: transform;
+  bottom: 0;
+  width: 100%;
+  height: 42vh;
+  min-height: 220px;
+  max-height: 420px;
+  display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bg-grid__point { display: none; }
+  .bg-grid__skyline [data-skyline-light] { display: none; }
 }
 
 @media (max-width: 768px) {

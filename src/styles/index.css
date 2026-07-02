@@ -18,29 +18,62 @@
 }
 
 .hero-title {
-  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  line-height: 1.08;
+  letter-spacing: var(--tracking-tight);
   margin-bottom: var(--space-md);
 }
 
-.hero-title-accent {
-  display: block;
-  color: var(--accent);
+.hero-role {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-md);
+  max-width: 500px;
 }
 
 .hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: var(--space-lg);
+  margin-bottom: 0;
   max-width: 480px;
 }
 
-.available-badge {
-  display: block;
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-lg);
+  padding-top: var(--space-md);
+  margin-top: var(--space-lg);
   margin-bottom: var(--space-xl);
+  border-top: 1px solid var(--border-default);
+}
+
+.hero-meta-item {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  position: relative;
+  padding-left: var(--space-lg);
+}
+
+.hero-meta-item:first-child {
+  padding-left: 0;
+}
+
+.hero-meta-item:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 1px;
+  height: 0.85em;
+  background: var(--border-strong);
 }
 
 .hero-ctas {
@@ -61,46 +94,143 @@
   align-items: center;
 }
 
-.hero-img-wrap {
-  position: relative;
+/* ── HERO PROJECT SEQUENCE — boceto → ETABS → obra ───────── */
+.hero-project-sequence {
   width: 100%;
   max-width: 460px;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 1px solid var(--border-default);
 }
 
-.hero-img-wrap img {
+.hps-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--bg-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.hps-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    transparent 55%,
+    color-mix(in srgb, var(--bg-base) 60%, transparent) 100%);
+}
+
+.hps-layer {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  filter: saturate(0.92) contrast(1.04);
 }
 
-.hero-img-badge {
+.hps-layer--boceto       { z-index: 3; }
+.hps-layer--etabs        { z-index: 2; }
+.hps-layer--construccion { z-index: 1; }
+
+/* Barrido diagonal técnico: cada capa "entra" recortada con un
+   clip-path en diagonal en lugar de un fade — más ágil y menos
+   slider comercial. El z-index activo se reordena por JS. */
+.hero-project-sequence.is-sequenced .hps-layer {
+  clip-path: polygon(-15% 0%, 0% 0%, -15% 100%, -30% 100%);
+  transition: clip-path 550ms cubic-bezier(.65, 0, .35, 1);
+}
+
+.hero-project-sequence.is-sequenced .hps-layer.is-active {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.hps-scan {
   position: absolute;
-  bottom: var(--space-md);
-  left: var(--space-md);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-md);
-  padding: 8px 14px;
+  top: 0;
+  bottom: 0;
+  left: -4%;
+  width: 2px;
+  z-index: 6;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 8px 0 color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.hero-project-sequence.is-sequenced .hps-scan.is-scanning {
+  animation: hpsScan 550ms cubic-bezier(.65, 0, .35, 1);
+}
+
+@keyframes hpsScan {
+  0%   { left: -4%;   opacity: 0; }
+  15%  { opacity: 0.9; }
+  85%  { opacity: 0.9; }
+  100% { left: 103%;  opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hps-scan { display: none; }
+}
+
+.hps-label {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 5;
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--bg-overlay);
+  border: 1px solid var(--border-default);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-secondary);
 }
 
-.hero-img-badge strong {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.01em;
-  line-height: 1.1;
+.hps-label-num {
+  color: var(--accent);
+  font-weight: 500;
 }
 
-.hero-img-badge span {
+.hps-progress {
+  position: absolute;
+  left: var(--space-sm);
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+  z-index: 5;
+  display: flex;
+  gap: 4px;
+}
+
+.hps-progress-tick {
+  flex: 1;
+  height: 2px;
+  background: var(--border-strong);
+  opacity: 0.5;
+  transition: opacity 0.4s ease, background-color 0.4s ease;
+}
+
+.hps-progress-tick.is-active {
+  background: var(--accent);
+  opacity: 1;
+}
+
+.hero-project-sequence figcaption {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
   font-size: 0.7rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
   color: var(--text-tertiary);
-  margin-top: 2px;
 }
 
 /* ── STATS ───────────────────────────────────────────────── */
