@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Notas técnicas de ingeniería estructural — criterio normativo, guías de práctica profesional y reflexiones bajo NSR-10 — Gionny A. Gutiérrez" />
+  <title>Notas técnicas | Gionny Gutiérrez</title>
+  <link rel="stylesheet" href="../src/styles/main.css" />
+  <link rel="stylesheet" href="../src/styles/notes.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        Gionny A. Gutiérrez
+        <span>Structural Engineer · BIM · Developer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../engineering.html">Ingeniería</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../projects/index.html">Proyectos</a></li>
+        <li><a href="../notes/index.html">Notas</a></li>
+        <li><a href="../pages/about.html">Sobre mí</a></li>
+        <li><a href="../pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="notes-hero">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-label">Biblioteca técnica</span>
+        </div>
+        <h1>Notas técnicas</h1>
+        <p>
+          Criterios, guías y reflexiones sobre diseño estructural, normativa
+          colombiana y automatización aplicada.
+        </p>
+        <div class="notes-hero-categories">
+          <span>NSR-10</span>
+          <span>ACI 318</span>
+          <span>Diseño sísmico</span>
+          <span>Memorias de cálculo</span>
+          <span>BIM</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- FILTROS -->
+        <div class="notes-filters">
+          <button class="notes-filter-btn is-active" data-filter="all">Todas</button>
+          <button class="notes-filter-btn" data-filter="nsr10">NSR-10</button>
+          <button class="notes-filter-btn" data-filter="aci">ACI 318</button>
+          <button class="notes-filter-btn" data-filter="sismico">Diseño sísmico</button>
+          <button class="notes-filter-btn" data-filter="memorias">Memorias de cálculo</button>
+          <button class="notes-filter-btn" data-filter="bim">BIM</button>
+          <button class="notes-filter-btn" data-filter="python">Python</button>
+          <button class="notes-filter-btn" data-filter="qaqc">QA/QC</button>
+          <button class="notes-filter-btn" data-filter="geotecnia">Geotecnia</button>
+        </div>
+
+        <!-- DESTACADAS -->
+        <div class="notes-featured">
+
+          <a href="columna-fuerte-viga-debil-cubierta.html"
+             class="notes-featured-card notes-featured-card--primary reveal"
+             data-note-cat="nsr10 aci sismico">
+            <span class="notes-featured-num">Nota 01 · Criterio normativo</span>
+            <h2>¿Debe aplicarse columna fuerte-viga débil en columnas discontinuas de cubierta?</h2>
+            <p>
+              La NSR-10 exige el chequeo ΣMnc ≥ 1.2 ΣMnb en pórticos DMO y DES.
+              En columnas de cubierta que no continúan por encima del nudo, el
+              argumento técnico detrás de ese requisito merece una lectura más
+              fina. Una reflexión de criterio, no una guía para incumplir la norma.
+            </p>
+            <div class="notes-featured-meta">
+              <span>Criterio en discusión</span>
+              <span>9 min de lectura</span>
+            </div>
+            <div class="notes-card-tags">
+              <span class="tag tag-struct">NSR-10</span>
+              <span class="tag tag-struct">DMO · DES</span>
+              <span class="tag tag-neutral">Columna fuerte-viga débil</span>
+            </div>
+            <span class="notes-featured-link">
+              Leer nota
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+          <a href="memoria-calculo-nsr10.html"
+             class="notes-featured-card notes-featured-card--secondary reveal reveal-delay-1"
+             data-note-cat="nsr10 memorias">
+            <span class="notes-featured-num">Nota 02 · Guía práctica</span>
+            <h2>Cómo organizar una memoria de cálculo fácil de revisar</h2>
+            <p>
+              Un orden de capítulos pensado para curaduría, interventoría y
+              cliente técnico en Colombia — de localización a anexos, sin
+              piezas sueltas.
+            </p>
+            <div class="notes-featured-meta">
+              <span>Guía de referencia</span>
+              <span>7 min de lectura</span>
+            </div>
+            <div class="notes-card-tags">
+              <span class="tag tag-struct">NSR-10</span>
+              <span class="tag tag-neutral">Memorias de cálculo</span>
+            </div>
+            <span class="notes-featured-link">
+              Leer nota
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+        </div>
+
+        <!-- GRID SECUNDARIO -->
+        <p class="notes-grid-heading">Más notas</p>
+        <div class="notes-grid">
+
+          <div class="notes-card reveal" data-note-cat="sismico qaqc">
+            <p class="notes-card-eyebrow">Diseño sísmico · QA/QC</p>
+            <h3>Control de derivas: qué reviso y cómo lo reporto</h3>
+            <p>Una guía corta para interpretar derivas, comunicar resultados sin ruido y documentar de forma que el revisor lo entienda rápido.</p>
+            <div class="notes-card-tags">
+              <span class="tag tag-struct">Diseño sísmico</span>
+              <span class="tag tag-neutral">QA/QC</span>
+            </div>
+            <span class="notes-card-status">Próximamente</span>
+          </div>
+
+          <div class="notes-card reveal reveal-delay-1" data-note-cat="bim">
+            <p class="notes-card-eyebrow">Revit · BIM</p>
+            <h3>Revit para estructura: estándares mínimos que uso</h3>
+            <p>Nombres, niveles, vistas y documentación: lo que evita caos en coordinación y hace que el modelo sobreviva al traspaso de equipo.</p>
+            <div class="notes-card-tags">
+              <span class="tag tag-bim">Revit</span>
+              <span class="tag tag-bim">BIM</span>
+            </div>
+            <span class="notes-card-status">Próximamente</span>
+          </div>
+
+          <div class="notes-card reveal reveal-delay-2" data-note-cat="python">
+            <p class="notes-card-eyebrow">Python · Automatización</p>
+            <h3>Automatización en ingeniería: 3 tareas que siempre automatizo</h3>
+            <p>Reportes, extracción de cantidades y validaciones geométricas. Impacto real en tiempo y reducción de errores humanos.</p>
+            <div class="notes-card-tags">
+              <span class="tag tag-software">Python</span>
+              <span class="tag tag-software">Automatización</span>
+            </div>
+            <span class="notes-card-status">Próximamente</span>
+          </div>
+
+          <div class="notes-card reveal" data-note-cat="geotecnia">
+            <p class="notes-card-eyebrow">Geotecnia · Riesgo</p>
+            <h3>Geotecnia para estructurales: señales de alerta en laderas</h3>
+            <p>Qué pregunto y qué reviso cuando el proyecto tiene riesgo de movimientos en masa. Lo que no aparece en el informe pero importa.</p>
+            <div class="notes-card-tags">
+              <span class="tag tag-neutral">Geotecnia</span>
+              <span class="tag tag-neutral">Riesgo</span>
+            </div>
+            <span class="notes-card-status">Próximamente</span>
+          </div>
+
+          <div class="notes-card reveal reveal-delay-1" data-note-cat="qaqc">
+            <p class="notes-card-eyebrow">QA/QC · Detalle</p>
+            <h3>Plantilla de revisión: vigas y columnas antes de modelar</h3>
+            <p>Checklist previo para evitar re-trabajo: geometría, recubrimientos, coherencia y detalles clave que se escapan bajo presión de tiempo.</p>
+            <div class="notes-card-tags">
+              <span class="tag tag-neutral">QA/QC</span>
+              <span class="tag tag-struct">Detalle</span>
+            </div>
+            <span class="notes-card-status">Próximamente</span>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="notes-cta reveal">
+          <p>
+            Publicaré guías más completas y casos cortos derivados de proyectos
+            reales. Si quieres discutir alguno de estos criterios o necesitas
+            apoyo técnico, escríbeme.
+          </p>
+          <div class="notes-cta-btns">
+            <a href="../pages/contact.html" class="btn btn-primary">Contactar</a>
+            <a href="../projects/index.html" class="btn btn-outline">Ver proyectos</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            Gionny A. Gutiérrez
+            <span>Structural Engineer · BIM · Developer</span>
+          </a>
+          <p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p>
+          <span class="available-badge">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="../engineering.html">Ingeniería</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../projects/index.html">Proyectos</a></li>
+            <li><a href="../pages/about.html">Sobre mí</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+        <p class="footer-tech">Análisis sísmico · Diseño en concreto · Diseño en acero · Modelación estructural · Automatización BIM</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="bg-grid" aria-hidden="true">
+    <div class="bg-grid__point"></div>
+  </div>
+
+  <script src="../src/scripts/global.js"></script>
+  <script src="../src/scripts/grid.js" defer></script>
+  <script src="../src/scripts/notes.js" defer></script>
+</body>
+</html>

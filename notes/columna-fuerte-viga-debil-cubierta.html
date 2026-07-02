@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Criterio técnico sobre la aplicación del chequeo columna fuerte-viga débil (NSR-10 C.21.3.6.2 / C.21.6.2.2) en columnas discontinuas de cubierta — Gionny A. Gutiérrez" />
+  <title>Columna fuerte-viga débil en cubierta | Notas técnicas</title>
+  <link rel="stylesheet" href="../src/styles/main.css" />
+  <link rel="stylesheet" href="../src/styles/notes.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        Gionny A. Gutiérrez
+        <span>Structural Engineer · BIM · Developer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../engineering.html">Ingeniería</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../projects/index.html">Proyectos</a></li>
+        <li><a href="../notes/index.html">Notas</a></li>
+        <li><a href="../pages/about.html">Sobre mí</a></li>
+        <li><a href="../pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="note-hero">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="eyebrow-line eyebrow-line--struct"></span>
+          <span class="eyebrow-label eyebrow-label--struct">Criterio normativo</span>
+        </div>
+        <h1>¿Debe aplicarse columna fuerte-viga débil en columnas discontinuas de cubierta?</h1>
+        <div class="note-hero-meta">
+          <div class="note-hero-meta-item"><span class="note-hero-meta-label">Categoría</span><span class="note-hero-meta-value">Diseño sísmico</span></div>
+          <div class="note-hero-meta-item"><span class="note-hero-meta-label">Norma</span><span class="note-hero-meta-value">NSR-10 · ACI 318</span></div>
+          <div class="note-hero-meta-item"><span class="note-hero-meta-label">Estado</span><span class="note-hero-meta-value">Criterio en discusión</span></div>
+          <div class="note-hero-meta-item"><span class="note-hero-meta-label">Lectura</span><span class="note-hero-meta-value">~9 min</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="note-layout">
+
+          <article class="note-article reveal">
+
+            <h2 id="introduccion">Introducción</h2>
+            <p>
+              El chequeo columna fuerte-viga débil es uno de los pilares del diseño
+              sismorresistente en pórticos de concreto reforzado. Su propósito es
+              simple de enunciar: obligar a que las columnas tengan más capacidad
+              a momento que las vigas que llegan a un mismo nudo, de modo que la
+              disipación de energía ante un sismo ocurra preferiblemente en las
+              vigas y no en las columnas.
+            </p>
+            <p>
+              Esto no es un capricho normativo. Un mecanismo de piso blando —donde
+              se forman rótulas plásticas en las columnas de un mismo nivel— es
+              mucho más peligroso que uno donde las rótulas se distribuyen en las
+              vigas: el primero puede comprometer la estabilidad global del
+              edificio; el segundo, bien detallado, permite una respuesta dúctil y
+              progresiva.
+            </p>
+
+            <h2 id="que-exige-la-nsr-10">Qué exige la NSR-10</h2>
+            <p>
+              La NSR-10 traslada este criterio a los sistemas de pórticos con
+              capacidad especial de disipación de energía, con dos referencias
+              puntuales:
+            </p>
+            <ul>
+              <li>Pórticos con capacidad moderada de disipación de energía (DMO): <span class="note-code">NSR-10 C.21.3.6.2</span></li>
+              <li>Pórticos con capacidad especial de disipación de energía (DES): <span class="note-code">NSR-10 C.21.6.2.2</span></li>
+            </ul>
+            <p>En ambos casos, el requisito se resume en la misma relación de resistencias en el nudo:</p>
+            <div class="note-formula">
+              <code>ΣMnc ≥ 1.2 · ΣMnb</code>
+            </div>
+            <p>
+              Donde <strong>ΣMnc</strong> es la suma de momentos nominales de las
+              columnas que llegan al nudo y <strong>ΣMnb</strong> la suma de
+              momentos nominales de las vigas. El factor 1.2 busca un margen
+              razonable para que, incluso con las incertidumbres propias del
+              modelo y los materiales, la jerarquía columna fuerte-viga débil se
+              mantenga en la práctica.
+            </p>
+
+            <h2 id="donde-aparece-la-duda">Dónde aparece la duda</h2>
+            <p>
+              El chequeo está pensado, filosóficamente, para nudos donde la columna
+              <strong>continúa</strong> por encima y por debajo del nivel analizado
+              — es decir, para pisos intermedios, donde efectivamente existe el
+              riesgo de que una rótula en columna genere un mecanismo de piso
+              blando que compromete niveles completos del edificio.
+            </p>
+            <p>
+              La pregunta se vuelve legítima en las columnas de último piso o de
+              cubierta: aquellas que <strong>no continúan</strong> por encima del
+              nudo. En ese caso no hay un "piso superior" cuya estabilidad dependa
+              de la columna analizada — el elemento termina ahí. ¿Tiene sentido
+              exigirle el mismo margen 1.2 que a una columna de piso intermedio,
+              cuyo eventual daño sí puede propagar un mecanismo de colapso a través
+              de varios niveles?
+            </p>
+
+            <h2 id="argumento-tecnico">Argumento técnico</h2>
+            <p>
+              Hay al menos tres razones técnicas que sustentan revisar este punto
+              con más detalle en columnas discontinuas de cubierta:
+            </p>
+            <ul>
+              <li><strong>Menor carga axial tributaria.</strong> Al no recibir carga de niveles superiores, estas columnas suelen trabajar con una carga axial considerablemente menor que las de pisos intermedios, lo que cambia su punto de operación sobre el diagrama de interacción P-M.</li>
+              <li><strong>Menor efecto en el mecanismo global.</strong> Una eventual rótula plástica en la base de una columna de cubierta no tiene "piso superior" que desestabilizar — su contribución al riesgo de mecanismo de piso blando es distinta a la de una columna intermedia.</li>
+              <li><strong>Diferencia física entre piso intermedio y cubierta.</strong> El nudo de cubierta típicamente concentra menos elementos y menos incertidumbre acumulada de niveles superiores, lo que reduce parte de la justificación original del margen de 1.2.</li>
+            </ul>
+            <p>
+              Ninguno de estos argumentos elimina la necesidad de un buen
+              detallado. Lo que cuestionan es si el chequeo automático y sin
+              matices del 1.2 es la única forma razonable de garantizar seguridad
+              en ese nudo específico.
+            </p>
+
+            <h2 id="lectura-desde-aci-nist">Lectura desde ACI / NIST</h2>
+            <p>
+              La literatura técnica detrás del ACI 318 —en particular las guías
+              NIST sobre pórticos especiales resistentes a momento— reconoce esta
+              distinción. Sin transcribir texto normativo, la idea central que
+              plantean es que puede ser razonable tratar de forma diferenciada las
+              conexiones de cubierta o de niveles equivalentes donde la columna no
+              continúa por encima del nudo, en la medida en que la carga axial sea
+              baja y el impacto sobre el mecanismo global de colapso sea limitado
+              —siempre que el detallado siga permitiendo un comportamiento dúctil.
+            </p>
+            <p>
+              Esa lectura no es una licencia para relajar el diseño sin criterio:
+              es una invitación a que el ingeniero evalúe explícitamente si, en el
+              caso concreto de una columna de cubierta con baja carga axial, el
+              requisito 1.2 debe aplicarse con el mismo rigor que en un piso
+              intermedio, o si existe una base técnica para un tratamiento distinto.
+            </p>
+
+            <h2 id="cierre">Cierre</h2>
+            <p>
+              La propuesta de esta nota no es eliminar el control de columna
+              fuerte-viga débil en cubierta, sino evaluarlo con criterio en lugar
+              de aplicarlo de forma automática y sin contexto. En la práctica,
+              eso implica:
+            </p>
+            <ul>
+              <li>No prescindir del control de resistencia y ductilidad del nudo.</li>
+              <li>Verificar explícitamente la interacción P-M de la columna bajo su carga axial real de cubierta.</li>
+              <li>Revisar cortante, confinamiento y anclaje del refuerzo con el mismo nivel de exigencia que en un piso intermedio.</li>
+              <li>Documentar el criterio adoptado en la memoria de cálculo, con la justificación técnica específica del caso.</li>
+            </ul>
+
+            <div class="note-callout">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <p>
+                Esta nota no reemplaza la aplicación de la NSR-10 ni el criterio
+                del diseñador responsable o de la autoridad competente. Su objetivo
+                es abrir una discusión técnica sobre casos de borde en columnas de
+                cubierta.
+              </p>
+            </div>
+
+          </article>
+
+          <aside class="note-toc reveal reveal-delay-1">
+            <p class="note-toc-title">En esta nota</p>
+            <nav class="note-toc-list">
+              <a href="#introduccion">Introducción</a>
+              <a href="#que-exige-la-nsr-10">Qué exige la NSR-10</a>
+              <a href="#donde-aparece-la-duda">Dónde aparece la duda</a>
+              <a href="#argumento-tecnico">Argumento técnico</a>
+              <a href="#lectura-desde-aci-nist">Lectura desde ACI / NIST</a>
+              <a href="#cierre">Cierre</a>
+            </nav>
+            <div class="tool-sidebar-card" style="margin-top: var(--space-lg); padding: var(--space-md);">
+              <div class="tags-row">
+                <span class="tag tag-struct">NSR-10</span>
+                <span class="tag tag-struct">ACI 318</span>
+                <span class="tag tag-struct">DMO</span>
+                <span class="tag tag-struct">DES</span>
+                <span class="tag tag-neutral">Diseño sísmico</span>
+                <span class="tag tag-neutral">Columna fuerte-viga débil</span>
+                <span class="tag tag-neutral">Cubierta</span>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+
+        <div class="note-nav">
+          <a href="index.html" class="note-nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Volver a Notas
+          </a>
+          <a href="memoria-calculo-nsr10.html" class="note-nav-next">
+            Siguiente nota: Memoria de cálculo estructural
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <div class="note-cta reveal">
+          <a href="../pages/contact.html" class="btn btn-primary">Discutir este criterio</a>
+          <a href="../projects/index.html" class="btn btn-outline">Ver proyectos</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            Gionny A. Gutiérrez
+            <span>Structural Engineer · BIM · Developer</span>
+          </a>
+          <p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p>
+          <span class="available-badge">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="../engineering.html">Ingeniería</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../projects/index.html">Proyectos</a></li>
+            <li><a href="../pages/about.html">Sobre mí</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+        <p class="footer-tech">Análisis sísmico · Diseño en concreto · Diseño en acero · Modelación estructural · Automatización BIM</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../src/scripts/global.js"></script>
+  <script src="../src/scripts/notes.js" defer></script>
+</body>
+</html>

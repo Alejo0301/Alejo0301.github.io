@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Orden de capítulos sugerido para una memoria de cálculo estructural clara y fácil de revisar bajo NSR-10 — Gionny A. Gutiérrez" />
+  <title>Memoria de cálculo estructural bajo NSR-10 | Notas técnicas</title>
+  <link rel="stylesheet" href="../src/styles/main.css" />
+  <link rel="stylesheet" href="../src/styles/notes.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        Gionny A. Gutiérrez
+        <span>Structural Engineer · BIM · Developer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../engineering.html">Ingeniería</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../projects/index.html">Proyectos</a></li>
+        <li><a href="../notes/index.html">Notas</a></li>
+        <li><a href="../pages/about.html">Sobre mí</a></li>
+        <li><a href="../pages/contact.html" class="btn btn-accent btn-sm">Contacto</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="note-hero">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="eyebrow-line eyebrow-line--struct"></span>
+          <span class="eyebrow-label eyebrow-label--struct">Guía práctica</span>
+        </div>
+        <h1>Cómo organizar una memoria de cálculo estructural fácil de revisar en Colombia</h1>
+        <div class="note-hero-meta">
+          <div class="note-hero-meta-item"><span class="note-hero-meta-label">Categoría</span><span class="note-hero-meta-value">Documentación técnica</span></div>
+          <div class="note-hero-meta-item"><span class="note-hero-meta-label">Norma</span><span class="note-hero-meta-value">NSR-10</span></div>
+          <div class="note-hero-meta-item"><span class="note-hero-meta-label">Estado</span><span class="note-hero-meta-value">Guía de referencia</span></div>
+          <div class="note-hero-meta-item"><span class="note-hero-meta-label">Lectura</span><span class="note-hero-meta-value">~7 min</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="note-layout">
+
+          <article class="note-article reveal">
+
+            <h2 id="introduccion">Introducción</h2>
+            <p>
+              Una memoria de cálculo bien organizada no cambia el resultado del
+              diseño, pero sí cambia radicalmente qué tan rápido y con qué
+              confianza la revisa un curador, un interventor o un cliente técnico.
+              El siguiente es un orden de capítulos que uso como referencia para
+              que la memoria se lea de forma lineal: de la localización del
+              proyecto hasta la verificación normativa final, sin piezas sueltas
+              ni información repetida entre secciones.
+            </p>
+
+            <h2 id="capitulos">Capítulos principales</h2>
+            <p>Veinte capítulos, pensados para leerse en este orden:</p>
+
+            <div class="note-chapter-list">
+              <div class="note-chapter"><span class="note-chapter-num">01</span><div><h3>Localización</h3><p>Ubicación exacta, zona de amenaza sísmica y parámetros principales de diseño.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">02</span><div><h3>Generalidades y filosofía de diseño</h3><p>Condiciones arquitectónicas, luces, elementos verticales y restricciones del proyecto.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">03</span><div><h3>Reglamentación vigente</h3><p>NSR-10, decretos modificatorios y normativa complementaria aplicable.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">04</span><div><h3>Sistema estructural</h3><p>Sistema de resistencia sísmica, entrepiso, cimentación, cubierta y accesos.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">05</span><div><h3>Tipo de análisis estructural</h3><p>Análisis usado, configuraciones particulares y alcance del modelo.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">06</span><div><h3>Método de diseño</h3><p>Método adoptado, resistencia última y combinaciones principales.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">07</span><div><h3>Materiales de construcción</h3><p>Concreto, acero de refuerzo, acero estructural, mampostería y resistencias.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">08</span><div><h3>Software de análisis</h3><p>Programas usados y alcance de cada herramienta.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">09</span><div><h3>Espectro de diseño</h3><p>Parámetros sísmicos, suelo, amenaza y fuente de datos geotécnica.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">10</span><div><h3>Avalúos de cargas</h3><p>Cargas muertas, vivas, sismo, viento y cargas especiales.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">11</span><div><h3>Análisis sísmico y combinaciones de carga</h3><p>Variables sísmicas, masas, combinaciones e irregularidades.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">12</span><div><h3>Análisis dinámico y modelo matemático</h3><p>Hipótesis, geometría, masas, cargas, restricciones y capturas del software.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">13</span><div><h3>Cálculo de derivas</h3><p>Derivas máximas, comparación normativa y conclusiones.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">14</span><div><h3>Verificación de deflexiones verticales</h3><p>Deflexiones de entrepiso y cumplimiento de servicio.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">15</span><div><h3>Diseño de elementos estructurales</h3><p>Vigas, columnas, muros, cimentación y viguetas.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">16</span><div><h3>Diseño de la cimentación</h3><p>Vigas de cimentación, zapatas, losa e interacción con el estudio geotécnico.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">17</span><div><h3>Diseño de la placa aligerada de entrepiso</h3><p>Sistema de entrepiso y cálculo de placa o viguetas.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">18</span><div><h3>Diseño de escaleras</h3><p>Escaleras, rampas y sistemas de acceso.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">19</span><div><h3>Muros no estructurales</h3><p>Tipos de muros, anclajes, soporte y revisión de estabilidad.</p></div></div>
+              <div class="note-chapter"><span class="note-chapter-num">20</span><div><h3>Verificación de Títulos J y K NSR-10</h3><p>Clasificación de ocupación, resistencia al fuego y requisitos aplicables.</p></div></div>
+            </div>
+
+            <h2 id="anexos">Anexos sugeridos</h2>
+            <p>Los anexos se separan del cuerpo principal para no interrumpir la lectura, pero se referencian desde los capítulos correspondientes:</p>
+            <div class="note-annex-list">
+              <div class="note-annex-row"><span class="note-annex-num">Anexo 01</span><span>Avalúos de cargas y características de materiales de estructura</span></div>
+              <div class="note-annex-row"><span class="note-annex-num">Anexo 02</span><span>Análisis sísmico, combinaciones de carga e irregularidades geométricas</span></div>
+              <div class="note-annex-row"><span class="note-annex-num">Anexo 03</span><span>Presentación del modelo matemático</span></div>
+              <div class="note-annex-row"><span class="note-annex-num">Anexo 04</span><span>Diseño estructural de vigas, columnas y muros</span></div>
+              <div class="note-annex-row"><span class="note-annex-num">Anexo 05</span><span>Diseño de cimentación, vigas de contrapeso y zapatas</span></div>
+              <div class="note-annex-row"><span class="note-annex-num">Anexo 06</span><span>Diseño de escaleras</span></div>
+              <div class="note-annex-row"><span class="note-annex-num">Anexo 07</span><span>Diseño de muros no estructurales</span></div>
+            </div>
+
+            <h2 id="errores-y-facilidad">Errores comunes y qué facilita la revisión</h2>
+            <div class="note-compare">
+              <div class="note-compare-col note-compare-col--warn">
+                <h3>Errores comunes</h3>
+                <ul>
+                  <li>Mezclar anexos con el cuerpo principal de la memoria.</li>
+                  <li>Omitir la fuente de los parámetros sísmicos y geotécnicos.</li>
+                  <li>No documentar las hipótesis del modelo computacional.</li>
+                  <li>Presentar derivas sin compararlas contra el límite normativo aplicable.</li>
+                </ul>
+              </div>
+              <div class="note-compare-col note-compare-col--good">
+                <h3>Qué facilita la revisión</h3>
+                <ul>
+                  <li>Un índice de capítulos consistente de principio a fin.</li>
+                  <li>Separar avalúos de cargas del análisis sísmico propiamente dicho.</li>
+                  <li>Incluir capturas del modelo junto a su hipótesis correspondiente.</li>
+                  <li>Cerrar siempre con la verificación de Títulos J y K, no dejarla implícita.</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 id="cierre">Cierre</h2>
+            <p>
+              Este orden no es una fórmula rígida — cada proyecto tiene
+              condiciones que pueden justificar ajustes. Pero mantener una
+              estructura consistente entre memorias, capítulo a capítulo, es lo
+              que permite que un revisor externo encuentre lo que busca sin tener
+              que leer el documento completo dos veces.
+            </p>
+            <p style="color: var(--text-tertiary); font-size: 0.85rem;">
+              Plantilla descargable de memoria: próximamente.
+            </p>
+
+          </article>
+
+          <aside class="note-toc reveal reveal-delay-1">
+            <p class="note-toc-title">En esta nota</p>
+            <nav class="note-toc-list">
+              <a href="#introduccion">Introducción</a>
+              <a href="#capitulos">Capítulos principales</a>
+              <a href="#anexos">Anexos sugeridos</a>
+              <a href="#errores-y-facilidad">Errores y facilidad de revisión</a>
+              <a href="#cierre">Cierre</a>
+            </nav>
+            <div class="tool-sidebar-card" style="margin-top: var(--space-lg); padding: var(--space-md);">
+              <div class="tags-row">
+                <span class="tag tag-struct">NSR-10</span>
+                <span class="tag tag-neutral">Memorias de cálculo</span>
+                <span class="tag tag-neutral">Revisión estructural</span>
+                <span class="tag tag-neutral">Curaduría</span>
+                <span class="tag tag-struct">Diseño estructural</span>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+
+        <div class="note-nav">
+          <a href="columna-fuerte-viga-debil-cubierta.html" class="note-nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Nota anterior: Columna fuerte-viga débil
+          </a>
+          <a href="index.html" class="note-nav-next">
+            Volver a Notas
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <div class="note-cta reveal">
+          <a href="../pages/contact.html" class="btn btn-primary">Solicitar apoyo técnico</a>
+          <a href="../projects/index.html" class="btn btn-outline">Ver proyectos</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            Gionny A. Gutiérrez
+            <span>Structural Engineer · BIM · Developer</span>
+          </a>
+          <p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p>
+          <span class="available-badge">Disponible para proyectos</span>
+        </div>
+        <div class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="../engineering.html">Ingeniería</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../projects/index.html">Proyectos</a></li>
+            <li><a href="../pages/about.html">Sobre mí</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../assets/CV_Resume_AG.pdf" target="_blank">Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+        <p class="footer-tech">Análisis sísmico · Diseño en concreto · Diseño en acero · Modelación estructural · Automatización BIM</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../src/scripts/global.js"></script>
+  <script src="../src/scripts/notes.js" defer></script>
+</body>
+</html>
