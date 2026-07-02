@@ -554,6 +554,45 @@ code, .mono {
   .bg-grid { display: none; }
 }
 
+/* ── PUENTE ATIRANTADO — centrado en el hueco del skyline ────
+   Deck y torres en --bim (acero), nodos estructurales en --accent
+   (oro) — mismos tokens que ya usa el resto del fondo animado. */
+.bridge-group {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: bridgeSway 7s ease-in-out infinite;
+}
+
+.bridge-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bridgeNodePulse 2.6s ease-in-out infinite;
+}
+
+@keyframes bridgeDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes bridgeNodePulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.6); }
+}
+
+@keyframes bridgeSway {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(0.12deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bridge-group,
+  .bridge-deck,
+  .bridge-pylon,
+  .bridge-cable,
+  .bridge-node {
+    animation: none !important;
+  }
+}
+
 /* ── RESPONSIVE GLOBAL ───────────────────────────────────── */
 @media (max-width: 768px) {
   .container    { padding: 0 var(--space-md); }

@@ -268,6 +268,71 @@
   color: var(--text-tertiary);
 }
 
+/* ── CINTA DE HERRAMIENTAS ───────────────────────────────── */
+.tools-ribbon {
+  border-bottom: 1px solid var(--border-default);
+  padding: var(--space-md) 0;
+  overflow: hidden;
+}
+
+.tools-ribbon__track {
+  display: flex;
+  width: max-content;
+  animation: toolsMarquee 32s linear infinite;
+}
+
+.tools-ribbon:hover .tools-ribbon__track {
+  animation-play-state: paused;
+}
+
+.tools-ribbon__group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.tools-ribbon__item {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  padding: 0 var(--space-lg);
+  position: relative;
+}
+
+.tools-ribbon__item:not(:last-child)::after {
+  content: '·';
+  position: absolute;
+  right: 0;
+  color: var(--border-strong);
+}
+
+@keyframes toolsMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-ribbon__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .tools-ribbon__group[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tools-ribbon__item {
+    font-size: 0.7rem;
+    padding: 0 var(--space-md);
+  }
+}
+
 /* ── ÁREAS ───────────────────────────────────────────────── */
 .areas-heading {
   max-width: 560px;
