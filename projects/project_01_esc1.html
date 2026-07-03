@@ -7,6 +7,17 @@
   <title>ESC-1 — Edificio multifamiliar (4 niveles) | Diseño estructural</title>
   <link rel="stylesheet" href="../src/styles/main.css" />
   <link rel="stylesheet" href="../src/styles/project.css" />
+  <link rel="stylesheet" href="../src/styles/model-viewer.css" />
+
+  <!-- Three.js vendorizado localmente (sin CDN) — visor 3D del modelo -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "../src/vendor/three/three.module.min.js",
+      "three/addons/": "../src/vendor/three/addons/"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -64,6 +75,37 @@
 
             <h2>Resumen ejecutivo</h2>
             <p>Se desarrolló el diseño estructural de un edificio multifamiliar de cuatro niveles ubicado en zona de alta amenaza sísmica. El principal reto fue garantizar estabilidad y rigidez sin apoyos intermedios, resolviendo una luz libre de 6 metros mediante pórticos resistentes a momento en concreto reforzado. El proyecto integró evaluación geotécnica del terreno por condiciones de amenaza por movimientos en masa y se diseñó conforme a los requisitos de la NSR-10. El resultado fue un sistema estructural estable, continuo y normativamente verificable, compatible con los requerimientos arquitectónicos y constructivos del proyecto.</p>
+
+            <section class="project-inline-model reveal">
+              <div class="inline-model-header">
+                <div>
+                  <p class="inline-model-kicker">Modelo 3D</p>
+                  <h2>Modelo estructural interactivo</h2>
+                  <p class="inline-model-lead">
+                    Explora el modelo estructural exportado desde Revit en formato glTF.
+                    Puedes rotar, acercar y desplazar la vista para revisar la configuración
+                    general de pórticos, vigas, columnas y cimentación.
+                  </p>
+                </div>
+                <button type="button" class="model-viewer-btn" data-inline-reset title="Restablecer vista">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                  Reset view
+                </button>
+              </div>
+
+              <div
+                class="inline-model-viewer"
+                data-inline-model-src="../assets/projects/ESC-1/models/modelo_ESC1_PRUEBA.gltf"
+                data-model-title="Proyecto 01 — ESCALA ESC-1"
+              >
+                <div class="inline-model-status">
+                  <span class="model-viewer-spinner" aria-hidden="true"></span>
+                  <span>Cargando modelo…</span>
+                </div>
+              </div>
+
+              <p class="inline-model-hint">Arrastra para rotar · rueda para zoom · click derecho para mover</p>
+            </section>
 
             <h2>Contexto y restricciones</h2>
             <ul>
@@ -179,5 +221,6 @@
   </footer>
 
   <script src="../src/scripts/global.js"></script>
+  <script type="module" src="../src/scripts/project-model-viewer.js"></script>
 </body>
 </html>

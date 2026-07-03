@@ -54,8 +54,9 @@
   transform: translateY(-4px);
 }
 
-/* Imagen */
+/* Imagen (también puede ser <a> en cards con acciones múltiples) */
 .project-card-img-wrap {
+  display: block;
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -100,6 +101,12 @@
   flex: 1;
 }
 
+.project-card-title-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .project-card-title {
   font-size: 1rem;
   font-weight: 600;
@@ -141,6 +148,19 @@
   color: var(--accent-dark);
 }
 
+/* Fila de acciones (cards con visor 3D, ej. piloto ESC-1) */
+.project-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* El botón .project-model-trigger y el modal del visor 3D viven
+   en src/styles/model-viewer.css (compartido con las páginas de
+   detalle de proyecto que también lo usan). */
+
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .projects-grid {
@@ -151,5 +171,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-xs);
+  }
+
+  .project-card-actions {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

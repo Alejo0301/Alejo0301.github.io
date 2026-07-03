@@ -9,6 +9,17 @@
   <!-- Rutas desde projects/ suben un nivel -->
   <link rel="stylesheet" href="../src/styles/main.css" />
   <link rel="stylesheet" href="../src/styles/projects.css" />
+  <link rel="stylesheet" href="../src/styles/model-viewer.css" />
+
+  <!-- Three.js vendorizado localmente (sin CDN) — visor 3D de modelos de proyecto -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "../src/vendor/three/three.module.min.js",
+      "three/addons/": "../src/vendor/three/addons/"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -61,13 +72,15 @@
 
         <div class="projects-grid">
 
-          <a href="project_01_esc1.html" class="project-card reveal" data-cat="estructuras">
-            <div class="project-card-img-wrap">
+          <div class="project-card reveal" data-cat="estructuras">
+            <a href="project_01_esc1.html" class="project-card-img-wrap">
               <img src="../assets/projects/ESC-1/Portada_ESC1.png" alt="Portada proyecto ESC-1" class="project-card-img" loading="lazy" />
               <div class="project-card-num">01</div>
-            </div>
+            </a>
             <div class="project-card-body">
-              <h3 class="project-card-title">Proyecto 01 — ESCALA ESC-1</h3>
+              <a href="project_01_esc1.html" class="project-card-title-link">
+                <h3 class="project-card-title">Proyecto 01 — ESCALA ESC-1</h3>
+              </a>
               <p class="project-card-desc">Edificio multifamiliar de 4 niveles en zona sísmica alta, con luz libre de 6 m sin columnas mediante pórticos en concreto y diseño conforme a NSR-10.</p>
               <div class="project-card-tags">
                 <span class="tag tag-struct">Estructuras</span>
@@ -75,9 +88,20 @@
                 <span class="tag tag-struct">ETABS</span>
                 <span class="tag tag-neutral">Geotecnia</span>
               </div>
-              <span class="project-card-link">Ver proyecto →</span>
+              <div class="project-card-actions">
+                <a href="project_01_esc1.html" class="project-card-link">Ver proyecto →</a>
+                <button
+                  class="project-model-trigger"
+                  type="button"
+                  data-model-src="../assets/projects/ESC-1/models/modelo_ESC1_PRUEBA.gltf"
+                  data-model-title="Proyecto 01 — ESCALA ESC-1"
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44a1.98 1.98 0 0 1-1.94 0l-7.9-4.44A.998.998 0 0 1 2.2 16.5V7.5c0-.38.21-.71.53-.88l7.9-4.44a1.98 1.98 0 0 1 1.94 0l7.9 4.44c.32.17.53.5.53.88Z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
+                  Explorar modelo 3D
+                </button>
+              </div>
             </div>
-          </a>
+          </div>
 
           <a href="project_02_playa360.html" class="project-card reveal" data-cat="estructuras">
             <div class="project-card-img-wrap">
@@ -248,6 +272,36 @@
 
   </main>
 
+  <!-- VISOR 3D (modal técnico) -->
+  <div class="model-viewer-modal" id="modelViewerModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modelViewerTitle">
+    <div class="model-viewer-panel">
+      <header class="model-viewer-header">
+        <div>
+          <p class="model-viewer-kicker">Modelo 3D</p>
+          <h2 class="model-viewer-title" id="modelViewerTitle">Modelo 3D</h2>
+        </div>
+        <div class="model-viewer-actions">
+          <button type="button" class="model-viewer-btn" id="modelViewerReset" title="Restablecer vista">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+            Reset view
+          </button>
+          <button type="button" class="model-viewer-close" id="modelViewerClose" aria-label="Cerrar visor 3D">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </header>
+      <div class="model-viewer-stage" id="modelViewerStage">
+        <div class="model-viewer-status" id="modelViewerStatus">
+          <span class="model-viewer-spinner" aria-hidden="true"></span>
+          <span>Cargando modelo…</span>
+        </div>
+      </div>
+      <footer class="model-viewer-footer">
+        <span class="model-viewer-hint">Arrastra para rotar · Rueda para zoom · Click derecho para mover</span>
+      </footer>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
@@ -293,6 +347,7 @@
 
   <script src="../src/scripts/global.js"></script>
   <script src="../src/scripts/grid.js" defer></script>
+  <script type="module" src="../src/scripts/project-model-viewer.js"></script>
 
 </body>
 </html>
