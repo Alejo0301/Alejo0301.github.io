@@ -6,6 +6,17 @@
   <title>Edificio Multifamiliar MonteReal</title>
   <link rel="stylesheet" href="../src/styles/main.css" />
   <link rel="stylesheet" href="../src/styles/project.css" />
+  <link rel="stylesheet" href="../src/styles/model-viewer.css" />
+
+  <!-- Three.js vendorizado localmente (sin CDN) — visor 3D del modelo -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "../src/vendor/three/three.module.min.js",
+      "three/addons/": "../src/vendor/three/addons/"
+    }
+  }
+  </script>
 </head>
 <body>
   <nav class="nav">
@@ -46,6 +57,38 @@
           <div class="project-content reveal">
             <h2>Resumen ejecutivo</h2>
             <p>MonteReal es un proyecto de edificación multifamiliar de 5 niveles con parqueadero y 11 apartamentos, concebido para responder a exigencias de seguridad estructural, funcionalidad residencial y eficiencia constructiva. El diseño se desarrolló en un contexto de alta sismicidad, lo que implicó un especial cuidado en la definición del sistema resistente, el control de derivas y la regularidad estructural. Adicionalmente, las condiciones geotécnicas complejas del sitio exigieron una coordinación rigurosa entre la superestructura y la solución de cimentación, buscando garantizar un comportamiento adecuado de la edificación tanto en servicio como ante eventos sísmicos. El resultado fue una propuesta estructural robusta, compatible con la arquitectura del proyecto y alineada con los criterios de diseño exigidos por la normativa colombiana.</p>
+
+            <section class="project-inline-model reveal">
+              <div class="inline-model-header">
+                <div>
+                  <p class="inline-model-kicker">Modelo 3D</p>
+                  <h2>Modelo estructural interactivo</h2>
+                  <p class="inline-model-lead">
+                    Explora el modelo estructural exportado desde Revit en formato glTF.
+                    Puedes rotar, acercar y desplazar la vista para revisar la configuración
+                    general de pórticos, placas, columnas y cimentación del proyecto.
+                  </p>
+                </div>
+                <button type="button" class="model-viewer-btn" data-inline-reset title="Restablecer vista">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                  Reset view
+                </button>
+              </div>
+
+              <div
+                class="inline-model-viewer"
+                data-inline-model-src="../assets/projects/Montereal/models/modelo_Montereal_PRUEBA.gltf"
+                data-model-title="Proyecto 04 — Edificio Multifamiliar MonteReal"
+              >
+                <div class="inline-model-status">
+                  <span class="model-viewer-spinner" aria-hidden="true"></span>
+                  <span>Cargando modelo…</span>
+                </div>
+              </div>
+
+              <p class="inline-model-hint">Arrastra para rotar · rueda para zoom · click derecho para mover</p>
+            </section>
+
             <h2>Contexto y principales desafíos</h2>
             <ul><li><strong>Uso:</strong> Edificación residencial multifamiliar.</li><li><strong>Configuración:</strong> 5 niveles, parqueadero y 11 apartamentos.</li><li><strong>Condición sísmica:</strong> Proyecto ubicado en zona de alta sismicidad.</li><li><strong>Condición geotécnica:</strong> Presencia de retos asociados al suelo y a la interacción suelo-estructura.</li><li><strong>Desafío principal:</strong> Integrar seguridad sísmica, viabilidad estructural y funcionalidad arquitectónica en un mismo sistema.</li></ul>
             <h2>Solución estructural</h2>
@@ -108,5 +151,6 @@
   </main>
   <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="nav-logo">Gionny A. Gutiérrez<span>Structural Engineer · BIM · Developer</span></a><p>Portafolio profesional de ingeniería estructural, BIM y herramientas de automatización técnica.</p><span class="available-badge">Disponible para proyectos</span></div><div class="footer-col"><h4>Páginas</h4><ul><li><a href="../engineering.html">Ingeniería</a></li><li><a href="../software.html">Software</a></li><li><a href="../projects/index.html">Proyectos</a></li><li><a href="../pages/about.html">Sobre mí</a></li></ul></div><div class="footer-col"><h4>Contacto</h4><ul><li><a href="mailto:gionnygutierrezp@gmail.com">Email</a></li><li><a href="https://www.linkedin.com/in/alejandrogutierrez21" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/Alejo0301" target="_blank" rel="noopener">GitHub</a></li><li><a aria-disabled="true" title="CV en actualización" class="is-disabled">Descargar CV</a></li></ul></div></div><div class="footer-bottom"><p>© Gionny A. Gutiérrez — Built with HTML/CSS/JS · Hosted on GitHub Pages</p><p class="footer-tech">Análisis sísmico · Diseño en concreto · Diseño en acero · Modelación estructural · Automatización BIM</p></div></div></footer>
   <script src="../src/scripts/global.js"></script>
+  <script type="module" src="../src/scripts/project-model-viewer.js"></script>
 </body>
 </html>
